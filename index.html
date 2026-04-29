@@ -623,9 +623,17 @@ footer {
 }
 
 /* ── RESPONSIVE ── */
+@media(max-width:1200px) {
+  .services-grid[style*="repeat(4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
 @media(max-width:968px) {
   .trust-grid { grid-template-columns: 1fr; gap: 32px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid[style*="repeat(4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
   .why-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-content { grid-template-columns: 1fr; gap: 40px; }
 }
@@ -635,6 +643,9 @@ footer {
   #hero { padding: 100px 4% 60px; }
   #services, #why, #proof, #cta { padding: 64px 4%; }
   .services-grid { grid-template-columns: 1fr; }
+  .services-grid[style*="repeat(4"] {
+    grid-template-columns: 1fr !important;
+  }
   .footer-content { grid-template-columns: 1fr; }
 }
 </style>
@@ -658,7 +669,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#why">Why Us</a>
-    <a href="/gst-audit-compliance" class="nav-cta">Begin Audit</a>
+    <a href="/gst-audit-compliance.html" class="nav-cta">Begin Audit</a>
   </div>
 </nav>
 
@@ -672,7 +683,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1 class="hero-h1">Precision Audit.<br/>Zero Compromise.</h1>
   <p class="hero-tagline">1,247 companies protected. AI-powered compliance. 72-hour delivery. Money-back guarantee.</p>
   <div class="hero-actions">
-    <a href="/gst-audit-compliance" class="btn-primary">Begin GST Audit — ₹25,000</a>
+    <a href="/gst-audit-compliance.html" class="btn-primary">Begin GST Audit — ₹25,000</a>
     <a href="#services" class="btn-ghost">Explore All Services</a>
   </div>
 </section>
@@ -703,42 +714,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="services-grid">
     
-    <a href="/gst-audit-compliance" class="service-card">
+    <a href="/gst-audit-compliance.html" class="service-card">
       <div class="service-icon">⚖️</div>
       <h3 class="service-title">GST Audit & Compliance</h3>
       <p class="service-desc">GSTR reconciliation, ITC optimization, penalty assessment. Average ₹2-5L savings identified.</p>
       <div class="service-price">₹25,000</div>
     </a>
 
-    <a href="/dpdp-readiness-assessment" class="service-card">
+    <a href="/dpdp-readiness-assessment.html" class="service-card">
       <div class="service-icon">🔐</div>
       <h3 class="service-title">DPDP Readiness Assessment</h3>
       <p class="service-desc">Complete DPDP Act 2023 gap analysis. Avoid penalties up to ₹250 crore. Templates included.</p>
       <div class="service-price">₹40,000</div>
     </a>
 
-    <a href="/financial-operations-audit" class="service-card">
+    <a href="/financial-operations-audit.html" class="service-card">
       <div class="service-icon">📊</div>
       <h3 class="service-title">Financial Operations Audit</h3>
       <p class="service-desc">Internal controls, P2P/O2C cycles, revenue leakage detection. ₹2-10L average savings.</p>
       <div class="service-price">₹30,000</div>
     </a>
 
-    <a href="/it-cybersecurity-audit" class="service-card">
+    <a href="/it-cybersecurity-audit.html" class="service-card">
       <div class="service-icon">🛡️</div>
       <h3 class="service-title">IT & Cybersecurity Audit</h3>
       <p class="service-desc">ISO 27001 aligned. Network, cloud, endpoints. Average breach cost ₹17.9 crore—prevent it.</p>
       <div class="service-price">₹50,000</div>
     </a>
 
-    <a href="/export-compliance" class="service-card">
+    <a href="/export-compliance.html" class="service-card">
       <div class="service-icon">🌏</div>
       <h3 class="service-title">Export Compliance Audit</h3>
       <p class="service-desc">FEMA, RBI, FTP, DGFT compliance. RoDTEP optimization. ₹1-5L refund recovery typical.</p>
       <div class="service-price">₹20,000</div>
     </a>
 
-    <a href="/vextintel-monthly-retainer" class="service-card" style="background:rgba(197,160,89,0.04);border:0.5px solid rgba(197,160,89,0.18);">
+    <a href="/vextintel-monthly-retainer.html" class="service-card" style="background:rgba(197,160,89,0.04);border:0.5px solid rgba(197,160,89,0.18);">
       <div class="service-icon">📡</div>
       <h3 class="service-title">VextIntel Monthly Retainer</h3>
       <p class="service-desc">Continuous compliance intelligence. GST, DPDP, RBI alerts. 95% cheaper than full-time CCO.</p>
@@ -747,8 +758,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </div>
   
-  <div style="text-align:center;margin-top:48px;">
-    <a href="#services" class="btn-ghost">View Global AI Services →</a>
+  <!-- Global AI Services -->
+  <div class="section-header" style="margin-top:80px;">
+    <span class="section-eyebrow">Global Services</span>
+    <h2 class="section-h2">AI-Powered Intelligence</h2>
+  </div>
+  
+  <div class="services-grid" style="grid-template-columns: repeat(4, 1fr);">
+    
+    <a href="/ai-business-process-intelligence.html" class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3 class="service-title">Process Intelligence</h3>
+      <p class="service-desc">AI-powered process mapping, bottleneck analysis. 30-40% cost reduction typical.</p>
+      <div class="service-price" style="color:#9EA7B8;">$807 USD</div>
+    </a>
+
+    <a href="/ai-competitive-intelligence.html" class="service-card">
+      <div class="service-icon">🎯</div>
+      <h3 class="service-title">Competitive Intelligence</h3>
+      <p class="service-desc">5-10 competitor profiles, pricing analysis, SWOT. 5-day delivery.</p>
+      <div class="service-price" style="color:#9EA7B8;">$699 USD</div>
+    </a>
+
+    <a href="/ai-market-entry-analysis.html" class="service-card">
+      <div class="service-icon">🌐</div>
+      <h3 class="service-title">Market Entry Analysis</h3>
+      <p class="service-desc">TAM sizing, regulatory landscape, GTM strategy. 92% accuracy.</p>
+      <div class="service-price" style="color:#9EA7B8;">$914 USD</div>
+    </a>
+
+    <a href="/ai-operational-risk-assessment.html" class="service-card">
+      <div class="service-icon">⚠️</div>
+      <h3 class="service-title">Operational Risk</h3>
+      <p class="service-desc">Enterprise risk assessment. ISO 31000 aligned. Mitigation roadmap.</p>
+      <div class="service-price" style="color:#9EA7B8;">$1,022 USD</div>
+    </a>
+
   </div>
 </section>
 
@@ -803,7 +848,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cta-content">
     <h2 class="cta-h2">Start With Our Most Popular Audit</h2>
     <p class="cta-desc">Join 1,247 companies who've prevented ₹127 crore in penalties. 72-hour delivery. Money-back guarantee.</p>
-    <a href="/gst-audit-compliance" class="btn-primary">Begin GST Audit — ₹25,000</a>
+    <a href="/gst-audit-compliance.html" class="btn-primary">Begin GST Audit — ₹25,000</a>
   </div>
 </section>
 
@@ -824,22 +869,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <div class="footer-section-title">Indian Services</div>
       <div class="footer-links">
-        <a href="/gst-audit-compliance">GST Audit (₹25K)</a>
-        <a href="/dpdp-readiness-assessment">DPDP Assessment (₹40K)</a>
-        <a href="/financial-operations-audit">Financial Audit (₹30K)</a>
-        <a href="/it-cybersecurity-audit">Cybersecurity (₹50K)</a>
-        <a href="/export-compliance">Export Compliance (₹20K)</a>
-        <a href="/vextintel-monthly-retainer">VextIntel (₹15K/mo)</a>
+        <a href="/gst-audit-compliance.html">GST Audit (₹25K)</a>
+        <a href="/dpdp-readiness-assessment.html">DPDP Assessment (₹40K)</a>
+        <a href="/financial-operations-audit.html">Financial Audit (₹30K)</a>
+        <a href="/it-cybersecurity-audit.html">Cybersecurity (₹50K)</a>
+        <a href="/export-compliance.html">Export Compliance (₹20K)</a>
+        <a href="/vextintel-monthly-retainer.html">VextIntel (₹15K/mo)</a>
       </div>
     </div>
 
     <div>
       <div class="footer-section-title">Global Services</div>
       <div class="footer-links">
-        <a href="/ai-business-process-intelligence">Process Intelligence ($807)</a>
-        <a href="/ai-competitive-intelligence">Competitive Intel ($699)</a>
-        <a href="/ai-market-entry-analysis">Market Entry ($914)</a>
-        <a href="/ai-operational-risk-assessment">Operational Risk ($1,022)</a>
+        <a href="/ai-business-process-intelligence.html">Process Intelligence ($807)</a>
+        <a href="/ai-competitive-intelligence.html">Competitive Intel ($699)</a>
+        <a href="/ai-market-entry-analysis.html">Market Entry ($914)</a>
+        <a href="/ai-operational-risk-assessment.html">Operational Risk ($1,022)</a>
       </div>
     </div>
 
