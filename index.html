@@ -621,6 +621,25 @@ footer {
   color: rgba(245,245,220,0.35);
   letter-spacing: 0.08em;
 }
+.footer-legal {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.footer-legal a {
+  font-family: var(--ff-ui);
+  font-size: 10px;
+  color: rgba(245,245,220,0.22);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+.footer-legal a:hover {
+  opacity: 0.55;
+}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1200px) {
@@ -854,8 +873,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- FOOTER -->
 <footer>
-<p>© 2026 Vext Audit Capital · A division of SkyDasher Tech LLP · All rights reserved.</p>
-<div class="fl">
+<div class="footer-bottom">
+<p class="footer-copyright">© 2026 Vext Audit Capital · A division of SkyDasher Tech LLP · All rights reserved.</p>
+<div class="footer-legal">
 <a href="privacy.html">Privacy</a>
 <a href="terms.html">Terms</a>
 <a href="refund.html">Refund</a>
@@ -864,6 +884,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="cookies.html">Cookies</a>
 <a href="security.html">Security</a>
 <a href="disclosure.html">Disclosure</a>
+</div>
 </div>
 </footer>
 
