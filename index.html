@@ -475,6 +475,7 @@ footer{background:#1F0606;padding:60px 5% 30px;border-top:0.5px solid rgba(197,1
     </div>
   </div>
 </footer>
+<script src="https://www.google.com/recaptcha/api.js?render=6Lc77OUsAAAAAPXy5gdbxWiSVNOPhCTJwVzRLPah"></script>
 <script>
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -482,8 +483,15 @@ document.getElementById('contactForm').addEventListener('submit', async function
   const errorMsg = document.getElementById('formError');
   const successBox = document.getElementById('formSuccess');
   btn.disabled = true;
-  btn.textContent = 'Submitting...';
+  btn.textContent = 'Verifying...';
   errorMsg.style.display = 'none';
+  let recaptchaToken = '';
+  try {
+    recaptchaToken = await grecaptcha.execute('6Lc77OUsAAAAAPXy5gdbxWiSVNOPhCTJwVzRLPah', {action: 'contact'});
+  } catch(e) {
+    recaptchaToken = '';
+  }
+  btn.textContent = 'Submitting...';
   const countryCode = document.getElementById('countryCode').value;
   const phoneNumber = document.getElementById('phone').value;
   const data = {
@@ -496,7 +504,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
     service: document.getElementById('service').value,
     message: document.getElementById('message').value,
     source: 'Website Contact Form',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    recaptcha_token: recaptchaToken
   };
   try {
     await fetch('https://hooks.zapier.com/hooks/catch/27507083/4y8c6af/', {
