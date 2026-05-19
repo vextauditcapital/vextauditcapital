@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Secure Document Upload | Vext Audit Capital</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--b:#4A0E0E;--c:#F5F5DC;--g:#C5A059;--gl:#D4B878;--bd:#2D0808;--bl:#1D0404;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bd);color:var(--c);font-family:'Cormorant Garamond',serif;min-height:100vh;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(29,4,4,0.97);border-bottom:0.5px solid rgba(197,160,89,0.15);backdrop-filter:blur(16px);}
+.nl{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nm{font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--g);letter-spacing:0.16em;line-height:1;}
+.ns{font-family:'Jost',sans-serif;font-size:7px;color:var(--c);opacity:0.35;letter-spacing:0.22em;text-transform:uppercase;margin-top:3px;}
+.secure{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--g);opacity:0.6;border:0.5px solid rgba(197,160,89,0.25);padding:4px 12px;display:flex;align-items:center;gap:6px;}
+.secure::before{content:'';width:6px;height:6px;background:#4ade80;border-radius:50%;display:inline-block;}
+.wrap{max-width:680px;margin:0 auto;padding:100px 24px 80px;}
+.hdr{text-align:center;margin-bottom:48px;}
+.lock{width:60px;height:60px;border:0.5px solid rgba(197,160,89,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;background:rgba(197,160,89,0.04);}
+.ey{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--g);opacity:0.6;margin-bottom:14px;display:block;}
+h1{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,34px);font-weight:500;color:var(--c);letter-spacing:0.04em;margin-bottom:10px;line-height:1.2;}
+h1 span{color:var(--g);}
+.sub{font-size:17px;font-weight:300;font-style:italic;color:var(--c);opacity:0.45;line-height:1.7;}
+.card{background:rgba(245,245,220,0.03);border:0.5px solid rgba(197,160,89,0.18);padding:28px 32px;margin-bottom:16px;}
+.card-title{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--g);opacity:0.55;margin-bottom:16px;padding-bottom:10px;border-bottom:0.5px solid rgba(197,160,89,0.12);}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.fg label{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);opacity:0.35;}
+.fg input,.fg select{background:rgba(245,245,220,0.04);border:0.5px solid rgba(197,160,89,0.2);color:var(--c);font-family:'Cormorant Garamond',serif;font-size:16px;padding:11px 14px;outline:none;transition:border-color 0.2s;width:100%;}
+.fg input:focus,.fg select:focus{border-color:var(--g);}
+.fg select option{background:var(--bd);color:var(--c);}
+.fg input::placeholder{color:rgba(245,245,220,0.2);font-style:italic;}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.drop-zone{border:1px dashed rgba(197,160,89,0.25);padding:36px 24px;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(197,160,89,0.02);position:relative;margin-bottom:14px;}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--g);background:rgba(197,160,89,0.06);}
+.drop-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.drop-icon{font-size:32px;margin-bottom:12px;opacity:0.4;}
+.drop-title{font-family:'Cinzel',serif;font-size:13px;color:var(--c);margin-bottom:6px;letter-spacing:0.06em;}
+.drop-sub{font-family:'Jost',sans-serif;font-size:10px;color:var(--c);opacity:0.3;letter-spacing:0.06em;}
+.file-list{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.file-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(197,160,89,0.05);border:0.5px solid rgba(197,160,89,0.15);}
+.file-name{font-family:'Jost',sans-serif;font-size:11px;color:var(--c);opacity:0.7;}
+.file-size{font-family:'Jost',sans-serif;font-size:10px;color:var(--g);opacity:0.6;}
+.file-remove{font-family:'Jost',sans-serif;font-size:10px;color:var(--c);opacity:0.3;cursor:pointer;background:none;border:none;color:var(--c);transition:opacity 0.2s;}
+.file-remove:hover{opacity:0.8;}
+.checklist{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+.check-item{display:flex;align-items:flex-start;gap:10px;font-family:'Jost',sans-serif;font-size:11px;color:var(--c);opacity:0.55;line-height:1.5;}
+.check-dot{width:4px;height:4px;background:var(--g);border-radius:50%;flex-shrink:0;margin-top:5px;opacity:0.6;}
+.progress-wrap{height:2px;background:rgba(197,160,89,0.1);margin:16px 0;overflow:hidden;}
+.progress-bar{height:2px;background:var(--g);width:0%;transition:width 0.5s;}
+.btn{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;background:var(--g);color:var(--bd);border:none;padding:16px 40px;cursor:pointer;transition:background 0.2s,transform 0.15s;width:100%;}
+.btn:hover{background:var(--gl);transform:translateY(-1px);}
+.btn:disabled{opacity:0.35;cursor:not-allowed;transform:none;}
+.success{display:none;text-align:center;padding:32px 0;}
+.success-ring{width:72px;height:72px;border-radius:50%;border:1px solid var(--g);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;animation:pulse 2.5s ease infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(197,160,89,0.15);}50%{box-shadow:0 0 0 14px rgba(197,160,89,0);}}
+.success h2{font-family:'Cinzel',serif;font-size:26px;color:var(--g);margin-bottom:10px;letter-spacing:0.06em;}
+.success p{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:var(--c);opacity:0.6;line-height:1.8;}
+.trust{display:flex;gap:24px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+.trust-item{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--c);opacity:0.3;display:flex;align-items:center;gap:6px;}
+.trust-item::before{content:'';width:5px;height:5px;background:var(--g);border-radius:50%;opacity:0.5;}
+@media(max-width:600px){.fr2{grid-template-columns:1fr;}.card{padding:20px 16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nl">
+    <div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div>
+  </a>
+  <div class="secure">256-bit encrypted</div>
+</nav>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="lock">
+      <svg width="22" height="26" viewBox="0 0 22 26" fill="none"><rect x="1" y="11" width="20" height="14" rx="2" stroke="#C5A059" stroke-opacity=".6" stroke-width="1.2"/><path d="M6 11V7a5 5 0 0110 0v4" stroke="#C5A059" stroke-opacity=".6" stroke-width="1.2" stroke-linecap="round"/><circle cx="11" cy="18" r="2" fill="#C5A059" fill-opacity=".5"/></svg>
+    </div>
+    <span class="ey">Secure Document Portal</span>
+    <h1>Upload your <span>documents</span></h1>
+    <p class="sub">All files are encrypted, confidential, and accessible only to your dedicated audit team.</p>
+  </div>
+
+  <div id="form-wrap">
+    <div class="card">
+      <div class="card-title">Engagement details</div>
+      <div class="fr2">
+        <div class="fg"><label>Reference Number *</label><input type="text" id="ref" placeholder="VAC-2026-XXXXX"/></div>
+        <div class="fg"><label>Your Name *</label><input type="text" id="cname" placeholder="Full name"/></div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label>Email *</label><input type="email" id="cemail" placeholder="your@email.com"/></div>
+        <div class="fg"><label>Company *</label><input type="text" id="ccompany" placeholder="Company name"/></div>
+      </div>
+      <div class="fg">
+        <label>Service *</label>
+        <select id="cservice" onchange="updateChecklist()">
+          <option value="">Select your service</option>
+          <optgroup label="Indian Services">
+            <option>GST Audit &amp; Compliance</option>
+            <option>DPDP Readiness Assessment</option>
+            <option>Financial Operations Audit</option>
+            <option>IT &amp; Cybersecurity Audit</option>
+            <option>Export Compliance</option>
+            <option>VextIntel Monthly Retainer</option>
+          </optgroup>
+          <optgroup label="Global Services">
+            <option>Process Intelligence</option>
+            <option>Competitive Intelligence</option>
+            <option>Market Entry Analysis</option>
+            <option>Operational Risk Assessment</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="card" id="checklist-card" style="display:none">
+      <div class="card-title">Required documents for <span id="service-name" style="color:var(--g)"></span></div>
+      <div class="checklist" id="checklist"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Upload files</div>
+      <div class="drop-zone" id="drop-zone" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropFiles(event)">
+        <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.jpg,.png,.zip" onchange="handleFiles(this.files)"/>
+        <div class="drop-icon">📎</div>
+        <div class="drop-title">Drop files here or click to browse</div>
+        <div class="drop-sub">PDF, Excel, Word, CSV, Images accepted · Max 50MB per file</div>
+      </div>
+      <div class="file-list" id="file-list"></div>
+      <div class="progress-wrap"><div class="progress-bar" id="progress"></div></div>
+      <p style="font-family:'Jost',sans-serif;font-size:9px;color:var(--c);opacity:0.3;margin-bottom:16px;letter-spacing:0.06em;">All uploads are encrypted in transit and at rest. Stored in your private Google Drive client folder.</p>
+      <button class="btn" id="submit-btn" onclick="submitDocuments()" disabled>Upload Documents Securely</button>
+    </div>
+  </div>
+
+  <div class="success" id="success-wrap">
+    <div class="success-ring">
+      <svg width="28" height="22" viewBox="0 0 28 22" fill="none"><path d="M2 11L10.5 19.5L26 2" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h2>Documents received.</h2>
+    <p>Your files have been uploaded securely to your private client folder.<br/>Your audit team has been notified and will begin work within 24 hours.<br/><br/>Delivery: 5 business days from today.</p>
+    <p style="margin-top:20px;font-size:14px;opacity:0.4;">Questions? Call Rayan: +1 (502) 260-3057 (24/7)</p>
+  </div>
+
+  <div class="trust">
+    <div class="trust-item">256-bit SSL encryption</div>
+    <div class="trust-item">Private client folder</div>
+    <div class="trust-item">Confidential handling</div>
+    <div class="trust-item">DPIIT recognised startup</div>
+  </div>
+</div>
+
+<script>
+const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxihuqTbKLbt6bdCnbO2nI8htEJh1rMcVdztQko_TYSfpZUqDbZpKP2a0uY_ASztU5DDQ/exec';
+
+const CHECKLISTS = {
+  'GST Audit & Compliance': ['GST Registration Certificate','GSTR-1 returns last 12 months','GSTR-3B returns last 12 months','GSTR-2A/2B reconciliation','Purchase register with HSN codes','Sales register with HSN codes','Bank statements all accounts 12 months','ITC ledger and availed summary','E-way bill register if applicable','GST notices or department correspondence if any'],
+  'DPDP Readiness Assessment': ['Current privacy policy document','Data flow diagram','List of all third-party vendors','Consent collection mechanism details','Data retention policy','IT systems and databases inventory','Data breach response procedure','Employee data handling training records'],
+  'Financial Operations Audit': ['Last 2 years audited financial statements','Current year management accounts','Bank statements all accounts 12 months','Accounts payable aging report','Accounts receivable aging report','Expense vouchers last 6 months','Payroll register last 6 months','Fixed asset register'],
+  'IT & Cybersecurity Audit': ['Network architecture diagram','IT asset inventory','Information security policy','User access control list','Firewall configuration summary','Last penetration test report if any','Incident response plan','Business continuity plan'],
+  'Export Compliance': ['IEC certificate','Last 12 months export invoices','Shipping bills for all exports','FIRC certificates','FEMA compliance records','DGFT licence copies if applicable','Drawback claim records if any','RBI EDPMS reporting proof'],
+  'VextIntel Monthly Retainer': ['Business registration certificate','GST registration certificate','List of industries and sectors','Current compliance calendar if any'],
+  'Process Intelligence': ['Current process maps or workflow diagrams','Standard operating procedures','Process performance KPIs','Bottleneck or issue log'],
+  'Competitive Intelligence': ['List of primary competitors','Current market positioning documents','Pricing strategy documentation','Sales and revenue data','Customer feedback and win-loss analysis'],
+  'Market Entry Analysis': ['Target market details','Intended product or service details','Current business registration','Financial capacity details','Timeline and milestones'],
+  'Operational Risk Assessment': ['Organisational chart','Key business processes documentation','Current risk register if any','Insurance policies','Business continuity plan','Last 2 years financial statements']
+};
+
+let selectedFiles = [];
+
+function updateChecklist() {
+  const service = document.getElementById('cservice').value;
+  const card = document.getElementById('checklist-card');
+  const list = document.getElementById('checklist');
+  const name = document.getElementById('service-name');
+  if (!service) { card.style.display='none'; return; }
+  card.style.display='block';
+  name.textContent = service;
+  const items = CHECKLISTS[service] || [];
+  list.innerHTML = items.map(i=>'<div class="check-item"><div class="check-dot"></div><span>'+i+'</span></div>').join('');
+  checkReady();
+}
+
+function handleFiles(files) {
+  Array.from(files).forEach(f => {
+    if (!selectedFiles.find(sf=>sf.name===f.name)) selectedFiles.push(f);
+  });
+  renderFileList();
+  checkReady();
+}
+
+function renderFileList() {
+  const list = document.getElementById('file-list');
+  list.innerHTML = selectedFiles.map((f,i)=>
+    '<div class="file-item"><span class="file-name">'+f.name+'</span><span style="display:flex;align-items:center;gap:10px"><span class="file-size">'+formatSize(f.size)+'</span><button class="file-remove" onclick="removeFile('+i+')">✕</button></span></div>'
+  ).join('');
+}
+
+function removeFile(i) { selectedFiles.splice(i,1); renderFileList(); checkReady(); }
+function formatSize(b) { return b>1048576?(b/1048576).toFixed(1)+' MB':(b/1024).toFixed(0)+' KB'; }
+
+function dragOver(e) { e.preventDefault(); document.getElementById('drop-zone').classList.add('drag-over'); }
+function dragLeave() { document.getElementById('drop-zone').classList.remove('drag-over'); }
+function dropFiles(e) { e.preventDefault(); dragLeave(); handleFiles(e.dataTransfer.files); }
+
+function checkReady() {
+  const ref = document.getElementById('ref').value.trim();
+  const name = document.getElementById('cname').value.trim();
+  const email = document.getElementById('cemail').value.trim();
+  const company = document.getElementById('ccompany').value.trim();
+  const service = document.getElementById('cservice').value;
+  const ready = ref && name && email && company && service && selectedFiles.length > 0;
+  document.getElementById('submit-btn').disabled = !ready;
+}
+
+['ref','cname','cemail','ccompany'].forEach(id => {
+  document.getElementById(id).addEventListener('input', checkReady);
+});
+
+async function submitDocuments() {
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Uploading...';
+
+  const ref = document.getElementById('ref').value.trim();
+  const name = document.getElementById('cname').value.trim();
+  const email = document.getElementById('cemail').value.trim();
+  const company = document.getElementById('ccompany').value.trim();
+  const service = document.getElementById('cservice').value;
+
+  const progress = document.getElementById('progress');
+  let done = 0;
+
+  for (const file of selectedFiles) {
+    try {
+      const base64 = await toBase64(file);
+      await fetch(WEBAPP_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'document_upload',
+          ref: ref, name: name, email: email,
+          company: company, service: service,
+          fileName: file.name, fileData: base64,
+          mimeType: file.type
+        })
+      });
+    } catch(e) { console.log('Upload error:', e); }
+    done++;
+    progress.style.width = (done/selectedFiles.length*100)+'%';
+  }
+
+  // Notify backend
+  try {
+    await fetch(WEBAPP_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        source: 'document_upload_complete',
+        ref: ref, name: name, email: email,
+        company: company, service: service,
+        fileCount: selectedFiles.length
+      })
+    });
+  } catch(e) {}
+
+  document.getElementById('form-wrap').style.display = 'none';
+  document.getElementById('success-wrap').style.display = 'block';
+}
+
+function toBase64(file) {
+  return new Promise((res,rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result.split(',')[1]);
+    r.onerror = rej;
+    r.readAsDataURL(file);
+  });
+}
+
+// Pre-fill from URL params
+const p = new URLSearchParams(window.location.search);
+if (p.get('ref')) document.getElementById('ref').value = p.get('ref');
+if (p.get('name')) document.getElementById('cname').value = p.get('name');
+if (p.get('email')) document.getElementById('cemail').value = p.get('email');
+if (p.get('service')) {
+  const sel = document.getElementById('cservice');
+  for (let i=0; i<sel.options.length; i++) {
+    if (sel.options[i].value.toLowerCase().includes(p.get('service').toLowerCase())) {
+      sel.selectedIndex = i; updateChecklist(); break;
+    }
+  }
+}
+</script>
+</body>
+</html>
