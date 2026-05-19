@@ -42,13 +42,13 @@ h1 span{color:var(--g);}
 .file-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(197,160,89,0.05);border:0.5px solid rgba(197,160,89,0.15);}
 .file-name{font-family:'Jost',sans-serif;font-size:11px;color:var(--c);opacity:0.7;}
 .file-size{font-family:'Jost',sans-serif;font-size:10px;color:var(--g);opacity:0.6;}
-.file-remove{font-family:'Jost',sans-serif;font-size:10px;color:var(--c);opacity:0.3;cursor:pointer;background:none;border:none;color:var(--c);transition:opacity 0.2s;}
+.file-remove{font-family:'Jost',sans-serif;font-size:10px;background:none;border:none;color:var(--c);opacity:0.3;cursor:pointer;transition:opacity 0.2s;}
 .file-remove:hover{opacity:0.8;}
 .checklist{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
 .check-item{display:flex;align-items:flex-start;gap:10px;font-family:'Jost',sans-serif;font-size:11px;color:var(--c);opacity:0.55;line-height:1.5;}
 .check-dot{width:4px;height:4px;background:var(--g);border-radius:50%;flex-shrink:0;margin-top:5px;opacity:0.6;}
 .progress-wrap{height:2px;background:rgba(197,160,89,0.1);margin:16px 0;overflow:hidden;}
-.progress-bar{height:2px;background:var(--g);width:0%;transition:width 0.5s;}
+.progress-bar{height:2px;background:var(--g);width:0%;transition:width 0.4s;}
 .btn{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;background:var(--g);color:var(--bd);border:none;padding:16px 40px;cursor:pointer;transition:background 0.2s,transform 0.15s;width:100%;}
 .btn:hover{background:var(--gl);transform:translateY(-1px);}
 .btn:disabled{opacity:0.35;cursor:not-allowed;transform:none;}
@@ -57,6 +57,9 @@ h1 span{color:var(--g);}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(197,160,89,0.15);}50%{box-shadow:0 0 0 14px rgba(197,160,89,0);}}
 .success h2{font-family:'Cinzel',serif;font-size:26px;color:var(--g);margin-bottom:10px;letter-spacing:0.06em;}
 .success p{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:var(--c);opacity:0.6;line-height:1.8;}
+.fmt-note{background:rgba(197,160,89,0.06);border-left:2px solid rgba(197,160,89,0.4);padding:12px 16px;margin-bottom:14px;}
+.fmt-note p{font-family:'Jost',sans-serif;font-size:10px;color:var(--c);opacity:0.5;line-height:1.7;letter-spacing:0.03em;}
+.fmt-note strong{color:var(--g);opacity:1;}
 .trust{display:flex;gap:24px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
 .trust-item{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--c);opacity:0.3;display:flex;align-items:center;gap:6px;}
 .trust-item::before{content:'';width:5px;height:5px;background:var(--g);border-radius:50%;opacity:0.5;}
@@ -85,16 +88,16 @@ h1 span{color:var(--g);}
     <div class="card">
       <div class="card-title">Engagement details</div>
       <div class="fr2">
-        <div class="fg"><label>Reference Number *</label><input type="text" id="ref" placeholder="VAC-2026-XXXXX"/></div>
-        <div class="fg"><label>Your Name *</label><input type="text" id="cname" placeholder="Full name"/></div>
+        <div class="fg"><label>Reference Number *</label><input type="text" id="ref" placeholder="VAC-2026-XXXXX" oninput="chk()"/></div>
+        <div class="fg"><label>Your Name *</label><input type="text" id="cname" placeholder="Full name" oninput="chk()"/></div>
       </div>
       <div class="fr2">
-        <div class="fg"><label>Email *</label><input type="email" id="cemail" placeholder="your@email.com"/></div>
-        <div class="fg"><label>Company *</label><input type="text" id="ccompany" placeholder="Company name"/></div>
+        <div class="fg"><label>Email *</label><input type="email" id="cemail" placeholder="your@email.com" oninput="chk()"/></div>
+        <div class="fg"><label>Company *</label><input type="text" id="ccompany" placeholder="Company name" oninput="chk()"/></div>
       </div>
       <div class="fg">
         <label>Service *</label>
-        <select id="cservice" onchange="updateChecklist()">
+        <select id="cservice" onchange="updateChecklist();chk()">
           <option value="">Select your service</option>
           <optgroup label="Indian Services">
             <option>GST Audit &amp; Compliance</option>
@@ -121,15 +124,18 @@ h1 span{color:var(--g);}
 
     <div class="card">
       <div class="card-title">Upload files</div>
+      <div class="fmt-note">
+        <p><strong>Format guidance:</strong> Excel files → save as CSV before uploading. Word documents → save as PDF before uploading. PDFs, images, and text files upload directly. If unsure, email to support@vextaudit.com.</p>
+      </div>
       <div class="drop-zone" id="drop-zone" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropFiles(event)">
-        <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.jpg,.png,.zip" onchange="handleFiles(this.files)"/>
+        <input type="file" id="file-input" multiple accept=".pdf,.csv,.txt,.jpg,.jpeg,.png,.zip,.xlsx,.xls,.doc,.docx" onchange="handleFiles(this.files)"/>
         <div class="drop-icon">📎</div>
         <div class="drop-title">Drop files here or click to browse</div>
-        <div class="drop-sub">PDF, Excel, Word, CSV, Images accepted · Max 50MB per file</div>
+        <div class="drop-sub">PDF, CSV, Images, Excel, Word accepted · Max 50MB per file</div>
       </div>
       <div class="file-list" id="file-list"></div>
       <div class="progress-wrap"><div class="progress-bar" id="progress"></div></div>
-      <p style="font-family:'Jost',sans-serif;font-size:9px;color:var(--c);opacity:0.3;margin-bottom:16px;letter-spacing:0.06em;">All uploads are encrypted in transit and at rest. Stored in your private Google Drive client folder.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:9px;color:var(--c);opacity:0.3;margin-bottom:16px;letter-spacing:0.06em;">All uploads are encrypted. Stored in your private Google Drive client folder. Only your audit team has access.</p>
       <button class="btn" id="submit-btn" onclick="submitDocuments()" disabled>Upload Documents Securely</button>
     </div>
   </div>
@@ -139,84 +145,73 @@ h1 span{color:var(--g);}
       <svg width="28" height="22" viewBox="0 0 28 22" fill="none"><path d="M2 11L10.5 19.5L26 2" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <h2>Documents received.</h2>
-    <p>Your files have been uploaded securely to your private client folder.<br/>Your audit team has been notified and will begin work within 24 hours.<br/><br/>Delivery: 5 business days from today.</p>
+    <p>Your files have been uploaded securely.<br/>Your audit team has been notified and will begin work within 24 hours.<br/><br/>Delivery: 5 business days from today.</p>
     <p style="margin-top:20px;font-size:14px;opacity:0.4;">Questions? Call Rayan: +1 (502) 260-3057 (24/7)</p>
   </div>
 
   <div class="trust">
-    <div class="trust-item">256-bit SSL encryption</div>
+    <div class="trust-item">256-bit SSL</div>
     <div class="trust-item">Private client folder</div>
     <div class="trust-item">Confidential handling</div>
-    <div class="trust-item">DPIIT recognised startup</div>
+    <div class="trust-item">DPIIT recognised</div>
   </div>
 </div>
 
 <script>
-const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxihuqTbKLbt6bdCnbO2nI8htEJh1rMcVdztQko_TYSfpZUqDbZpKP2a0uY_ASztU5DDQ/exec';
+const WEBAPP = 'https://script.google.com/macros/s/AKfycbxihuqTbKLbt6bdCnbO2nI8htEJh1rMcVdztQko_TYSfpZUqDbZpKP2a0uY_ASztU5DDQ/exec';
 
 const CHECKLISTS = {
-  'GST Audit & Compliance': ['GST Registration Certificate','GSTR-1 returns last 12 months','GSTR-3B returns last 12 months','GSTR-2A/2B reconciliation','Purchase register with HSN codes','Sales register with HSN codes','Bank statements all accounts 12 months','ITC ledger and availed summary','E-way bill register if applicable','GST notices or department correspondence if any'],
-  'DPDP Readiness Assessment': ['Current privacy policy document','Data flow diagram','List of all third-party vendors','Consent collection mechanism details','Data retention policy','IT systems and databases inventory','Data breach response procedure','Employee data handling training records'],
-  'Financial Operations Audit': ['Last 2 years audited financial statements','Current year management accounts','Bank statements all accounts 12 months','Accounts payable aging report','Accounts receivable aging report','Expense vouchers last 6 months','Payroll register last 6 months','Fixed asset register'],
-  'IT & Cybersecurity Audit': ['Network architecture diagram','IT asset inventory','Information security policy','User access control list','Firewall configuration summary','Last penetration test report if any','Incident response plan','Business continuity plan'],
-  'Export Compliance': ['IEC certificate','Last 12 months export invoices','Shipping bills for all exports','FIRC certificates','FEMA compliance records','DGFT licence copies if applicable','Drawback claim records if any','RBI EDPMS reporting proof'],
-  'VextIntel Monthly Retainer': ['Business registration certificate','GST registration certificate','List of industries and sectors','Current compliance calendar if any'],
-  'Process Intelligence': ['Current process maps or workflow diagrams','Standard operating procedures','Process performance KPIs','Bottleneck or issue log'],
-  'Competitive Intelligence': ['List of primary competitors','Current market positioning documents','Pricing strategy documentation','Sales and revenue data','Customer feedback and win-loss analysis'],
-  'Market Entry Analysis': ['Target market details','Intended product or service details','Current business registration','Financial capacity details','Timeline and milestones'],
-  'Operational Risk Assessment': ['Organisational chart','Key business processes documentation','Current risk register if any','Insurance policies','Business continuity plan','Last 2 years financial statements']
+  'GST Audit & Compliance':['GST Registration Certificate','GSTR-1 returns last 12 months','GSTR-3B returns last 12 months','GSTR-2A/2B reconciliation','Purchase register with HSN codes','Sales register','Bank statements 12 months','ITC ledger','E-way bill register if applicable','GST notices if any'],
+  'DPDP Readiness Assessment':['Privacy policy document','Data flow diagram','Vendor and processor list','Consent mechanism details','Data retention policy','IT systems inventory','Breach response procedure','Employee training records'],
+  'Financial Operations Audit':['Last 2 years audited financials','Current year management accounts','Bank statements 12 months','Accounts payable aging report','Accounts receivable aging report','Expense vouchers 6 months','Payroll register 6 months','Fixed asset register'],
+  'IT & Cybersecurity Audit':['Network architecture diagram','IT asset inventory','Information security policy','User access control list','Firewall configuration summary','Last pen test report if any','Incident response plan','Business continuity plan'],
+  'Export Compliance':['IEC certificate','Last 12 months export invoices','Shipping bills','FIRC certificates','FEMA compliance records','DGFT licences if applicable','Drawback records if any','RBI reporting proof'],
+  'VextIntel Monthly Retainer':['Business registration certificate','GST registration certificate','Industry and sector list','Current compliance calendar if any'],
+  'Process Intelligence':['Process maps or workflow diagrams','Standard operating procedures','Performance KPIs','Bottleneck or issue log'],
+  'Competitive Intelligence':['List of primary competitors','Market positioning documents','Pricing strategy','Sales and revenue data','Customer feedback and win-loss analysis'],
+  'Market Entry Analysis':['Target market details','Intended product or service','Business registration','Financial capacity details','Timeline and milestones'],
+  'Operational Risk Assessment':['Organisational chart','Key business processes','Risk register if any','Insurance policies','Business continuity plan','Last 2 years financials']
 };
 
 let selectedFiles = [];
 
 function updateChecklist() {
-  const service = document.getElementById('cservice').value;
+  const s = document.getElementById('cservice').value;
   const card = document.getElementById('checklist-card');
   const list = document.getElementById('checklist');
-  const name = document.getElementById('service-name');
-  if (!service) { card.style.display='none'; return; }
-  card.style.display='block';
-  name.textContent = service;
-  const items = CHECKLISTS[service] || [];
-  list.innerHTML = items.map(i=>'<div class="check-item"><div class="check-dot"></div><span>'+i+'</span></div>').join('');
-  checkReady();
+  const nm = document.getElementById('service-name');
+  if (!s) { card.style.display='none'; return; }
+  card.style.display = 'block';
+  nm.textContent = s;
+  list.innerHTML = (CHECKLISTS[s]||[]).map(i=>'<div class="check-item"><div class="check-dot"></div><span>'+i+'</span></div>').join('');
 }
 
 function handleFiles(files) {
-  Array.from(files).forEach(f => {
-    if (!selectedFiles.find(sf=>sf.name===f.name)) selectedFiles.push(f);
-  });
-  renderFileList();
-  checkReady();
+  Array.from(files).forEach(f => { if (!selectedFiles.find(sf=>sf.name===f.name)) selectedFiles.push(f); });
+  renderFileList(); chk();
 }
 
 function renderFileList() {
-  const list = document.getElementById('file-list');
-  list.innerHTML = selectedFiles.map((f,i)=>
-    '<div class="file-item"><span class="file-name">'+f.name+'</span><span style="display:flex;align-items:center;gap:10px"><span class="file-size">'+formatSize(f.size)+'</span><button class="file-remove" onclick="removeFile('+i+')">✕</button></span></div>'
+  document.getElementById('file-list').innerHTML = selectedFiles.map((f,i)=>
+    '<div class="file-item"><span class="file-name">'+f.name+'</span><span style="display:flex;align-items:center;gap:10px"><span class="file-size">'+fmt(f.size)+'</span><button class="file-remove" onclick="rmFile('+i+')">✕</button></span></div>'
   ).join('');
 }
 
-function removeFile(i) { selectedFiles.splice(i,1); renderFileList(); checkReady(); }
-function formatSize(b) { return b>1048576?(b/1048576).toFixed(1)+' MB':(b/1024).toFixed(0)+' KB'; }
+function rmFile(i) { selectedFiles.splice(i,1); renderFileList(); chk(); }
+function fmt(b) { return b>1048576?(b/1048576).toFixed(1)+' MB':(b/1024).toFixed(0)+' KB'; }
+function dragOver(e){e.preventDefault();document.getElementById('drop-zone').classList.add('drag-over');}
+function dragLeave(){document.getElementById('drop-zone').classList.remove('drag-over');}
+function dropFiles(e){e.preventDefault();dragLeave();handleFiles(e.dataTransfer.files);}
 
-function dragOver(e) { e.preventDefault(); document.getElementById('drop-zone').classList.add('drag-over'); }
-function dragLeave() { document.getElementById('drop-zone').classList.remove('drag-over'); }
-function dropFiles(e) { e.preventDefault(); dragLeave(); handleFiles(e.dataTransfer.files); }
-
-function checkReady() {
-  const ref = document.getElementById('ref').value.trim();
-  const name = document.getElementById('cname').value.trim();
-  const email = document.getElementById('cemail').value.trim();
-  const company = document.getElementById('ccompany').value.trim();
-  const service = document.getElementById('cservice').value;
-  const ready = ref && name && email && company && service && selectedFiles.length > 0;
-  document.getElementById('submit-btn').disabled = !ready;
+function chk() {
+  const ok = document.getElementById('ref').value.trim() &&
+    document.getElementById('cname').value.trim() &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('cemail').value.trim()) &&
+    document.getElementById('ccompany').value.trim() &&
+    document.getElementById('cservice').value &&
+    selectedFiles.length > 0;
+  document.getElementById('submit-btn').disabled = !ok;
 }
-
-['ref','cname','cemail','ccompany'].forEach(id => {
-  document.getElementById(id).addEventListener('input', checkReady);
-});
 
 async function submitDocuments() {
   const btn = document.getElementById('submit-btn');
@@ -228,40 +223,45 @@ async function submitDocuments() {
   const email = document.getElementById('cemail').value.trim();
   const company = document.getElementById('ccompany').value.trim();
   const service = document.getElementById('cservice').value;
-
   const progress = document.getElementById('progress');
   let done = 0;
+  let uploadedCount = 0;
 
   for (const file of selectedFiles) {
     try {
-      const base64 = await toBase64(file);
-      await fetch(WEBAPP_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: 'document_upload',
-          ref: ref, name: name, email: email,
-          company: company, service: service,
-          fileName: file.name, fileData: base64,
-          mimeType: file.type
-        })
+      const b64 = await toBase64(file);
+      const payload = JSON.stringify({
+        source: 'document_upload',
+        ref, name, email, company, service,
+        fileName: file.name,
+        fileData: b64,
+        mimeType: file.type || 'application/octet-stream'
       });
-    } catch(e) { console.log('Upload error:', e); }
+
+      // Use no-cors fetch — we cannot read response but upload goes through
+      await fetch(WEBAPP, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: payload,
+        mode: 'no-cors'
+      });
+      uploadedCount++;
+    } catch(e) { console.log('Upload error:', file.name, e); }
     done++;
-    progress.style.width = (done/selectedFiles.length*100)+'%';
+    progress.style.width = (done / selectedFiles.length * 100) + '%';
   }
 
-  // Notify backend
+  // Send completion notification
   try {
-    await fetch(WEBAPP_URL, {
+    await fetch(WEBAPP, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
         source: 'document_upload_complete',
-        ref: ref, name: name, email: email,
-        company: company, service: service,
-        fileCount: selectedFiles.length
-      })
+        ref, name, email, company, service,
+        fileCount: uploadedCount
+      }),
+      mode: 'no-cors'
     });
   } catch(e) {}
 
@@ -285,12 +285,13 @@ if (p.get('name')) document.getElementById('cname').value = p.get('name');
 if (p.get('email')) document.getElementById('cemail').value = p.get('email');
 if (p.get('service')) {
   const sel = document.getElementById('cservice');
-  for (let i=0; i<sel.options.length; i++) {
-    if (sel.options[i].value.toLowerCase().includes(p.get('service').toLowerCase())) {
-      sel.selectedIndex = i; updateChecklist(); break;
+  for (let i=0;i<sel.options.length;i++) {
+    if (sel.options[i].value.toLowerCase().includes(p.get('service').toLowerCase().substring(0,6))) {
+      sel.selectedIndex=i; updateChecklist(); break;
     }
   }
 }
+chk();
 </script>
 </body>
 </html>
