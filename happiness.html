@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How did we do? | Vext Audit Capital</title>
+<meta name="description" content="Share your experience with Vext Audit Capital. Your feedback helps us improve."/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bd:#2D0808;--bm:#4A0E0E;--bl:#1D0404;--cr:#F5F5DC;--go:#C5A059;--gl:#D4B878;--gd:#9E7A35;--ff-d:'Cinzel',serif;--ff-b:'Cormorant Garamond',serif;--ff-u:'Jost',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bd);color:var(--cr);font-family:var(--ff-b);font-size:18px;line-height:1.7;min-height:100vh;}
+::-webkit-scrollbar{width:3px;} ::-webkit-scrollbar-thumb{background:var(--go);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:rgba(29,4,4,0.97);backdrop-filter:blur(16px);border-bottom:0.5px solid rgba(197,160,89,0.15);}
+.nl{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.ni{width:44px;height:44px;border-radius:50%;object-fit:cover;display:block;}
+.nm{font-family:var(--ff-d);font-size:12px;font-weight:600;color:var(--go);letter-spacing:0.16em;line-height:1;}
+.ns{font-family:var(--ff-u);font-size:7px;color:var(--cr);opacity:0.35;letter-spacing:0.22em;text-transform:uppercase;margin-top:3px;}
+.nb{font-family:var(--ff-u);font-size:10px;color:var(--cr);opacity:0.45;text-decoration:none;letter-spacing:0.14em;text-transform:uppercase;transition:opacity 0.2s,color 0.2s;}
+.nb:hover{opacity:1;color:var(--go);}
+.wrap{max-width:600px;margin:0 auto;padding:96px 24px 80px;}
+
+/* States */
+.screen{display:none;animation:fi 0.35s ease;}
+.screen.active{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+.ey{font-family:var(--ff-u);font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--go);opacity:0.65;margin-bottom:10px;display:block;}
+.h1{font-family:var(--ff-d);font-size:clamp(22px,2.8vw,34px);font-weight:600;color:var(--cr);letter-spacing:0.04em;margin-bottom:8px;line-height:1.2;}
+.h1 span{color:var(--go);}
+.sub{font-family:var(--ff-b);font-size:17px;font-weight:300;color:var(--cr);opacity:0.5;font-style:italic;margin-bottom:36px;line-height:1.75;}
+.gold-rule{width:40px;height:0.5px;background:var(--go);margin:20px 0 30px;}
+
+/* NPS Score */
+.nps-label{font-family:var(--ff-u);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cr);opacity:0.4;margin-bottom:14px;}
+.nps-grid{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.nps-btn{width:48px;height:48px;border:0.5px solid rgba(197,160,89,0.2);background:rgba(245,245,220,0.02);color:var(--cr);font-family:var(--ff-u);font-size:14px;font-weight:500;cursor:pointer;transition:all 0.15s;flex-shrink:0;}
+.nps-btn:hover{border-color:rgba(197,160,89,0.5);background:rgba(197,160,89,0.06);}
+.nps-btn.sel{border-color:var(--go);background:var(--go);color:var(--bd);}
+.nps-anchors{display:flex;justify-content:space-between;margin-bottom:32px;}
+.nps-anchor{font-family:var(--ff-u);font-size:9px;color:var(--cr);opacity:0.3;letter-spacing:0.08em;}
+
+/* Sentiment row */
+.sent-label{font-family:var(--ff-u);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cr);opacity:0.4;margin-bottom:12px;}
+.sent-row{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;}
+.sent-btn{font-family:var(--ff-u);font-size:11px;letter-spacing:0.1em;border:0.5px solid rgba(197,160,89,0.2);background:rgba(245,245,220,0.02);color:var(--cr);opacity:0.65;padding:10px 18px;cursor:pointer;transition:all 0.15s;}
+.sent-btn:hover{border-color:rgba(197,160,89,0.5);opacity:1;}
+.sent-btn.sel{border-color:var(--go);background:rgba(197,160,89,0.08);color:var(--go);opacity:1;}
+
+/* Form fields */
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.fg label{font-family:var(--ff-u);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cr);opacity:0.38;}
+.fg textarea,.fg input{background:rgba(245,245,220,0.04);border:0.5px solid rgba(197,160,89,0.18);color:var(--cr);font-family:var(--ff-b);font-size:16px;padding:11px 14px;outline:none;transition:border-color 0.2s;width:100%;}
+.fg textarea{resize:vertical;min-height:90px;font-size:15px;}
+.fg textarea:focus,.fg input:focus{border-color:var(--go);background:rgba(245,245,220,0.07);}
+.fg textarea::placeholder,.fg input::placeholder{color:rgba(245,245,220,0.18);font-style:italic;}
+
+/* Highlight row - what did we do well */
+.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:28px;}
+.tag{font-family:var(--ff-u);font-size:10px;letter-spacing:0.08em;border:0.5px solid rgba(197,160,89,0.18);background:rgba(245,245,220,0.02);color:var(--cr);opacity:0.55;padding:7px 14px;cursor:pointer;transition:all 0.15s;}
+.tag:hover{border-color:rgba(197,160,89,0.45);opacity:0.9;}
+.tag.sel{border-color:var(--go);background:rgba(197,160,89,0.07);color:var(--go);opacity:1;}
+
+/* Testimonial consent */
+.consent-box{border:0.5px solid rgba(197,160,89,0.18);background:rgba(197,160,89,0.03);padding:16px 18px;margin-bottom:24px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;}
+.consent-box input[type=checkbox]{width:14px;height:14px;accent-color:var(--go);flex-shrink:0;margin-top:4px;cursor:pointer;}
+.consent-text{font-family:var(--ff-u);font-size:11px;color:var(--cr);opacity:0.5;line-height:1.65;}
+.consent-text strong{color:var(--go);opacity:0.85;font-weight:500;}
+
+/* Buttons */
+.btn-p{font-family:var(--ff-u);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;background:var(--go);color:var(--bd);border:none;padding:14px 36px;cursor:pointer;transition:background 0.2s,transform 0.15s;}
+.btn-p:hover{background:var(--gl);transform:translateY(-1px);}
+.btn-p:disabled{opacity:0.3;cursor:not-allowed;transform:none;}
+.btn-s{font-family:var(--ff-u);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;background:transparent;color:var(--cr);opacity:0.38;border:0.5px solid rgba(245,245,220,0.12);padding:14px 22px;cursor:pointer;transition:all 0.2s;margin-left:10px;}
+.btn-s:hover{opacity:0.8;border-color:rgba(197,160,89,0.35);color:var(--go);}
+
+/* Progress dots */
+.dots{display:flex;gap:7px;margin-bottom:28px;}
+.dot{width:5px;height:5px;border-radius:50%;background:rgba(197,160,89,0.2);}
+.dot.done{background:var(--go);}
+.dot.active{background:var(--go);outline:2px solid rgba(197,160,89,0.3);outline-offset:2px;}
+
+/* Thank you */
+.ty-ring{width:72px;height:72px;border-radius:50%;border:1px solid var(--go);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;animation:rp 2.5s ease infinite;}
+@keyframes rp{0%,100%{box-shadow:0 0 0 0 rgba(197,160,89,0.12);}50%{box-shadow:0 0 0 14px rgba(197,160,89,0);}}
+.ty-h{font-family:var(--ff-d);font-size:clamp(22px,2.8vw,32px);color:var(--go);text-align:center;letter-spacing:0.06em;margin-bottom:12px;}
+.ty-p{font-family:var(--ff-b);font-size:17px;font-weight:300;color:var(--cr);opacity:0.65;line-height:1.8;text-align:center;margin-bottom:6px;}
+
+/* Score badge shown in step 2+ */
+.score-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-u);font-size:10px;letter-spacing:0.12em;color:var(--go);opacity:0.75;margin-bottom:20px;}
+.score-badge-num{font-family:var(--ff-d);font-size:22px;color:var(--go);opacity:1;line-height:1;}
+
+/* Alert banner */
+.alert{background:rgba(197,160,89,0.07);border-left:2px solid var(--go);padding:14px 16px;margin-bottom:24px;font-family:var(--ff-u);font-size:11px;color:var(--cr);opacity:0.7;line-height:1.65;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl">
+    <img src="VEXT_AUDIT_CAPITAL_LOGO.jpeg" alt="Vext Audit Capital" class="ni" onerror="this.style.display='none'"/>
+    <div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div>
+  </a>
+  <a href="/" class="nb">Return to site</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- STEP 1: NPS Score -->
+  <div class="screen active" id="s1">
+    <div class="dots">
+      <div class="dot active" id="d1"></div>
+      <div class="dot" id="d2"></div>
+      <div class="dot" id="d3"></div>
+    </div>
+    <span class="ey">Client Feedback</span>
+    <h1 class="h1">How likely are you to<br/><span>recommend us?</span></h1>
+    <p class="sub">On a scale of 0 to 10 -- 0 being not at all, 10 being absolutely.</p>
+    <div class="gold-rule"></div>
+    <div class="nps-label">Your score</div>
+    <div class="nps-grid" id="npsGrid"></div>
+    <div class="nps-anchors">
+      <span class="nps-anchor">Not at all likely</span>
+      <span class="nps-anchor">Extremely likely</span>
+    </div>
+    <button class="btn-p" id="b1" disabled onclick="go(2)">Continue</button>
+  </div>
+
+  <!-- STEP 2: What worked / what didn't -->
+  <div class="screen" id="s2">
+    <div class="dots">
+      <div class="dot done" id="d1b"></div>
+      <div class="dot active" id="d2b"></div>
+      <div class="dot" id="d3b"></div>
+    </div>
+    <div class="score-badge"><span class="score-badge-num" id="scoreBadge">-</span> / 10</div>
+    <span class="ey">Step 2 of 3</span>
+    <h1 class="h1">Tell us <span>more</span></h1>
+    <p class="sub" id="s2sub">What shaped your score?</p>
+    <div class="gold-rule"></div>
+
+    <div class="sent-label">How was the overall experience?</div>
+    <div class="sent-row">
+      <button class="sent-btn" onclick="toggleSent(this,'Excellent')">Excellent</button>
+      <button class="sent-btn" onclick="toggleSent(this,'Good')">Good</button>
+      <button class="sent-btn" onclick="toggleSent(this,'Acceptable')">Acceptable</button>
+      <button class="sent-btn" onclick="toggleSent(this,'Disappointing')">Disappointing</button>
+    </div>
+
+    <div class="sent-label">What did we do well? (select all that apply)</div>
+    <div class="tag-row">
+      <div class="tag" onclick="toggleTag(this)">Speed of delivery</div>
+      <div class="tag" onclick="toggleTag(this)">Report quality</div>
+      <div class="tag" onclick="toggleTag(this)">Communication</div>
+      <div class="tag" onclick="toggleTag(this)">Accuracy</div>
+      <div class="tag" onclick="toggleTag(this)">Value for money</div>
+      <div class="tag" onclick="toggleTag(this)">Advisor expertise</div>
+      <div class="tag" onclick="toggleTag(this)">Onboarding ease</div>
+      <div class="tag" onclick="toggleTag(this)">Post-delivery support</div>
+    </div>
+
+    <div class="fg">
+      <label>What could we have done better? <span style="opacity:0.5;font-size:8px;letter-spacing:0.08em">(optional)</span></label>
+      <textarea id="improve" placeholder="Be honest -- we read every response and act on them..."></textarea>
+    </div>
+    <button class="btn-p" onclick="go(3)">Continue</button>
+    <button class="btn-s" onclick="go(1)">Back</button>
+  </div>
+
+  <!-- STEP 3: Testimonial + contact -->
+  <div class="screen" id="s3">
+    <div class="dots">
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+    </div>
+    <span class="ey">Step 3 of 3</span>
+    <h1 class="h1">One last <span>thing</span></h1>
+    <p class="sub">Optional -- but greatly appreciated.</p>
+    <div class="gold-rule"></div>
+
+    <div class="fg">
+      <label>Would you like to leave a testimonial?</label>
+      <textarea id="testimonial" placeholder="In your own words, what would you tell a peer about working with Vext Audit Capital?"></textarea>
+    </div>
+
+    <div class="consent-box" onclick="toggleConsent()">
+      <input type="checkbox" id="tConsent"/>
+      <div class="consent-text">
+        <strong>Permission to publish:</strong> I consent to Vext Audit Capital publishing my testimonial (with my first name and company type only -- no surname, no company name) on their website and marketing materials. I can request removal at any time by emailing support@vextaudit.com.
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Your name (for our records only)</label>
+      <input type="text" id="rName" placeholder="Your name"/>
+    </div>
+    <div class="fg">
+      <label>Your email (so we can follow up if score was under 7)</label>
+      <input type="email" id="rEmail" placeholder="your@email.com"/>
+    </div>
+
+    <button class="btn-p" id="b3" onclick="submit()">Submit Feedback</button>
+    <button class="btn-s" onclick="go(2)">Back</button>
+  </div>
+
+  <!-- THANK YOU -->
+  <div class="screen" id="sty" style="text-align:center;padding:32px 0;">
+    <div class="ty-ring">
+      <svg width="26" height="20" viewBox="0 0 26 20" fill="none"><path d="M2 10L9.5 17.5L24 2" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1 class="ty-h">Thank you.</h1>
+    <p class="ty-p">Your feedback has been received and logged.<br/>We read every response personally.</p>
+    <p class="ty-p" id="tyNote" style="margin-top:16px;font-size:15px;"></p>
+    <a href="/" style="display:inline-block;margin-top:32px;font-family:var(--ff-u);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--go);text-decoration:none;border:0.5px solid rgba(197,160,89,0.35);padding:12px 28px;transition:background 0.2s;">Return to site</a>
+  </div>
+
+</div>
+
+<script>
+var state = {score: null, sentiment: null, tags: [], improve: '', testimonial: '', consent: false, name: '', email: ''};
+
+// Build NPS grid 0-10
+(function(){
+  var g = document.getElementById('npsGrid');
+  for(var i=0;i<=10;i++){
+    var b = document.createElement('button');
+    b.className = 'nps-btn';
+    b.textContent = i;
+    b.dataset.score = i;
+    b.onclick = (function(btn,score){
+      return function(){
+        document.querySelectorAll('.nps-btn').forEach(function(x){x.classList.remove('sel');});
+        btn.classList.add('sel');
+        state.score = score;
+        document.getElementById('b1').disabled = false;
+      };
+    })(b, i);
+    g.appendChild(b);
+  }
+})();
+
+function go(n){
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
+  var el = document.getElementById('s'+n);
+  if(el){ el.classList.add('active'); }
+  if(n===2){
+    document.getElementById('scoreBadge').textContent = state.score;
+    var sub = document.getElementById('s2sub');
+    if(state.score >= 9){ sub.textContent = 'What made the experience exceptional?'; }
+    else if(state.score >= 7){ sub.textContent = 'What shaped your score -- good and bad?'; }
+    else { sub.textContent = 'We are sorry the experience fell short. What happened?'; }
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleSent(btn, val){
+  document.querySelectorAll('.sent-btn').forEach(function(b){b.classList.remove('sel');});
+  btn.classList.add('sel');
+  state.sentiment = val;
+}
+
+function toggleTag(el){
+  el.classList.toggle('sel');
+  var label = el.textContent.trim();
+  var idx = state.tags.indexOf(label);
+  if(idx > -1){ state.tags.splice(idx,1); } else { state.tags.push(label); }
+}
+
+function toggleConsent(){
+  var cb = document.getElementById('tConsent');
+  cb.checked = !cb.checked;
+  state.consent = cb.checked;
+}
+
+async function submit(){
+  var btn = document.getElementById('b3');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  state.improve = document.getElementById('improve').value.trim();
+  state.testimonial = document.getElementById('testimonial').value.trim();
+  state.name = document.getElementById('rName').value.trim();
+  state.email = document.getElementById('rEmail').value.trim();
+  state.ts = new Date().toISOString();
+
+  // POST to Apps Script
+  var appScriptUrl = 'https://script.google.com/macros/s/AKfycbxihuqTb_PLACEHOLDER_REPLACE_WITH_REAL/exec';
+  var payload = {
+    type: 'HAPPINESS_SURVEY',
+    score: state.score,
+    sentiment: state.sentiment,
+    tags: state.tags.join(', '),
+    improve: state.improve,
+    testimonial: state.testimonial,
+    testimonialConsent: state.consent,
+    name: state.name,
+    email: state.email,
+    ts: state.ts
+  };
+
+  try{
+    await fetch(appScriptUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+  } catch(e){ console.error('Submit error:', e); }
+
+  // Show thank you
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
+  document.getElementById('sty').classList.add('active');
+
+  var note = document.getElementById('tyNote');
+  if(state.score <= 6){
+    note.innerHTML = 'Since your score was below 7, a member of our team will reach out to you within 24 hours to understand what went wrong and make it right.';
+    note.style.color = 'rgba(197,160,89,0.8)';
+  } else if(state.score === 10){
+    note.innerHTML = 'A perfect 10 means the world to us. Thank you for the trust.';
+  }
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Pre-fill from URL params (triggered by Apps Script delivery email)
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var ref = p.get('ref');
+  var name = p.get('name');
+  if(name){ document.getElementById('rName').value = decodeURIComponent(name); }
+  // ref is engagement reference for cross-linking in CRM
+  if(ref){ state.ref = ref; }
+})();
+</script>
+</body>
+</html>
