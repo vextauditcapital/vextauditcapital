@@ -86,10 +86,13 @@ section { padding: 60px 5%; }
 .services-header { text-align: center; margin-bottom: 36px; }
 .services-header .section-lead { margin: 0 auto; }
 .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(197,160,89,0.15); max-width: 1200px; margin: 0 auto; }
-.service-card { background: var(--burgundy); padding: 44px 32px; position: relative; overflow: hidden; transition: background 0.3s; cursor: pointer; }
+.service-card { background: var(--burgundy); padding: 44px 32px; position: relative; overflow: hidden; transition: background 0.3s; cursor: pointer; text-decoration: none; display: block; color: inherit; }
 .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
 .service-card:hover { background: var(--burgundy-light); }
 .service-card:hover::after { transform: scaleX(1); }
+.service-arrow { font-family: var(--ff-ui); font-size: 16px; color: var(--gold); opacity: 0; margin-top: 14px; transition: opacity 0.2s, transform 0.2s; display: block; }
+.service-card:hover .service-arrow { opacity: 0.7; transform: translateX(4px); }
+.svc-category-label { font-family: var(--ff-ui); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); opacity: 0.5; padding: 10px 0 10px; max-width: 1200px; margin: 0 auto; }
 .service-icon { font-size: 24px; margin-bottom: 18px; }
 .service-title { font-family: var(--ff-display); font-size: 17px; font-weight: 500; color: var(--cream); margin-bottom: 14px; letter-spacing: 0.05em; line-height: 1.3; }
 .service-desc { font-family: var(--ff-body); font-size: 15px; font-weight: 300; color: var(--cream); opacity: 0.62; line-height: 1.78; margin-bottom: 22px; }
@@ -292,46 +295,173 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
 <section id="services">
   <div class="services-header fade-up">
     <span class="section-eyebrow">What We Do</span>
-    <h2 class="section-h2">Six disciplines.<br/><span>One standard.</span></h2>
-    <p class="section-lead">From GST audits to cybersecurity compliance, every service delivered with the same rigour, precision, and accountability.</p>
+    <h2 class="section-h2">19 disciplines.<br/><span>One standard.</span></h2>
+    <p class="section-lead">From GST audits to GDPR assessments. Every service delivered with the same rigour, precision, and accountability.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card fade-up">
+
+  <div class="svc-category-label fade-up">India Statutory Compliance</div>
+  <div class="services-grid" style="margin-bottom:1px;">
+    <a href="gst-audit-compliance.html" class="service-card fade-up">
       <div class="service-icon">⚖</div>
       <h3 class="service-title">GST Audit &amp; Compliance</h3>
-      <p class="service-desc">Comprehensive GST health checks, return reconciliation, ITC audits, notice responses, and annual GSTR-9C preparation. We handle department inquiries and pre-assessment reviews with complete accuracy.</p>
-      <div class="service-price">Starting ₹25,000 / engagement</div>
-    </div>
-    <div class="service-card fade-up fade-up-delay-1">
-      <div class="service-icon">🔐</div>
-      <h3 class="service-title">DPDP Readiness Assessment</h3>
-      <p class="service-desc">India's Digital Personal Data Protection Act 2023 is now enforceable. We assess your data processing practices, consent frameworks, Data Fiduciary obligations, and breach notification readiness, closing every gap.</p>
-      <div class="service-price">Starting ₹40,000 / assessment</div>
-    </div>
-    <div class="service-card fade-up fade-up-delay-2">
+      <p class="service-desc">Comprehensive GST health checks, return reconciliation, ITC audits, notice responses, and annual GSTR-9C preparation.</p>
+      <div class="service-price">From ₹25,000 / engagement</div>
+      <div class="service-arrow">→</div>
+    </a><a href="payroll-compliance-audit.html" class="service-card fade-up">
+      <div class="service-icon">💼</div>
+      <h3 class="service-title">Payroll Compliance Audit</h3>
+      <p class="service-desc">PF ECR reconciliation, ESI returns review, Professional Tax compliance by state. Directors carry personal liability for defaults.</p>
+      <div class="service-price">From ₹25,000 / audit</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="income-tax-compliance-audit.html" class="service-card fade-up fade-up-delay-1">
+      <div class="service-icon">💰</div>
+      <h3 class="service-title">Income Tax Compliance Audit</h3>
+      <p class="service-desc">Form 16, 26AS and AIS reconciliation against ITR filed. Identifies mismatches before the Income Tax department does.</p>
+      <div class="service-price">From ₹30,000 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="fema-compliance-audit.html" class="service-card fade-up fade-up-delay-2">
+      <div class="service-icon">🌐</div>
+      <h3 class="service-title">FEMA Compliance Audit</h3>
+      <p class="service-desc">FIRC, BRC, FC-GPR and FC-TRS filing review mapped against FEMA schedules. Essential for all exporters and companies with foreign investment.</p>
+      <div class="service-price">From ₹35,000 / review</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="financial-operations-audit.html" class="service-card fade-up">
       <div class="service-icon">📊</div>
       <h3 class="service-title">Financial Operations Audit</h3>
-      <p class="service-desc">Internal financial controls review, expense audit, vendor payment verification, cash flow analysis, and process optimisation. We identify leakages, irregularities, and inefficiencies before they compound.</p>
-      <div class="service-price">Starting ₹30,000 / audit</div>
-    </div>
-    <div class="service-card fade-up fade-up-delay-3">
-      <div class="service-icon">🛡</div>
-      <h3 class="service-title">IT &amp; Cybersecurity Audit</h3>
-      <p class="service-desc">Technology infrastructure review, access control assessment, vulnerability analysis, ISMS gap review, and compliance mapping against applicable Indian IT regulations and international cybersecurity frameworks. Your digital exposure, made visible.</p>
-      <div class="service-price">Starting ₹50,000 / assessment</div>
-    </div>
-    <div class="service-card fade-up fade-up-delay-1">
+      <p class="service-desc">Internal financial controls review, expense audit, vendor payment verification, cash flow analysis, and process optimisation.</p>
+      <div class="service-price">From ₹30,000 / audit</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="transfer-pricing-documentation.html" class="service-card fade-up fade-up-delay-1">
+      <div class="service-icon">🔄</div>
+      <h3 class="service-title">Transfer Pricing Documentation</h3>
+      <p class="service-desc">Master File and Local File documentation for Form 3CEB. Mandatory for international related-party transactions exceeding Rs.1 crore.</p>
+      <div class="service-price">From ₹75,000 / engagement</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="startup-dpiit-compliance-audit.html" class="service-card fade-up fade-up-delay-2">
+      <div class="service-icon">🚀</div>
+      <h3 class="service-title">Startup India / DPIIT Compliance</h3>
+      <p class="service-desc">DPIIT recognition validity check, annual compliance requirements review, Section 80-IAC tax exemption eligibility assessment.</p>
+      <div class="service-price">From ₹12,000 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="msme-compliance-health-check.html" class="service-card fade-up">
+      <div class="service-icon">🏭</div>
+      <h3 class="service-title">MSME Compliance Health Check</h3>
+      <p class="service-desc">Udyam registration review, MSMED Act payment compliance. Both buyers and MSMEs face penalties under MSME Samadhaan.</p>
+      <div class="service-price">From ₹15,000 / check</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="dpdp-readiness-assessment.html" class="service-card fade-up fade-up-delay-1">
+      <div class="service-icon">🔐</div>
+      <h3 class="service-title">DPDP Readiness Assessment</h3>
+      <p class="service-desc">India's Digital Personal Data Protection Act 2023. Data Fiduciary obligations, consent frameworks, and breach notification readiness.</p>
+      <div class="service-price">From ₹40,000 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="export-compliance.html" class="service-card fade-up fade-up-delay-2">
       <div class="service-icon">🌏</div>
       <h3 class="service-title">Export Compliance</h3>
-      <p class="service-desc">Export compliance review, FEMA adherence, foreign remittance documentation, DGFT scheme compliance, and export incentive eligibility assessment. Cross-border done correctly.</p>
-      <div class="service-price">Starting ₹20,000 / review</div>
-    </div>
-    <div class="service-card fade-up fade-up-delay-2" style="background:rgba(197,160,89,0.04);border:0.5px solid rgba(197,160,89,0.18);">
+      <p class="service-desc">Export compliance review, FEMA adherence, foreign remittance documentation, DGFT scheme compliance, and export incentive eligibility.</p>
+      <div class="service-price">From ₹20,000 / review</div>
+      <div class="service-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="svc-category-label fade-up" style="margin-top:2px;">Global Compliance &amp; Cybersecurity</div>
+  <div class="services-grid" style="margin-bottom:1px;">
+    <a href="it-cybersecurity-audit.html" class="service-card fade-up">
+      <div class="service-icon">🛡</div>
+      <h3 class="service-title">IT &amp; Cybersecurity Audit</h3>
+      <p class="service-desc">Technology infrastructure review, access control assessment, vulnerability analysis, and compliance mapping against applicable IT regulations.</p>
+      <div class="service-price">From ₹50,000 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="iso27001-gap-assessment.html" class="service-card fade-up fade-up-delay-1">
+      <div class="service-icon">🔒</div>
+      <h3 class="service-title">Gap Assessment</h3>
+      <p class="service-desc">Complete control mapping with remediation roadmap. Essential pre-certification assessment for any company pursuing information security certification.</p>
+      <div class="service-price">From $1,199 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="soc2-readiness-assessment.html" class="service-card fade-up fade-up-delay-2">
+      <div class="service-icon">☁</div>
+      <h3 class="service-title">SOC 2 Readiness Assessment</h3>
+      <p class="service-desc">Trust Service Criteria control mapping for SaaS companies targeting US enterprise clients. Pre-audit readiness report with gap prioritisation.</p>
+      <div class="service-price">From $999 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="gdpr-compliance-assessment.html" class="service-card fade-up">
+      <div class="service-icon">🇪🇺</div>
+      <h3 class="service-title">GDPR Compliance Assessment</h3>
+      <p class="service-desc">Articles 5/6/7/12-23 mapping of current data processing practices. Fines up to 4% of global revenue for non-compliance.</p>
+      <div class="service-price">From $799 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="hipaa-compliance-assessment.html" class="service-card fade-up fade-up-delay-1">
+      <div class="service-icon">🏥</div>
+      <h3 class="service-title">HIPAA Compliance Assessment</h3>
+      <p class="service-desc">Administrative, physical, and technical safeguard review. For US healthcare companies and Indian IT firms servicing US healthcare clients.</p>
+      <div class="service-price">From $899 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="pci-dss-compliance-assessment.html" class="service-card fade-up fade-up-delay-2">
+      <div class="service-icon">💳</div>
+      <h3 class="service-title">PCI-DSS Compliance Assessment</h3>
+      <p class="service-desc">All 12 PCI-DSS requirements mapped with SAQ guidance. Mandatory for any company processing card payments globally.</p>
+      <div class="service-price">From $999 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="esg-baseline-report.html" class="service-card fade-up">
+      <div class="service-icon">🌿</div>
+      <h3 class="service-title">ESG Baseline Report</h3>
+      <p class="service-desc">GRI Standards-aligned ESG disclosure report. SEBI mandating BRSR for top 1000 listed companies, cascading to supply chains.</p>
+      <div class="service-price">From $599 / report</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="vendor-risk-assessment.html" class="service-card fade-up fade-up-delay-1">
+      <div class="service-icon">🤝</div>
+      <h3 class="service-title">Vendor Risk Assessment</h3>
+      <p class="service-desc">AI-driven third-party risk questionnaire and scoring. DPDP Act holds Data Fiduciaries liable for processor breaches.</p>
+      <div class="service-price">From $499 / assessment</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="aml-kyc-policy-audit.html" class="service-card fade-up fade-up-delay-2">
+      <div class="service-icon">🏦</div>
+      <h3 class="service-title">AML / KYC Policy Audit</h3>
+      <p class="service-desc">FATF recommendations and local AML law mapping. KYC procedures, transaction monitoring and STR process review.</p>
+      <div class="service-price">From $799 / audit</div>
+      <div class="service-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="svc-category-label fade-up" style="margin-top:2px;">Recurring Intelligence</div>
+  <div class="services-grid">
+    <a href="vextintel-monthly-retainer.html" class="service-card fade-up" style="background:rgba(197,160,89,0.04);border:0.5px solid rgba(197,160,89,0.18);">
       <div class="service-icon">📡</div>
-      <h3 class="service-title">VextIntel Monthly Retainer</h3>
-      <p class="service-desc">Stay ahead of every regulatory change with our monthly compliance intelligence service. Custom alerts, regulatory digests, risk flags, and a dedicated compliance advisor on call. The smartest insurance you can buy.</p>
+      <h3 class="service-title">VextIntel India Retainer</h3>
+      <p class="service-desc">Monthly regulatory digest, real-time GST/DPDP/RBI/FEMA alerts, compliance calendar, dedicated advisor, quarterly health check.</p>
       <div class="service-price" style="color:var(--gold-light);">₹15,000 / month · cancel anytime</div>
-    </div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="vextintel-global.html" class="service-card fade-up fade-up-delay-1" style="background:rgba(197,160,89,0.04);border:0.5px solid rgba(197,160,89,0.18);">
+      <div class="service-icon">🌍</div>
+      <h3 class="service-title">VextIntel Global Edition</h3>
+      <p class="service-desc">Multi-jurisdiction regulatory monitoring across 5 chosen jurisdictions. GDPR, DPDP, CCPA, MAS, FCA and more. Monthly digest plus real-time alerts.</p>
+      <div class="service-price" style="color:var(--gold-light);">$199 / month · cancel anytime</div>
+      <div class="service-arrow">→</div>
+    </a>
+    <a href="annual-compliance-subscription.html" class="service-card fade-up fade-up-delay-2" style="background:rgba(197,160,89,0.04);border:0.5px solid rgba(197,160,89,0.18);">
+      <div class="service-icon">📅</div>
+      <h3 class="service-title">Annual Compliance Subscription</h3>
+      <p class="service-desc">12 monthly health checks covering ROC, TDS, GST, Payroll and FEMA. Deadline tracking, automated alerts, dedicated advisor throughout the year.</p>
+      <div class="service-price" style="color:var(--gold-light);">₹1,20,000 / year · save 2 months</div>
+      <div class="service-arrow">→</div>
+    </a>
   </div>
 </section>
 

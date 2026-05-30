@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GDPR Compliance Assessment | Vext Audit Capital</title>
+<meta name="description" content="Articles 5-23 mapping of current data processing practices. Fines up to 4% of global revenue. Critical for any company processing EU citizen data. Fixed fee."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--burgundy:#4A0E0E;--cream:#F5F5DC;--gold:#C5A059;--gl:#D4B878;--bl:#6B1A1A;--bd:#2D0808;--ff-d:'Cinzel',serif;--ff-b:'Cormorant Garamond',serif;--ff-u:'Jost',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bd);color:var(--cream);font-family:var(--ff-b);font-size:18px;line-height:1.7;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 5%;background:rgba(29,4,4,0.95);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(197,160,89,0.2);transition:padding 0.3s;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;}
+.nav-logo-main{font-family:var(--ff-d);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0.16em;line-height:1;}
+.nav-logo-sub{font-family:var(--ff-u);font-size:7px;color:var(--cream);opacity:0.4;letter-spacing:0.22em;text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-family:var(--ff-u);font-size:11px;color:var(--cream);text-decoration:none;letter-spacing:0.14em;text-transform:uppercase;opacity:0.65;transition:opacity 0.2s,color 0.2s;}
+.nav-links a:hover{opacity:1;color:var(--gold);}
+.nav-cta{color:var(--gold)!important;opacity:1!important;border:0.5px solid var(--gold);padding:8px 20px!important;transition:background 0.2s!important;}
+.nav-cta:hover{background:var(--gold)!important;color:var(--bd)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:22px;height:1px;background:var(--gold);display:block;}
+.svc-hero{min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 5% 60px;position:relative;overflow:hidden;background:var(--burgundy);}
+.svc-hero-pattern{position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(197,160,89,1) 59px,rgba(197,160,89,1) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(197,160,89,1) 59px,rgba(197,160,89,1) 60px);}
+.svc-hero-glow{position:absolute;bottom:-100px;left:0;width:600px;height:600px;background:radial-gradient(ellipse,rgba(197,160,89,0.05) 0%,transparent 65%);pointer-events:none;}
+.svc-hero-inner{max-width:820px;position:relative;z-index:1;}
+.breadcrumb{font-family:var(--ff-u);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream);opacity:0.35;margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+.breadcrumb a{color:inherit;text-decoration:none;}
+.breadcrumb a:hover{opacity:0.8;color:var(--gold);}
+.svc-cat-badge{display:inline-block;font-family:var(--ff-u);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--bd);background:var(--gold);padding:5px 14px;margin-bottom:22px;}
+.svc-hero h1{font-family:var(--ff-d);font-size:clamp(30px,4.5vw,62px);font-weight:600;color:var(--cream);line-height:1.1;letter-spacing:0.03em;margin-bottom:18px;}
+.svc-hero h1 span{color:var(--gold);}
+.svc-hero-sub{font-family:var(--ff-b);font-size:clamp(17px,2vw,22px);font-weight:300;font-style:italic;color:var(--cream);opacity:0.65;max-width:580px;line-height:1.75;margin-bottom:32px;}
+.svc-meta{display:flex;flex-wrap:wrap;gap:28px;}
+.svc-meta-item{display:flex;flex-direction:column;gap:4px;}
+.svc-meta-label{font-family:var(--ff-u);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.55;}
+.svc-meta-val{font-family:var(--ff-d);font-size:15px;color:var(--cream);letter-spacing:0.04em;}
+.section-divider{width:100%;height:0.5px;background:linear-gradient(90deg,transparent 0%,rgba(197,160,89,0.3) 20%,rgba(197,160,89,0.3) 80%,transparent 100%);}
+.svc-body{max-width:1100px;margin:0 auto;padding:64px 5%;}
+.svc-layout{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:start;}
+.eyebrow{font-family:var(--ff-u);font-size:10px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;}
+.svc-main h2{font-family:var(--ff-d);font-size:clamp(22px,2.8vw,36px);font-weight:500;color:var(--cream);line-height:1.2;letter-spacing:0.03em;margin-bottom:20px;}
+.svc-main h2 span{color:var(--gold);}
+.gold-rule{width:44px;height:0.5px;background:var(--gold);margin:0 0 26px;}
+.svc-main p{font-family:var(--ff-b);font-size:17px;font-weight:300;color:var(--cream);opacity:0.75;line-height:1.9;margin-bottom:18px;}
+.svc-main p strong{color:var(--gold);font-weight:500;opacity:1;}
+.audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(197,160,89,0.12);margin:32px 0;}
+.audit-item{background:var(--burgundy);padding:22px 20px;}
+.audit-item-icon{font-size:20px;margin-bottom:10px;}
+.audit-item-title{font-family:var(--ff-d);font-size:13px;color:var(--cream);letter-spacing:0.06em;margin-bottom:7px;}
+.audit-item-desc{font-family:var(--ff-u);font-size:12px;color:var(--cream);opacity:0.5;line-height:1.6;}
+.risk-block{background:rgba(197,160,89,0.04);border-left:2px solid var(--gold);padding:24px 22px;margin:36px 0;}
+.risk-block-label{font-family:var(--ff-u);font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin-bottom:12px;}
+.risk-block p{font-family:var(--ff-b);font-size:16px;color:var(--cream);opacity:0.72;line-height:1.8;margin:0;}
+.del-list{display:flex;flex-direction:column;gap:14px;margin:22px 0;}
+.del-item{display:flex;gap:16px;align-items:flex-start;padding-bottom:14px;border-bottom:0.5px solid rgba(197,160,89,0.08);}
+.del-item:last-child{border-bottom:none;padding-bottom:0;}
+.del-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:9px;}
+.del-text{font-family:var(--ff-b);font-size:16px;color:var(--cream);opacity:0.72;line-height:1.7;}
+.del-text strong{color:var(--gold);font-weight:500;opacity:1;}
+.svc-sidebar{position:sticky;top:90px;}
+.sidebar-card{background:var(--burgundy);border:0.5px solid rgba(197,160,89,0.2);padding:36px 28px;margin-bottom:16px;}
+.sidebar-card h4{font-family:var(--ff-d);font-size:14px;color:var(--gold);letter-spacing:0.08em;margin-bottom:20px;}
+.price-amount{font-family:var(--ff-d);font-size:38px;color:var(--gold);line-height:1;}
+.price-period{font-family:var(--ff-u);font-size:11px;color:var(--cream);opacity:0.38;letter-spacing:0.1em;display:block;margin-top:4px;margin-bottom:24px;}
+.sidebar-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.sidebar-features li{font-family:var(--ff-u);font-size:12px;color:var(--cream);opacity:0.62;display:flex;gap:10px;align-items:flex-start;line-height:1.5;}
+.sidebar-features li::before{content:'+';color:var(--gold);opacity:0.7;flex-shrink:0;font-size:13px;}
+.btn-primary{font-family:var(--ff-u);font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:var(--bd);border:none;padding:15px 28px;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.15s;display:block;text-align:center;}
+.btn-primary:hover{background:var(--gl);transform:translateY(-1px);}
+.btn-ghost{font-family:var(--ff-u);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;background:transparent;color:var(--cream);border:0.5px solid rgba(245,245,220,0.25);padding:13px 28px;cursor:pointer;text-decoration:none;transition:border-color 0.2s,color 0.2s;display:block;text-align:center;margin-top:10px;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.sidebar-note{font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.28;line-height:1.6;margin-top:14px;text-align:center;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(197,160,89,0.12);}
+.rel-card{background:var(--burgundy);padding:28px 24px;text-decoration:none;display:block;transition:background 0.2s;position:relative;}
+.rel-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.rel-card:hover{background:var(--bl);}
+.rel-card:hover::after{transform:scaleX(1);}
+.rel-cat{font-family:var(--ff-u);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.5;margin-bottom:8px;}
+.rel-title{font-family:var(--ff-d);font-size:15px;color:var(--cream);letter-spacing:0.04em;margin-bottom:8px;line-height:1.3;}
+.rel-price{font-family:var(--ff-u);font-size:11px;color:var(--gold);opacity:0.6;}
+footer{background:var(--bd);border-top:0.5px solid rgba(197,160,89,0.15);padding:44px 5% 28px;}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px;margin-bottom:32px;}
+.footer-brand .name{font-family:var(--ff-d);font-size:15px;color:var(--gold);letter-spacing:0.14em;}
+.footer-brand .tagline{font-family:var(--ff-b);font-size:13px;font-style:italic;color:var(--cream);opacity:0.38;margin-top:5px;}
+.footer-links{display:flex;gap:32px;flex-wrap:wrap;}
+.footer-links a{font-family:var(--ff-u);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream);opacity:0.32;text-decoration:none;transition:opacity 0.2s;}
+.footer-links a:hover{opacity:0.8;color:var(--gold);}
+.footer-bottom{padding-top:20px;border-top:0.5px solid rgba(197,160,89,0.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.18;}
+.footer-legal{display:flex;gap:18px;}
+.footer-legal a{font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.18;text-decoration:none;}
+.footer-legal a:hover{opacity:0.5;}
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.7s,transform 0.7s;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+@media(max-width:1024px){.svc-layout{grid-template-columns:1fr;}.svc-sidebar{position:static;}.related-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){nav{padding:12px 5%;}.nav-links{display:none;}.hamburger{display:flex;}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(29,4,4,0.98);padding:24px 5%;gap:20px;}.audit-grid{grid-template-columns:1fr;}.related-grid{grid-template-columns:1fr;}.svc-body{padding:44px 5%;}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <img src="VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital" class="nav-logo-img"/>
+    <div><div class="nav-logo-main">VEXT AUDIT CAPITAL</div><div class="nav-logo-sub">Prudentia · Integritas · Fidelitas</div></div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="/#about">About</a><a href="/#services">Services</a>
+    <a href="/#vextintel">VextIntel</a><a href="/#pricing">Pricing</a>
+    <a href="/onboard.html" class="nav-cta">Begin Now</a>
+  </div>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+<div class="svc-hero">
+  <div class="svc-hero-pattern"></div><div class="svc-hero-glow"></div>
+  <div class="svc-hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/#services">Services</a><span>/</span><span style="color:var(--gold);opacity:0.8;">GDPR Compliance Assessment</span></div>
+    <div class="svc-cat-badge">Global Compliance & Cybersecurity</div>
+    <h1>GDPR Compliance<br/><span>Assessment</span></h1>
+    <p class="svc-hero-sub">Articles 5/6/7/12-23 mapping of data processing practices. Fines up to 4% of global revenue. Any company processing EU citizen data must comply.</p>
+    <div class="svc-meta">
+      <div class="svc-meta-item"><span class="svc-meta-label">Starting From</span><span class="svc-meta-val">$799 / assessment</span></div>
+      <div class="svc-meta-item"><span class="svc-meta-label">Delivery</span><span class="svc-meta-val">5 Business Days</span></div>
+      <div class="svc-meta-item"><span class="svc-meta-label">Post-Delivery Support</span><span class="svc-meta-val">30 Days Included</span></div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+<div class="svc-body">
+  <div class="svc-layout">
+    <div class="svc-main">
+      <span class="eyebrow fade-up">Overview</span>
+      <h2 class="fade-up">GDPR applies to you<br/><span>regardless of where you are.</span></h2>
+      <div class="gold-rule fade-up"></div>
+      <p class="fade-up">The General Data Protection Regulation applies to any organisation that processes personal data of EU residents, regardless of where the organisation is based. <strong>Indian companies with EU clients, EU website visitors, or EU employee data are subject to GDPR enforcement.</strong> The European Data Protection Board has fined non-EU companies.</p>
+      <p class="fade-up">Our assessment maps your data processing activities against the key GDPR obligations: lawful basis for processing, consent mechanisms, data subject rights procedures, data breach notification readiness, Data Protection Officer requirements, and Standard Contractual Clauses for cross-border transfers.</p>
+      <div class="risk-block fade-up">
+        <div class="risk-block-label">Why This Matters</div>
+        <p>Maximum GDPR fines are 4% of global annual turnover or EUR 20 million, whichever is higher. The most common enforcement areas are lack of valid consent, inadequate data subject rights procedures, and cross-border transfer violations. Our assessment identifies your highest exposure areas first.</p>
+      </div>
+      <h3 style="font-family:var(--ff-d);font-size:18px;color:var(--cream);letter-spacing:0.05em;margin:32px 0 18px;" class="fade-up">What We Audit</h3>
+      <div class="audit-grid fade-up">
+        <div class="audit-item"><div class="audit-item-icon">🇪🇺</div><div class="audit-item-title">Lawful Basis Assessment</div><div class="audit-item-desc">All data processing activities mapped to one of the six lawful bases under Article 6.</div></div>
+        <div class="audit-item"><div class="audit-item-icon">✅</div><div class="audit-item-title">Consent Mechanism Review</div><div class="audit-item-desc">Consent collection, withdrawal, and record-keeping reviewed against Article 7 requirements.</div></div>
+        <div class="audit-item"><div class="audit-item-icon">👤</div><div class="audit-item-title">Data Subject Rights</div><div class="audit-item-desc">Article 12-23 rights procedures assessed: access, rectification, erasure, portability, objection.</div></div>
+        <div class="audit-item"><div class="audit-item-icon">🔔</div><div class="audit-item-title">Breach Notification Readiness</div><div class="audit-item-desc">72-hour notification capability and internal breach response procedure reviewed.</div></div>
+        <div class="audit-item"><div class="audit-item-icon">🌐</div><div class="audit-item-title">Cross-Border Transfer Review</div><div class="audit-item-desc">Data transfers outside EEA assessed for SCCs, adequacy decisions, or BCRs.</div></div>
+        <div class="audit-item"><div class="audit-item-icon">📋</div><div class="audit-item-title">Record of Processing Activities</div><div class="audit-item-desc">ROPA completeness and accuracy reviewed against Article 30 requirements.</div></div>
+      </div>
+      <h3 style="font-family:var(--ff-d);font-size:18px;color:var(--cream);letter-spacing:0.05em;margin:32px 0 18px;" class="fade-up">What You Receive</h3>
+      <div class="del-list fade-up">
+        <div class="del-item"><div class="del-dot"></div><div class="del-text"><strong>GDPR Gap Assessment Report</strong> - All processing activities mapped against requirements with compliance status per article.</div></div>
+        <div class="del-item"><div class="del-dot"></div><div class="del-text"><strong>Data Processing Inventory</strong> - Complete record of processing activities with lawful basis, retention periods, and recipients.</div></div>
+        <div class="del-item"><div class="del-dot"></div><div class="del-text"><strong>Risk Priority Matrix</strong> - Highest enforcement risk areas ranked with recommended remediation actions.</div></div>
+        <div class="del-item"><div class="del-dot"></div><div class="del-text"><strong>SCCs Review</strong> - Cross-border transfer mechanisms assessed and Standard Contractual Clauses guidance provided.</div></div>
+        <div class="del-item"><div class="del-dot"></div><div class="del-text"><strong>Privacy Notice Templates</strong> - GDPR-compliant privacy notice and consent form templates for immediate implementation.</div></div>
+        <div class="del-item"><div class="del-dot"></div><div class="del-text"><strong>30-Day Support</strong> - Data subject request handling and DPA query advisory at no additional charge.</div></div>
+      </div>
+    </div>
+    <div class="svc-sidebar">
+      <div class="sidebar-card fade-up">
+        <h4>Engage This Service</h4>
+        <div class="price-amount">$799</div>
+        <span class="price-period">/ assessment - fixed fee</span>
+        <ul class="sidebar-features">
+          <li>All processing activities mapped</li>
+          <li>Lawful basis verified</li>
+          <li>Consent mechanisms reviewed</li>
+          <li>Data subject rights assessed</li>
+          <li>Breach response reviewed</li>
+          <li>Cross-border transfers checked</li>
+          <li>Privacy notice templates included</li>
+          <li>30-day post-delivery support</li>
+        </ul>
+        <a href="/onboard.html?service=gdpr" class="btn-primary">Begin Engagement</a>
+        <a href="mailto:support@vextaudit.com" class="btn-ghost">Ask a Question</a>
+        <p class="sidebar-note">Fixed fee. No hourly billing.<br/>Secure payment via Razorpay.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+<div style="padding:0 5% 64px;max-width:1100px;margin:0 auto;">
+  <span class="eyebrow fade-up">Related Services</span>
+  <div class="related-grid">
+    <a href="dpdp-readiness-assessment.html" class="rel-card fade-up"><div class="rel-cat">India Statutory</div><div class="rel-title">DPDP Readiness Assessment</div><div class="rel-price">From Rs.40,000 / assessment</div></a>
+    <a href="soc2-readiness-assessment.html" class="rel-card fade-up"><div class="rel-cat">Global Compliance</div><div class="rel-title">SOC 2 Readiness Assessment</div><div class="rel-price">From $999 / assessment</div></a>
+    <a href="hipaa-compliance-assessment.html" class="rel-card fade-up"><div class="rel-cat">Global Compliance</div><div class="rel-title">HIPAA Compliance Assessment</div><div class="rel-price">From $899 / assessment</div></a>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="name">VEXT AUDIT CAPITAL</div><div class="tagline">Precision audit. Zero compromise.</div></div>
+    <div class="footer-links">
+      <a href="/">Home</a><a href="/#services">Services</a><a href="/#pricing">Pricing</a>
+      <a href="mailto:support@vextaudit.com">support@vextaudit.com</a>
+      <a href="/onboard.html">Begin Engagement</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Vext Audit Capital (SkyDasher Tech LLP). All rights reserved.</p>
+    <div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclosure.html">Disclaimer</a></div>
+  </div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.padding=window.scrollY>60?'10px 5%':'16px 5%';});
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>
