@@ -1,0 +1,4037 @@
+{
+    "total_leads_ingested": 335,
+    "verified_leads": [
+        {
+            "email": "cfo@aerotechsystems22.in",
+            "name": "Contact Name 0",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 22",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 12174083.567905363,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 12174083.567905363 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@triseccybersecurity74.in",
+            "name": "Contact Name 1",
+            "contact_role": "Founder",
+            "company_name": "Trisec Cybersecurity 74",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 21334272.550458353,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 21334272.550458353 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@venturecapitalindia82.in",
+            "name": "Contact Name 2",
+            "contact_role": "Operations Head",
+            "company_name": "VentureCapital India 82",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 30633385.40812329,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 30633385.40812329 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech28.in",
+            "name": "Contact Name 3",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 28",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 17700336.835979246,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 17700336.835979246 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@aerotechsystems35.in",
+            "name": "Contact Name 4",
+            "contact_role": "Risk Officer",
+            "company_name": "AeroTech Systems 35",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 32184715.534480345,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 32184715.534480345 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@bharatagritech15.in",
+            "name": "Contact Name 5",
+            "contact_role": "CFO",
+            "company_name": "Bharat AgriTech 15",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 43495046.06415707,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 43495046.06415707 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity34.in",
+            "name": "Contact Name 6",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 34",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 1452025.9980796874,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 1452025.9980796874 below compliance threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech86.in",
+            "name": "Contact Name 8",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 86",
+            "sector": "Manufacturing",
+            "geography": "Europe",
+            "annual_revenue_inr": 20921583.952661667,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 20921583.952661667 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech89.in",
+            "name": "Contact Name 9",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 89",
+            "sector": "SaaS",
+            "geography": "United States",
+            "annual_revenue_inr": 17401325.98769134,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 17401325.98769134 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics59.in",
+            "name": "Contact Name 11",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 59",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 31051707.92726492,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 31051707.92726492 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@zenithfintech80.in",
+            "name": "Contact Name 12",
+            "contact_role": "Risk Officer",
+            "company_name": "Zenith FinTech 80",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 43877080.808353186,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 43877080.808353186 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@triseccybersecurity68.in",
+            "name": "Contact Name 14",
+            "contact_role": "Founder",
+            "company_name": "Trisec Cybersecurity 68",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 2254868.489088815,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Chennai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 2254868.489088815 below compliance threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia50.in",
+            "name": "Contact Name 15",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 50",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 32230824.545795295,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 32230824.545795295 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@venturecapitalindia81.in",
+            "name": "Contact Name 16",
+            "contact_role": "CEO",
+            "company_name": "VentureCapital India 81",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 49991807.532447204,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 49991807.532447204 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@aerotechsystems36.in",
+            "name": "Contact Name 17",
+            "contact_role": "Risk Officer",
+            "company_name": "AeroTech Systems 36",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 24316200.085582457,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Coimbatore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 24316200.085582457 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@bharatagritech63.in",
+            "name": "Contact Name 18",
+            "contact_role": "Operations Head",
+            "company_name": "Bharat AgriTech 63",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 37247537.807702854,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 37247537.807702854 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@hindustanlogistics88.in",
+            "name": "Contact Name 19",
+            "contact_role": "Risk Officer",
+            "company_name": "Hindustan Logistics 88",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 15996223.891013801,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 15996223.891013801 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia46.in",
+            "name": "Contact Name 20",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 46",
+            "sector": "Export",
+            "geography": "Australia",
+            "annual_revenue_inr": 37736198.41988595,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Outside core target geo: Australia",
+                "Annual revenue 37736198.41988595 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@hindustanlogistics24.in",
+            "name": "Contact Name 21",
+            "contact_role": "CEO",
+            "company_name": "Hindustan Logistics 24",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 47894937.123179674,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 47894937.123179674 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems16.in",
+            "name": "Contact Name 22",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 16",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 2317495.9741524514,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 2317495.9741524514 below compliance threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@bharatagritech47.in",
+            "name": "Contact Name 23",
+            "contact_role": "CFO",
+            "company_name": "Bharat AgriTech 47",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 49030030.72477273,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 49030030.72477273 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@aerotechsystems67.in",
+            "name": "Contact Name 26",
+            "contact_role": "Compliance Director",
+            "company_name": "AeroTech Systems 67",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 10589837.346982017,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 10589837.346982017 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@bharatagritech88.in",
+            "name": "Contact Name 28",
+            "contact_role": "CFO",
+            "company_name": "Bharat AgriTech 88",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 5306945.416350713,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 5306945.416350713 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@bharatagritech27.in",
+            "name": "Contact Name 29",
+            "contact_role": "Risk Officer",
+            "company_name": "Bharat AgriTech 27",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 34970654.58521109,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 34970654.58521109 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics26.in",
+            "name": "Contact Name 30",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 26",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 34826764.721563056,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 34826764.721563056 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@venturecapitalindia95.in",
+            "name": "Contact Name 33",
+            "contact_role": "Risk Officer",
+            "company_name": "VentureCapital India 95",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 7086892.67332951,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 7086892.67332951 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia74.in",
+            "name": "Contact Name 34",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 74",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 36858562.95015028,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 36858562.95015028 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@aerotechsystems39.in",
+            "name": "Contact Name 35",
+            "contact_role": "Risk Officer",
+            "company_name": "AeroTech Systems 39",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 47992391.343866624,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 47992391.343866624 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics56.in",
+            "name": "Contact Name 37",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 56",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 40346317.24388356,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 40346317.24388356 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity37.in",
+            "name": "Contact Name 38",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 37",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 15382755.438338637,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 15382755.438338637 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@zenithfintech18.in",
+            "name": "Contact Name 39",
+            "contact_role": "Founder",
+            "company_name": "Zenith FinTech 18",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 38942564.01912436,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 38942564.01912436 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia19.in",
+            "name": "Contact Name 40",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 19",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 9392318.41642744,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 9392318.41642744 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@venturecapitalindia57.in",
+            "name": "Contact Name 41",
+            "contact_role": "Operations Head",
+            "company_name": "VentureCapital India 57",
+            "sector": "Manufacturing",
+            "geography": "Europe",
+            "annual_revenue_inr": 15950012.930469465,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 15950012.930469465 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems55.in",
+            "name": "Contact Name 42",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 55",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 35701356.393912345,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 35701356.393912345 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@venturecapitalindia85.in",
+            "name": "Contact Name 43",
+            "contact_role": "Operations Head",
+            "company_name": "VentureCapital India 85",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 20957913.74881715,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 20957913.74881715 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia59.in",
+            "name": "Contact Name 45",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 59",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 43510946.1811901,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 43510946.1811901 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@venturecapitalindia37.in",
+            "name": "Contact Name 46",
+            "contact_role": "Operations Head",
+            "company_name": "VentureCapital India 37",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 41788118.10999494,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 41788118.10999494 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@hindustanlogistics89.in",
+            "name": "Contact Name 48",
+            "contact_role": "Compliance Director",
+            "company_name": "Hindustan Logistics 89",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 15654071.789218158,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 15654071.789218158 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems90.in",
+            "name": "Contact Name 49",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 90",
+            "sector": "FinTech",
+            "geography": "Australia",
+            "annual_revenue_inr": 27254748.952455346,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Hyderabad",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Outside core target geo: Australia",
+                "Annual revenue 27254748.952455346 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia24.in",
+            "name": "Contact Name 50",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 24",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 16630019.193061449,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 16630019.193061449 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@zenithfintech93.in",
+            "name": "Contact Name 52",
+            "contact_role": "Founder",
+            "company_name": "Zenith FinTech 93",
+            "sector": "FinTech",
+            "geography": "Singapore",
+            "annual_revenue_inr": 19635601.59262241,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 19635601.59262241 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems68.in",
+            "name": "Contact Name 54",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 68",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 47906020.32530775,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 47906020.32530775 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@bharatagritech39.in",
+            "name": "Contact Name 55",
+            "contact_role": "CFO",
+            "company_name": "Bharat AgriTech 39",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 18612729.915685628,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 18612729.915685628 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity51.in",
+            "name": "Contact Name 56",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 51",
+            "sector": "FinTech",
+            "geography": "Singapore",
+            "annual_revenue_inr": 33298157.712585855,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 33298157.712585855 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics65.in",
+            "name": "Contact Name 57",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 65",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 28304185.517462164,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 28304185.517462164 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems93.in",
+            "name": "Contact Name 58",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 93",
+            "sector": "Cybersecurity",
+            "geography": "United States",
+            "annual_revenue_inr": 4700014.249760574,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Revenue 4700014.249760574 below compliance threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech59.in",
+            "name": "Contact Name 59",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 59",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 35324637.169205844,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 35324637.169205844 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@zenithfintech65.in",
+            "name": "Contact Name 60",
+            "contact_role": "Operations Head",
+            "company_name": "Zenith FinTech 65",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 26111571.520335406,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 26111571.520335406 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems83.in",
+            "name": "Contact Name 62",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 83",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 42947022.91685391,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 42947022.91685391 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech66.in",
+            "name": "Contact Name 63",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 66",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 13047864.295479747,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 13047864.295479747 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@triseccybersecurity44.in",
+            "name": "Contact Name 66",
+            "contact_role": "CEO",
+            "company_name": "Trisec Cybersecurity 44",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 22603115.16300654,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 22603115.16300654 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech41.in",
+            "name": "Contact Name 67",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 41",
+            "sector": "Manufacturing",
+            "geography": "United States",
+            "annual_revenue_inr": 22835267.59013957,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 22835267.59013957 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity60.in",
+            "name": "Contact Name 69",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 60",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 19079369.568124183,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 19079369.568124183 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity97.in",
+            "name": "Contact Name 70",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 97",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 23376866.79438376,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 23376866.79438376 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@triseccybersecurity54.in",
+            "name": "Contact Name 72",
+            "contact_role": "CFO",
+            "company_name": "Trisec Cybersecurity 54",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 35527549.57093619,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 35527549.57093619 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@triseccybersecurity69.in",
+            "name": "Contact Name 73",
+            "contact_role": "Operations Head",
+            "company_name": "Trisec Cybersecurity 69",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 48922751.66501401,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 48922751.66501401 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@venturecapitalindia94.in",
+            "name": "Contact Name 74",
+            "contact_role": "CEO",
+            "company_name": "VentureCapital India 94",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 5956715.966042426,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 5956715.966042426 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@zenithfintech18.in",
+            "name": "Contact Name 76",
+            "contact_role": "Risk Officer",
+            "company_name": "Zenith FinTech 18",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 20370890.54888411,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 20370890.54888411 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@venturecapitalindia43.in",
+            "name": "Contact Name 77",
+            "contact_role": "CEO",
+            "company_name": "VentureCapital India 43",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 28849829.721552327,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 28849829.721552327 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@venturecapitalindia60.in",
+            "name": "Contact Name 79",
+            "contact_role": "CEO",
+            "company_name": "VentureCapital India 60",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 38132617.763620496,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 38132617.763620496 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia69.in",
+            "name": "Contact Name 80",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 69",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 39478923.75432388,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 39478923.75432388 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@venturecapitalindia75.in",
+            "name": "Contact Name 83",
+            "contact_role": "Risk Officer",
+            "company_name": "VentureCapital India 75",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 45582451.47616704,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 45582451.47616704 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@venturecapitalindia78.in",
+            "name": "Contact Name 86",
+            "contact_role": "CEO",
+            "company_name": "VentureCapital India 78",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 1690551.3503007577,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 1690551.3503007577 below compliance threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@triseccybersecurity33.in",
+            "name": "Contact Name 87",
+            "contact_role": "Founder",
+            "company_name": "Trisec Cybersecurity 33",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 5563950.118043248,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 5563950.118043248 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech47.in",
+            "name": "Contact Name 88",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 47",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 39187541.40251511,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 39187541.40251511 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@bharatagritech48.in",
+            "name": "Contact Name 91",
+            "contact_role": "Risk Officer",
+            "company_name": "Bharat AgriTech 48",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 47364495.979915895,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 47364495.979915895 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity21.in",
+            "name": "Contact Name 92",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 21",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 35399984.995175436,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 35399984.995175436 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@aerotechsystems51.in",
+            "name": "Contact Name 94",
+            "contact_role": "Founder",
+            "company_name": "AeroTech Systems 51",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 25086702.648255922,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 25086702.648255922 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@triseccybersecurity39.in",
+            "name": "Contact Name 95",
+            "contact_role": "CFO",
+            "company_name": "Trisec Cybersecurity 39",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 39879263.150162645,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 39879263.150162645 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@aerotechsystems52.in",
+            "name": "Contact Name 98",
+            "contact_role": "Compliance Director",
+            "company_name": "AeroTech Systems 52",
+            "sector": "Export",
+            "geography": "Europe",
+            "annual_revenue_inr": 6154542.971820165,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 6154542.971820165 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia31.in",
+            "name": "Contact Name 100",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 31",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 8615761.875162035,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 8615761.875162035 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@hindustanlogistics23.in",
+            "name": "Contact Name 102",
+            "contact_role": "Compliance Director",
+            "company_name": "Hindustan Logistics 23",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 14247425.868076446,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 14247425.868076446 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@triseccybersecurity94.in",
+            "name": "Contact Name 103",
+            "contact_role": "CEO",
+            "company_name": "Trisec Cybersecurity 94",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 41172070.90507689,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 41172070.90507689 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia94.in",
+            "name": "Contact Name 104",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 94",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 16010365.90900354,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 16010365.90900354 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@zenithfintech74.in",
+            "name": "Contact Name 105",
+            "contact_role": "Operations Head",
+            "company_name": "Zenith FinTech 74",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 25951332.10574657,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 25951332.10574657 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity83.in",
+            "name": "Contact Name 106",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 83",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 11907194.877521498,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 11907194.877521498 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia91.in",
+            "name": "Contact Name 107",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 91",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 22349788.54971789,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 22349788.54971789 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@hindustanlogistics50.in",
+            "name": "Contact Name 108",
+            "contact_role": "Compliance Director",
+            "company_name": "Hindustan Logistics 50",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 2739100.5918307407,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Hyderabad",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 2739100.5918307407 below compliance threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@zenithfintech52.in",
+            "name": "Contact Name 109",
+            "contact_role": "CFO",
+            "company_name": "Zenith FinTech 52",
+            "sector": "FinTech",
+            "geography": "Australia",
+            "annual_revenue_inr": 36638005.610345416,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Delhi",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Outside core target geo: Australia",
+                "Annual revenue 36638005.610345416 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@bharatagritech44.in",
+            "name": "Contact Name 110",
+            "contact_role": "Compliance Director",
+            "company_name": "Bharat AgriTech 44",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 31097523.26201229,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 31097523.26201229 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@triseccybersecurity28.in",
+            "name": "Contact Name 111",
+            "contact_role": "Operations Head",
+            "company_name": "Trisec Cybersecurity 28",
+            "sector": "SaaS",
+            "geography": "United States",
+            "annual_revenue_inr": 8418590.728525154,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 8418590.728525154 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity28.in",
+            "name": "Contact Name 112",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 28",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 3009927.241820515,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 3009927.241820515 below compliance threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech45.in",
+            "name": "Contact Name 113",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 45",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 48557566.93533854,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 48557566.93533854 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech82.in",
+            "name": "Contact Name 114",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 82",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 9296171.938876731,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 9296171.938876731 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@venturecapitalindia95.in",
+            "name": "Contact Name 115",
+            "contact_role": "Operations Head",
+            "company_name": "VentureCapital India 95",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 43631879.758916356,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 43631879.758916356 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia56.in",
+            "name": "Contact Name 116",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 56",
+            "sector": "Export",
+            "geography": "Singapore",
+            "annual_revenue_inr": 32681870.14090326,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 32681870.14090326 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@aerotechsystems96.in",
+            "name": "Contact Name 117",
+            "contact_role": "Founder",
+            "company_name": "AeroTech Systems 96",
+            "sector": "SaaS",
+            "geography": "Australia",
+            "annual_revenue_inr": 46978146.292045884,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Delhi",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Outside core target geo: Australia",
+                "Annual revenue 46978146.292045884 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@aerotechsystems29.in",
+            "name": "Contact Name 119",
+            "contact_role": "Operations Head",
+            "company_name": "AeroTech Systems 29",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 23435898.10570142,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 23435898.10570142 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@bharatagritech47.in",
+            "name": "Contact Name 120",
+            "contact_role": "Founder",
+            "company_name": "Bharat AgriTech 47",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 5969398.337832539,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 5969398.337832539 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@aerotechsystems24.in",
+            "name": "Contact Name 122",
+            "contact_role": "Compliance Director",
+            "company_name": "AeroTech Systems 24",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 5561861.874170402,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 5561861.874170402 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@triseccybersecurity60.in",
+            "name": "Contact Name 124",
+            "contact_role": "Operations Head",
+            "company_name": "Trisec Cybersecurity 60",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 16792080.340662625,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 16792080.340662625 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@bharatagritech84.in",
+            "name": "Contact Name 129",
+            "contact_role": "CFO",
+            "company_name": "Bharat AgriTech 84",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 14417258.12323803,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 14417258.12323803 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@zenithfintech28.in",
+            "name": "Contact Name 133",
+            "contact_role": "Operations Head",
+            "company_name": "Zenith FinTech 28",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 41153332.37634193,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 41153332.37634193 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia18.in",
+            "name": "Contact Name 134",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 18",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 27869732.24736641,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 27869732.24736641 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@triseccybersecurity78.in",
+            "name": "Contact Name 136",
+            "contact_role": "CEO",
+            "company_name": "Trisec Cybersecurity 78",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 33284684.89235082,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 33284684.89235082 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@triseccybersecurity47.in",
+            "name": "Contact Name 137",
+            "contact_role": "CFO",
+            "company_name": "Trisec Cybersecurity 47",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 11269460.774137817,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 11269460.774137817 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia99.in",
+            "name": "Contact Name 138",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 99",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 40852712.97503633,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 40852712.97503633 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems56.in",
+            "name": "Contact Name 139",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 56",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 2353489.769503457,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 2353489.769503457 below compliance threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@bharatagritech67.in",
+            "name": "Contact Name 143",
+            "contact_role": "Risk Officer",
+            "company_name": "Bharat AgriTech 67",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 47140748.25682477,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 47140748.25682477 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@triseccybersecurity27.in",
+            "name": "Contact Name 144",
+            "contact_role": "CFO",
+            "company_name": "Trisec Cybersecurity 27",
+            "sector": "Logistics",
+            "geography": "United States",
+            "annual_revenue_inr": 45402904.159266785,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 45402904.159266785 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@zenithfintech86.in",
+            "name": "Contact Name 145",
+            "contact_role": "Operations Head",
+            "company_name": "Zenith FinTech 86",
+            "sector": "Manufacturing",
+            "geography": "Singapore",
+            "annual_revenue_inr": 6282894.158646484,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 6282894.158646484 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems23.in",
+            "name": "Contact Name 146",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 23",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 9164408.786170924,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 9164408.786170924 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech60.in",
+            "name": "Contact Name 147",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 60",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 22869758.605158776,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 22869758.605158776 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems51.in",
+            "name": "Contact Name 149",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 51",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 30993187.061716184,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 30993187.061716184 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia33.in",
+            "name": "Contact Name 150",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 33",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 39979081.48535665,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 39979081.48535665 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics13.in",
+            "name": "Contact Name 151",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 13",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 31130286.45669903,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 31130286.45669903 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@bharatagritech42.in",
+            "name": "Contact Name 153",
+            "contact_role": "CFO",
+            "company_name": "Bharat AgriTech 42",
+            "sector": "FinTech",
+            "geography": "United States",
+            "annual_revenue_inr": 21478146.768797353,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 21478146.768797353 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@bharatagritech92.in",
+            "name": "Contact Name 154",
+            "contact_role": "Compliance Director",
+            "company_name": "Bharat AgriTech 92",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 11522117.216003519,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 11522117.216003519 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics82.in",
+            "name": "Contact Name 156",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 82",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 43673780.166923426,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 43673780.166923426 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@zenithfintech72.in",
+            "name": "Contact Name 157",
+            "contact_role": "Operations Head",
+            "company_name": "Zenith FinTech 72",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 12021344.80557016,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 12021344.80557016 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@zenithfintech20.in",
+            "name": "Contact Name 158",
+            "contact_role": "CFO",
+            "company_name": "Zenith FinTech 20",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 24173329.975709423,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 24173329.975709423 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@bharatagritech41.in",
+            "name": "Contact Name 159",
+            "contact_role": "Operations Head",
+            "company_name": "Bharat AgriTech 41",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 9219308.343659662,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 9219308.343659662 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia12.in",
+            "name": "Contact Name 160",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 12",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 38850988.2359255,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 38850988.2359255 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems28.in",
+            "name": "Contact Name 161",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 28",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 4743455.618115834,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Chennai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 4743455.618115834 below compliance threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@zenithfintech22.in",
+            "name": "Contact Name 166",
+            "contact_role": "Founder",
+            "company_name": "Zenith FinTech 22",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 6421784.488915184,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 6421784.488915184 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@triseccybersecurity57.in",
+            "name": "Contact Name 168",
+            "contact_role": "CFO",
+            "company_name": "Trisec Cybersecurity 57",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 22042532.729383845,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 22042532.729383845 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@bharatagritech41.in",
+            "name": "Contact Name 169",
+            "contact_role": "Compliance Director",
+            "company_name": "Bharat AgriTech 41",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 3083593.6397670703,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Bangalore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 3083593.6397670703 below compliance threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@bharatagritech73.in",
+            "name": "Contact Name 173",
+            "contact_role": "Risk Officer",
+            "company_name": "Bharat AgriTech 73",
+            "sector": "Cybersecurity",
+            "geography": "Europe",
+            "annual_revenue_inr": 6545244.098423998,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Coimbatore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 6545244.098423998 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems97.in",
+            "name": "Contact Name 174",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 97",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 28153217.13209526,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 28153217.13209526 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia56.in",
+            "name": "Contact Name 175",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 56",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 31533878.213960037,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 31533878.213960037 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@hindustanlogistics12.in",
+            "name": "Contact Name 176",
+            "contact_role": "Compliance Director",
+            "company_name": "Hindustan Logistics 12",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 18866155.949913748,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 18866155.949913748 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@bharatagritech21.in",
+            "name": "Contact Name 177",
+            "contact_role": "Operations Head",
+            "company_name": "Bharat AgriTech 21",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 45647175.986523226,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 45647175.986523226 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@zenithfintech34.in",
+            "name": "Contact Name 179",
+            "contact_role": "CEO",
+            "company_name": "Zenith FinTech 34",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 22035558.158439502,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 22035558.158439502 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@triseccybersecurity74.in",
+            "name": "Contact Name 180",
+            "contact_role": "Operations Head",
+            "company_name": "Trisec Cybersecurity 74",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 35829031.47171909,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 35829031.47171909 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@triseccybersecurity38.in",
+            "name": "Contact Name 184",
+            "contact_role": "CFO",
+            "company_name": "Trisec Cybersecurity 38",
+            "sector": "FinTech",
+            "geography": "Australia",
+            "annual_revenue_inr": 36589547.52667977,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Outside core target geo: Australia",
+                "Annual revenue 36589547.52667977 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@hindustanlogistics39.in",
+            "name": "Contact Name 186",
+            "contact_role": "Risk Officer",
+            "company_name": "Hindustan Logistics 39",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 42569597.7217149,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Coimbatore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 42569597.7217149 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems24.in",
+            "name": "Contact Name 188",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 24",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 21428592.929936137,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 21428592.929936137 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia10.in",
+            "name": "Contact Name 191",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 10",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 42151251.211808145,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 42151251.211808145 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech95.in",
+            "name": "Contact Name 193",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 95",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 39620099.074549325,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 39620099.074549325 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics92.in",
+            "name": "Contact Name 194",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 92",
+            "sector": "Logistics",
+            "geography": "United States",
+            "annual_revenue_inr": 3940784.8502674056,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Mumbai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Revenue 3940784.8502674056 below compliance threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems11.in",
+            "name": "Contact Name 195",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 11",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 43578033.392869756,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 43578033.392869756 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@zenithfintech26.in",
+            "name": "Contact Name 197",
+            "contact_role": "Operations Head",
+            "company_name": "Zenith FinTech 26",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 44588769.30873367,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 44588769.30873367 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@triseccybersecurity15.in",
+            "name": "Contact Name 198",
+            "contact_role": "CEO",
+            "company_name": "Trisec Cybersecurity 15",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 13032178.254227022,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 13032178.254227022 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech74.in",
+            "name": "Contact Name 199",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 74",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 18781954.252757203,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 18781954.252757203 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@hindustanlogistics21.in",
+            "name": "Contact Name 200",
+            "contact_role": "Founder",
+            "company_name": "Hindustan Logistics 21",
+            "sector": "Export",
+            "geography": "Singapore",
+            "annual_revenue_inr": 33145400.37759284,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 33145400.37759284 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia15.in",
+            "name": "Contact Name 202",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 15",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 40448599.11149284,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 40448599.11149284 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics87.in",
+            "name": "Contact Name 205",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 87",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 35746876.238613024,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 35746876.238613024 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech50.in",
+            "name": "Contact Name 206",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 50",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 33106882.1882398,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 33106882.1882398 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics40.in",
+            "name": "Contact Name 207",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 40",
+            "sector": "Logistics",
+            "geography": "Singapore",
+            "annual_revenue_inr": 9736091.506221429,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 9736091.506221429 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@aerotechsystems22.in",
+            "name": "Contact Name 208",
+            "contact_role": "Operations Head",
+            "company_name": "AeroTech Systems 22",
+            "sector": "Logistics",
+            "geography": "Europe",
+            "annual_revenue_inr": 33420845.91366153,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Coimbatore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 33420845.91366153 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@triseccybersecurity65.in",
+            "name": "Contact Name 209",
+            "contact_role": "CEO",
+            "company_name": "Trisec Cybersecurity 65",
+            "sector": "Cybersecurity",
+            "geography": "Singapore",
+            "annual_revenue_inr": 29351136.631008517,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 29351136.631008517 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@triseccybersecurity87.in",
+            "name": "Contact Name 210",
+            "contact_role": "Operations Head",
+            "company_name": "Trisec Cybersecurity 87",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 43260325.80790033,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 43260325.80790033 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@bharatagritech60.in",
+            "name": "Contact Name 211",
+            "contact_role": "Founder",
+            "company_name": "Bharat AgriTech 60",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 30186731.065887928,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 30186731.065887928 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@hindustanlogistics94.in",
+            "name": "Contact Name 212",
+            "contact_role": "Founder",
+            "company_name": "Hindustan Logistics 94",
+            "sector": "FinTech",
+            "geography": "Singapore",
+            "annual_revenue_inr": 7473753.436388276,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 7473753.436388276 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@zenithfintech61.in",
+            "name": "Contact Name 213",
+            "contact_role": "CFO",
+            "company_name": "Zenith FinTech 61",
+            "sector": "Cybersecurity",
+            "geography": "United States",
+            "annual_revenue_inr": 46201772.92562893,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 46201772.92562893 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity55.in",
+            "name": "Contact Name 214",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 55",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 20645170.520903,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 20645170.520903 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity98.in",
+            "name": "Contact Name 216",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 98",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 27490517.686245758,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 27490517.686245758 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@zenithfintech49.in",
+            "name": "Contact Name 217",
+            "contact_role": "CFO",
+            "company_name": "Zenith FinTech 49",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 44078936.16623307,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 44078936.16623307 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity69.in",
+            "name": "Contact Name 220",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 69",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 29423764.25733566,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 29423764.25733566 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity29.in",
+            "name": "Contact Name 221",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 29",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 22275684.508102063,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 22275684.508102063 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity22.in",
+            "name": "Contact Name 222",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 22",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 37261281.01282031,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 37261281.01282031 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia40.in",
+            "name": "Contact Name 223",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 40",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 46263890.834634475,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 46263890.834634475 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@zenithfintech10.in",
+            "name": "Contact Name 224",
+            "contact_role": "Risk Officer",
+            "company_name": "Zenith FinTech 10",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 26303121.844707828,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 26303121.844707828 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics47.in",
+            "name": "Contact Name 227",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 47",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 21658652.173614707,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 21658652.173614707 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity33.in",
+            "name": "Contact Name 228",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 33",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 10587474.899871696,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 10587474.899871696 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@triseccybersecurity72.in",
+            "name": "Contact Name 229",
+            "contact_role": "Operations Head",
+            "company_name": "Trisec Cybersecurity 72",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 25230293.563529048,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 25230293.563529048 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@zenithfintech89.in",
+            "name": "Contact Name 230",
+            "contact_role": "Founder",
+            "company_name": "Zenith FinTech 89",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 32648250.758770596,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 32648250.758770596 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics43.in",
+            "name": "Contact Name 231",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 43",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 43300376.04707423,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 43300376.04707423 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@zenithfintech66.in",
+            "name": "Contact Name 232",
+            "contact_role": "CFO",
+            "company_name": "Zenith FinTech 66",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 32505003.911256626,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 32505003.911256626 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@hindustanlogistics23.in",
+            "name": "Contact Name 233",
+            "contact_role": "CEO",
+            "company_name": "Hindustan Logistics 23",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 45390901.79165567,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 45390901.79165567 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia60.in",
+            "name": "Contact Name 234",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 60",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 1890369.730388864,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Bangalore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 1890369.730388864 below compliance threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@aerotechsystems11.in",
+            "name": "Contact Name 235",
+            "contact_role": "Founder",
+            "company_name": "AeroTech Systems 11",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 14211309.417622138,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 14211309.417622138 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia87.in",
+            "name": "Contact Name 236",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 87",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 6860541.84210989,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 6860541.84210989 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@zenithfintech63.in",
+            "name": "Contact Name 240",
+            "contact_role": "Founder",
+            "company_name": "Zenith FinTech 63",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 39263873.92728785,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 39263873.92728785 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia45.in",
+            "name": "Contact Name 243",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 45",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 19605485.960905675,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 19605485.960905675 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@aerotechsystems19.in",
+            "name": "Contact Name 244",
+            "contact_role": "Operations Head",
+            "company_name": "AeroTech Systems 19",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 42982461.715590335,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 42982461.715590335 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems63.in",
+            "name": "Contact Name 245",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 63",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 30343272.637186036,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 30343272.637186036 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics31.in",
+            "name": "Contact Name 246",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 31",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 20773083.60840357,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 20773083.60840357 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@hindustanlogistics64.in",
+            "name": "Contact Name 247",
+            "contact_role": "Founder",
+            "company_name": "Hindustan Logistics 64",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 16626469.839063345,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 16626469.839063345 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics18.in",
+            "name": "Contact Name 249",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 18",
+            "sector": "SaaS",
+            "geography": "Singapore",
+            "annual_revenue_inr": 26411394.69080214,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 26411394.69080214 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@triseccybersecurity22.in",
+            "name": "Contact Name 250",
+            "contact_role": "CFO",
+            "company_name": "Trisec Cybersecurity 22",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 10832198.099676944,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 10832198.099676944 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@venturecapitalindia93.in",
+            "name": "Contact Name 251",
+            "contact_role": "Risk Officer",
+            "company_name": "VentureCapital India 93",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 6632042.436669638,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 6632042.436669638 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@venturecapitalindia96.in",
+            "name": "Contact Name 253",
+            "contact_role": "Operations Head",
+            "company_name": "VentureCapital India 96",
+            "sector": "Logistics",
+            "geography": "Europe",
+            "annual_revenue_inr": 18888615.197824996,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 18888615.197824996 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems42.in",
+            "name": "Contact Name 256",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 42",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 7596316.275809032,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 7596316.275809032 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity67.in",
+            "name": "Contact Name 257",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 67",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 31806632.886602346,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 31806632.886602346 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@bharatagritech14.in",
+            "name": "Contact Name 259",
+            "contact_role": "Compliance Director",
+            "company_name": "Bharat AgriTech 14",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 25023180.34691064,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 25023180.34691064 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech15.in",
+            "name": "Contact Name 260",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 15",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 48139576.695394024,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 48139576.695394024 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@hindustanlogistics61.in",
+            "name": "Contact Name 261",
+            "contact_role": "Compliance Director",
+            "company_name": "Hindustan Logistics 61",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 44690347.44564775,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 44690347.44564775 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@hindustanlogistics92.in",
+            "name": "Contact Name 264",
+            "contact_role": "Risk Officer",
+            "company_name": "Hindustan Logistics 92",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 42452830.29706866,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 42452830.29706866 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech58.in",
+            "name": "Contact Name 267",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 58",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 12279361.055492176,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 12279361.055492176 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@aerotechsystems96.in",
+            "name": "Contact Name 268",
+            "contact_role": "Compliance Director",
+            "company_name": "AeroTech Systems 96",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 8213616.238963512,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 8213616.238963512 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@hindustanlogistics55.in",
+            "name": "Contact Name 269",
+            "contact_role": "Risk Officer",
+            "company_name": "Hindustan Logistics 55",
+            "sector": "Export",
+            "geography": "United States",
+            "annual_revenue_inr": 38584640.17465621,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 38584640.17465621 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@triseccybersecurity10.in",
+            "name": "Contact Name 271",
+            "contact_role": "Operations Head",
+            "company_name": "Trisec Cybersecurity 10",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 11654905.457391279,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 11654905.457391279 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech78.in",
+            "name": "Contact Name 272",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 78",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 9709640.776547989,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 9709640.776547989 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@venturecapitalindia54.in",
+            "name": "Contact Name 273",
+            "contact_role": "CFO",
+            "company_name": "VentureCapital India 54",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 1087281.4341081562,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Chennai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 1087281.4341081562 below compliance threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems99.in",
+            "name": "Contact Name 274",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 99",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 25048965.263673767,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 25048965.263673767 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@hindustanlogistics69.in",
+            "name": "Contact Name 276",
+            "contact_role": "CEO",
+            "company_name": "Hindustan Logistics 69",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 18700408.881987587,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 18700408.881987587 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@hindustanlogistics55.in",
+            "name": "Contact Name 277",
+            "contact_role": "CEO",
+            "company_name": "Hindustan Logistics 55",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 24802493.371783063,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 24802493.371783063 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity93.in",
+            "name": "Contact Name 282",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 93",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 11370013.16568378,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 11370013.16568378 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia34.in",
+            "name": "Contact Name 283",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 34",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 6635473.515349479,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 6635473.515349479 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@venturecapitalindia88.in",
+            "name": "Contact Name 285",
+            "contact_role": "Founder",
+            "company_name": "VentureCapital India 88",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 8356804.4574032435,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 8356804.4574032435 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@hindustanlogistics29.in",
+            "name": "Contact Name 286",
+            "contact_role": "Risk Officer",
+            "company_name": "Hindustan Logistics 29",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 36676700.95411628,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 36676700.95411628 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@hindustanlogistics68.in",
+            "name": "Contact Name 289",
+            "contact_role": "Compliance Director",
+            "company_name": "Hindustan Logistics 68",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 23828027.369660392,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Chennai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 23828027.369660392 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@venturecapitalindia46.in",
+            "name": "Contact Name 290",
+            "contact_role": "Risk Officer",
+            "company_name": "VentureCapital India 46",
+            "sector": "Export",
+            "geography": "United States",
+            "annual_revenue_inr": 6114968.5681749815,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 6114968.5681749815 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@aerotechsystems71.in",
+            "name": "Contact Name 294",
+            "contact_role": "Risk Officer",
+            "company_name": "AeroTech Systems 71",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 13438616.682769928,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Hyderabad",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 13438616.682769928 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@aerotechsystems24.in",
+            "name": "Contact Name 295",
+            "contact_role": "Operations Head",
+            "company_name": "AeroTech Systems 24",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 49461339.461844295,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Delhi",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 49461339.461844295 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@hindustanlogistics24.in",
+            "name": "Contact Name 296",
+            "contact_role": "Compliance Director",
+            "company_name": "Hindustan Logistics 24",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 26468332.71728428,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 26468332.71728428 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech13.in",
+            "name": "Contact Name 298",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 13",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 2909042.0111977784,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Coimbatore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 2909042.0111977784 below compliance threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity36.in",
+            "name": "Contact Name 299",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 36",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 10521001.209177375,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 10521001.209177375 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@triseccybersecurity27.in",
+            "name": "Contact Name 300",
+            "contact_role": "Compliance Director",
+            "company_name": "Trisec Cybersecurity 27",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 31365610.956088293,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 31365610.956088293 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@hindustanlogistics47.in",
+            "name": "Contact Name 302",
+            "contact_role": "Founder",
+            "company_name": "Hindustan Logistics 47",
+            "sector": "Cybersecurity",
+            "geography": "Singapore",
+            "annual_revenue_inr": 24266453.603991076,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 24266453.603991076 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia86.in",
+            "name": "Contact Name 303",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 86",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 5090973.621620638,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 5090973.621620638 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech99.in",
+            "name": "Contact Name 304",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 99",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 35889876.752418764,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 35889876.752418764 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@venturecapitalindia66.in",
+            "name": "Contact Name 305",
+            "contact_role": "Compliance Director",
+            "company_name": "VentureCapital India 66",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 22923182.742060073,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 22923182.742060073 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@aerotechsystems43.in",
+            "name": "Contact Name 306",
+            "contact_role": "Compliance Director",
+            "company_name": "AeroTech Systems 43",
+            "sector": "Manufacturing",
+            "geography": "Singapore",
+            "annual_revenue_inr": 48757197.01924506,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: Singapore",
+                "Annual revenue 48757197.01924506 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@zenithfintech24.in",
+            "name": "Contact Name 308",
+            "contact_role": "Risk Officer",
+            "company_name": "Zenith FinTech 24",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 11868771.244547656,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 11868771.244547656 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@zenithfintech94.in",
+            "name": "Contact Name 310",
+            "contact_role": "CFO",
+            "company_name": "Zenith FinTech 94",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 18981468.314827815,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 18981468.314827815 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@aerotechsystems75.in",
+            "name": "Contact Name 311",
+            "contact_role": "Founder",
+            "company_name": "AeroTech Systems 75",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 16006370.440642769,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 16006370.440642769 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@hindustanlogistics95.in",
+            "name": "Contact Name 312",
+            "contact_role": "CFO",
+            "company_name": "Hindustan Logistics 95",
+            "sector": "Cybersecurity",
+            "geography": "India",
+            "annual_revenue_inr": 4417517.194964968,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Bangalore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 4417517.194964968 below compliance threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@bharatagritech35.in",
+            "name": "Contact Name 313",
+            "contact_role": "CFO",
+            "company_name": "Bharat AgriTech 35",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 32597899.66946528,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 32597899.66946528 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems46.in",
+            "name": "Contact Name 314",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 46",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 40187992.4903646,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 40187992.4903646 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@zenithfintech55.in",
+            "name": "Contact Name 316",
+            "contact_role": "CFO",
+            "company_name": "Zenith FinTech 55",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 32192614.574084125,
+            "generating_agent": "Lead_Agent_Delta",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 32192614.574084125 meets threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@venturecapitalindia82.in",
+            "name": "Contact Name 318",
+            "contact_role": "CEO",
+            "company_name": "VentureCapital India 82",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 31095371.66200504,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 31095371.66200504 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics72.in",
+            "name": "Contact Name 319",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 72",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 32841469.456410144,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 32841469.456410144 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "risk.officer@triseccybersecurity82.in",
+            "name": "Contact Name 320",
+            "contact_role": "Risk Officer",
+            "company_name": "Trisec Cybersecurity 82",
+            "sector": "Manufacturing",
+            "geography": "India",
+            "annual_revenue_inr": 29542317.785954993,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 29542317.785954993 meets threshold",
+                "Non-decision-maker role: risk officer"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@aerotechsystems34.in",
+            "name": "Contact Name 323",
+            "contact_role": "CEO",
+            "company_name": "AeroTech Systems 34",
+            "sector": "Export",
+            "geography": "India",
+            "annual_revenue_inr": 44936137.221003376,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Delhi",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 44936137.221003376 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@hindustanlogistics91.in",
+            "name": "Contact Name 324",
+            "contact_role": "Founder",
+            "company_name": "Hindustan Logistics 91",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 38361812.61368228,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Coimbatore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 38361812.61368228 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "operations.head@hindustanlogistics48.in",
+            "name": "Contact Name 325",
+            "contact_role": "Operations Head",
+            "company_name": "Hindustan Logistics 48",
+            "sector": "SaaS",
+            "geography": "Europe",
+            "annual_revenue_inr": 28645187.2377998,
+            "generating_agent": "Lead_Agent_Gamma",
+            "city": "Chennai",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: Europe",
+                "Annual revenue 28645187.2377998 meets threshold",
+                "Non-decision-maker role: operations head"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "founder@zenithfintech10.in",
+            "name": "Contact Name 326",
+            "contact_role": "Founder",
+            "company_name": "Zenith FinTech 10",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 44548643.60806558,
+            "generating_agent": "Lead_Agent_Alpha",
+            "city": "Hyderabad",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 44548643.60806558 meets threshold",
+                "Key decision-maker role: founder"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@bharatagritech19.in",
+            "name": "Contact Name 328",
+            "contact_role": "Compliance Director",
+            "company_name": "Bharat AgriTech 19",
+            "sector": "FinTech",
+            "geography": "India",
+            "annual_revenue_inr": 15454405.166993055,
+            "generating_agent": "Lead_Agent_Beta",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 15454405.166993055 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "ceo@bharatagritech27.in",
+            "name": "Contact Name 329",
+            "contact_role": "CEO",
+            "company_name": "Bharat AgriTech 27",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 15503781.309294667,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Mumbai",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 15503781.309294667 meets threshold",
+                "Key decision-maker role: ceo"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@bharatagritech63.in",
+            "name": "Contact Name 330",
+            "contact_role": "Compliance Director",
+            "company_name": "Bharat AgriTech 63",
+            "sector": "SaaS",
+            "geography": "India",
+            "annual_revenue_inr": 24496763.372369826,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 24496763.372369826 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "compliance.director@zenithfintech82.in",
+            "name": "Contact Name 333",
+            "contact_role": "Compliance Director",
+            "company_name": "Zenith FinTech 82",
+            "sector": "FinTech",
+            "geography": "Australia",
+            "annual_revenue_inr": 36977803.06944471,
+            "generating_agent": "Lead_Agent_Zeta",
+            "city": "Bangalore",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Outside core target geo: Australia",
+                "Annual revenue 36977803.06944471 meets threshold",
+                "Key decision-maker role: compliance director"
+            ],
+            "qualified": true
+        },
+        {
+            "email": "cfo@aerotechsystems29.in",
+            "name": "Contact Name 334",
+            "contact_role": "CFO",
+            "company_name": "AeroTech Systems 29",
+            "sector": "Logistics",
+            "geography": "India",
+            "annual_revenue_inr": 4929349.034365695,
+            "generating_agent": "Lead_Agent_Epsilon",
+            "city": "Chennai",
+            "icp_score": 60,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Revenue 4929349.034365695 below compliance threshold",
+                "Key decision-maker role: cfo"
+            ],
+            "qualified": true
+        }
+    ]
+}
