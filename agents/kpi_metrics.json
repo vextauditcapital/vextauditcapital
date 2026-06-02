@@ -1,22 +1,22 @@
 {
     "general_metrics": {
-        "total_processed_leads": 3066,
-        "total_qualified_leads": 1274,
-        "conversion_rate_percentage": 41.55,
-        "total_closed_deals": 130,
-        "realized_revenue_inr": 7885000.0,
+        "total_processed_leads": 3454,
+        "total_qualified_leads": 1375,
+        "conversion_rate_percentage": 39.81,
+        "total_closed_deals": 150,
+        "realized_revenue_inr": 9385000.0,
         "target_revenue_june_inr": 6000000.0,
-        "june_target_feasibility_score": 98.98
+        "june_target_feasibility_score": 100.0
     },
     "unit_economics": {
-        "blended_average_order_value_inr": 60653.85,
+        "blended_average_order_value_inr": 62566.67,
         "customer_acquisition_cost_inr": 150.0,
-        "ltv_to_cac_ratio": 404.36,
+        "ltv_to_cac_ratio": 417.11,
         "cac_payback_days": 1.0,
         "rule_of_40_score": 130.0
     },
     "email_health_stats": {
-        "emails_delivered": 283,
+        "emails_delivered": 467,
         "bounce_rate_percentage": 0.0,
         "hard_bounces_logged": 0,
         "soft_bounces_logged": 0,
