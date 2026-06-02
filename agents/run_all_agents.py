@@ -28,6 +28,36 @@ def run_orchestration():
     except Exception as e:
         logger.error(f"Email Command Center encountered an execution error: {e}")
         
+    # 3. Run Automated Invoice Generation Agent
+    try:
+        logger.info("\n[STEP 3] EXECUTING VEXTINVOICE AGENT PIPELINE")
+        from agents.utils.invoice_agent import VextInvoiceAgent
+        invoice_agent = VextInvoiceAgent()
+        invoice_agent.run_onboarding_invoices()
+    except Exception as e:
+        logger.error(f"Invoice Agent encountered an execution error: {e}")
+        
+    # 4. Run Automated Compliance Audit Agent Hierarchy (Phase 3)
+    try:
+        logger.info("\n[STEP 4] EXECUTING VEXT COMPLIANCE AUDIT AGENT HIERARCHY")
+        from agents.utils.audit_hierarchy import master_verification_agent
+        sample_ledger = (
+            "INV-2026-001, 33AFIFS2899N1Z5, 25000.00, 25000.00, PASS\n"
+            "INV-2026-002, 11BBBBB2222B2Z2, 12000.00, 12500.00, FAIL\n" # Imbalanced + Invalid GSTIN syntax
+            "INV-2026-001, 33AFIFS2899N1Z5, 10000.00, 10000.00, PASS\n" # Duplicate Invoice booking
+        )
+        report = master_verification_agent.execute_and_verify_audit(
+            client_name="Test Enterprise",
+            client_email="test@enterprise.co.in",
+            service_code="gst",
+            service_name="GST Audit & Compliance",
+            file_name="ledger_june.csv",
+            file_content=sample_ledger
+        )
+        logger.info(f"Compliance Audit completed. PDF path: {report['audit_meta']['pdf_report_path']}")
+    except Exception as e:
+        logger.error(f"Compliance Audit Hierarchy encountered an execution error: {e}")
+        
     logger.info("\n" + "="*70)
     logger.info("⚡ ALL AI AGENT PIPELINES COMPLETED SUCCESSFULLY")
     logger.info("⚡ Operational Telemetry logged in agents_operations.log")

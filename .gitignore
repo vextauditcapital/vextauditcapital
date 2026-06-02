@@ -1,0 +1,28 @@
+# Credentials and secrets
+.env
+*.env
+secrets.json
+
+# Python cache and byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary logs, reports and local DBs
+*.log
+agents/compliance_audit_trail.log
+invoices/
+reports/
+*.txt
+
+# Virtual Environments
+venv/
+ENV/
+env/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store

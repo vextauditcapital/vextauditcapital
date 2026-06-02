@@ -7,11 +7,23 @@ import sys
 import logging
 from agents.config import settings
 
+# Reconfigure stdout/stderr to support unicode output safely on Windows console
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='backslashreplace')
+    except Exception:
+        pass
+if hasattr(sys.stderr, 'reconfigure'):
+    try:
+        sys.stderr.reconfigure(encoding='utf-8', errors='backslashreplace')
+    except Exception:
+        pass
+
 # Setup standard logging safely
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[logging.StreamFileHandler('agents_operations.log', encoding='utf-8') if hasattr(logging, 'StreamFileHandler') else logging.FileHandler('agents_operations.log', encoding='utf-8')] if False else [logging.StreamHandler(sys.stdout)]
+    handlers=[logging.StreamHandler(sys.stdout)]
 )
 logger = logging.getLogger("VextMailClient")
 

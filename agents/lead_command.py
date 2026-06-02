@@ -120,6 +120,16 @@ class LeadCommandCenter:
                 disqualified_icp += 1
                 continue
                 
+            # Trigger the Quality & Relevance Vetting Agent to verify relevance and write personalized outbound templates
+            try:
+                from agents.vetting_agent import vetting_agent
+                drafted_details = vetting_agent.cross_check_and_draft_campaign(scored_lead)
+                scored_lead["recommended_service_name"] = drafted_details["recommended_service_name"]
+                scored_lead["custom_personalization_line"] = drafted_details["custom_personalization_line"]
+                scored_lead["campaign_sequence"] = drafted_details["campaign_sequence"]
+            except Exception as e:
+                logger.error(f"Failed to execute personalized quality-vetting on lead: {e}")
+                
             # Add to database if completely verified & qualified
             data["verified_leads"].append(scored_lead)
             existing_emails.add(email_addr)
@@ -130,6 +140,23 @@ class LeadCommandCenter:
         # Save updated database
         with open(self.db_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)
+
+        # Trigger Enterprise secure audit logs and institutional KPIs
+        try:
+            from agents.utils.security_vault import security_vault
+            from agents.utils.analytics import analytics_engine
+            
+            # Log mathematically verifiable immutable transaction
+            security_vault.write_immutable_audit_log(
+                action="ingest_leads_batch",
+                operator="LeadCommandCenter",
+                status="SUCCESS",
+                details=f"Batch processed {batch_total} raw leads. Discovered {newly_verified} corporate ICP prospects."
+            )
+            # Update real-time LTV/CAC payback dashboards
+            analytics_engine.update_on_lead_processing(batch_total, newly_verified)
+        except Exception as ex:
+            logger.error(f"Failed to record secure analytics/compliance logs during ingestion: {ex}")
 
         metrics = {
             "processed_in_batch": batch_total,
@@ -142,6 +169,7 @@ class LeadCommandCenter:
         
         logger.info(f"Batch processing completed. Ingested: {newly_verified} verified corporate leads.")
         return metrics
+
 
 def run_sample_pipeline():
     """Generates 300 to 500 simulated raw leads from the 6 agents and processes them."""

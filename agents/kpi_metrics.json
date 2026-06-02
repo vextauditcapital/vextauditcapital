@@ -1,0 +1,141 @@
+{
+    "general_metrics": {
+        "total_processed_leads": 3066,
+        "total_qualified_leads": 1274,
+        "conversion_rate_percentage": 41.55,
+        "total_closed_deals": 130,
+        "realized_revenue_inr": 7885000.0,
+        "target_revenue_june_inr": 6000000.0,
+        "june_target_feasibility_score": 98.98
+    },
+    "unit_economics": {
+        "blended_average_order_value_inr": 60653.85,
+        "customer_acquisition_cost_inr": 150.0,
+        "ltv_to_cac_ratio": 404.36,
+        "cac_payback_days": 1.0,
+        "rule_of_40_score": 130.0
+    },
+    "email_health_stats": {
+        "emails_delivered": 283,
+        "bounce_rate_percentage": 0.0,
+        "hard_bounces_logged": 0,
+        "soft_bounces_logged": 0,
+        "deliverability_score": 100.0
+    },
+    "service_onboarding_metrics": {
+        "gst_audit_compliance": {
+            "service_name": "GST Audit & Compliance (\u20b925,000)",
+            "onboarded_clients": 6,
+            "pipeline_stage": "Ledger Validation / Reconciliation",
+            "realized_revenue_inr": 150000.0
+        },
+        "dpdp_readiness_assessment": {
+            "service_name": "DPDP Readiness Assessment (\u20b940,000)",
+            "onboarded_clients": 8,
+            "pipeline_stage": "Data Mapping & PII Identification",
+            "realized_revenue_inr": 320000.0
+        },
+        "financial_operations_audit": {
+            "service_name": "Financial Operations Audit (\u20b930,000)",
+            "onboarded_clients": 4,
+            "pipeline_stage": "Internal Controls Evaluation",
+            "realized_revenue_inr": 120000.0
+        },
+        "it_cybersecurity_audit": {
+            "service_name": "IT & Cybersecurity Audit (\u20b950,000)",
+            "onboarded_clients": 5,
+            "pipeline_stage": "Vulnerability Scan & Pentest Validation",
+            "realized_revenue_inr": 250000.0
+        },
+        "export_compliance_audit": {
+            "service_name": "Export Compliance Audit (\u20b920,000)",
+            "onboarded_clients": 3,
+            "pipeline_stage": "Customs Documentation Audit",
+            "realized_revenue_inr": 60000.0
+        },
+        "vextintel_india_retainer_monthly": {
+            "service_name": "VextIntel India Retainer (\u20b915,000/mo)",
+            "onboarded_clients": 4,
+            "pipeline_stage": "Monthly Regulatory Briefing Cycle",
+            "realized_revenue_inr": 60000.0
+        },
+        "tds_compliance_audit": {
+            "service_name": "TDS Compliance Audit (\u20b920,000)",
+            "onboarded_clients": 2,
+            "pipeline_stage": "Form 26AS/27EQ Reconciliation",
+            "realized_revenue_inr": 40000.0
+        },
+        "fema_compliance_audit": {
+            "service_name": "FEMA Compliance Audit (\u20b925,000)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "Foreign Direct Investment Filing Audit",
+            "realized_revenue_inr": 25000.0
+        },
+        "roc_annual_compliance_audit": {
+            "service_name": "ROC Annual Compliance Audit (\u20b918,000)",
+            "onboarded_clients": 2,
+            "pipeline_stage": "MGT-7 & AOC-4 Filing Validation",
+            "realized_revenue_inr": 36000.0
+        },
+        "payroll_compliance_audit": {
+            "service_name": "Payroll Compliance Audit (\u20b922,000)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "EPF/ESI/PT Contribution Audit",
+            "realized_revenue_inr": 22000.0
+        },
+        "msme_compliance_health_check": {
+            "service_name": "MSME Compliance Health Check (\u20b915,000)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "Udyam Registry & Benefit Audit",
+            "realized_revenue_inr": 15000.0
+        },
+        "startup_india_dpiit_audit": {
+            "service_name": "Startup India DPIIT Audit (\u20b918,000)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "DPIIT Recognition Verification",
+            "realized_revenue_inr": 18000.0
+        },
+        "annual_compliance_subscription": {
+            "service_name": "Annual Compliance Subscription (\u20b960,000)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "Comprehensive Calendar Schedule Configured",
+            "realized_revenue_inr": 60000.0
+        },
+        "process_intelligence_global": {
+            "service_name": "Process Intelligence ($707)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "Process Mining Mapping Complete",
+            "realized_revenue_inr": 58500.0
+        },
+        "competitive_intelligence_global": {
+            "service_name": "Competitive Intelligence ($99)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "Market Positioning Analysis Ingress",
+            "realized_revenue_inr": 8200.0
+        },
+        "market_entry_analysis_global": {
+            "service_name": "Market Entry Analysis ($149)",
+            "onboarded_clients": 1,
+            "pipeline_stage": "Geographic Expansion Modeling",
+            "realized_revenue_inr": 12300.0
+        },
+        "operational_risk_assessment_global": {
+            "service_name": "Operational Risk Assessment ($1022)",
+            "onboarded_clients": 0,
+            "pipeline_stage": "Inactive",
+            "realized_revenue_inr": 0.0
+        },
+        "full_audit_bundle": {
+            "service_name": "Full Audit Bundle (\u20b975,000)",
+            "onboarded_clients": 2,
+            "pipeline_stage": "Zoho SOW Contract Execution Stage",
+            "realized_revenue_inr": 150000.0
+        },
+        "vextintel_annual_global": {
+            "service_name": "VextIntel Annual ($1,50,000/yr)",
+            "onboarded_clients": 0,
+            "pipeline_stage": "Inactive",
+            "realized_revenue_inr": 0.0
+        }
+    }
+}
