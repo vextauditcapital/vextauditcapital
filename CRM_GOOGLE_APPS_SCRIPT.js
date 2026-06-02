@@ -2,7 +2,7 @@
  * Vext Audit Capital - CRM Sheets Onboarding Logging Apps Script
  *
  * INSTRUCTIONS FOR DEPLOYMENT:
- * 1. Open your Google Sheet where you want to log client intakes.
+ * 1. Open your master Google Sheet (ID: 1Xj2RaD-TuP8ieDn8JKhy77alYKYWTM4S3ejnVTL8Q1k) or your active CRM Sheet.
  * 2. Click on Extensions -> Apps Script.
  * 3. Delete any default code and paste this script.
  * 4. Click the Save icon (floppy disk).
@@ -66,7 +66,13 @@ function doPost(e) {
     var children = getVal("children");
     
     // Access target sheet and set up headers if sheet is empty
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var sheet;
+    try {
+      // Direct integration with VAC 360-Degree master sheet: 1Xj2RaD-TuP8ieDn8JKhy77alYKYWTM4S3ejnVTL8Q1k
+      sheet = SpreadsheetApp.openById("1Xj2RaD-TuP8ieDn8JKhy77alYKYWTM4S3ejnVTL8Q1k").getActiveSheet();
+    } catch(err) {
+      sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    }
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
         "Timestamp", "Service", "Amount", "Currency", "Client Name", 
