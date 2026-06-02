@@ -293,9 +293,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
  <div class="stp" id="sty">
  <div class="ty">
  <div class="ty-ring"><svg width="26" height="20" viewBox="0 0 26 20" fill="none"><path d="M2 10L9.5 17.5L24 2" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
- <h1 class="ty-h1">Payment received.</h1>
- <p class="ty-p">Welcome to Vext Audit Capital, <strong id="tyn" style="color:var(--gold)"></strong>.</p>
- <p class="ty-p" style="font-size:16px;margin-top:4px;">A welcome email is on its way to <strong id="tye" style="color:var(--gold)"></strong>.<br/>Our fully automated compliance pipeline has initiated your onboarding cycle.</p>
+ <h1 class="ty-h1" id="tyh">Payment received.</h1>
+ <p class="ty-p" id="typ1">Welcome to Vext Audit Capital, <strong id="tyn" style="color:var(--gold)"></strong>.</p>
+ <p class="ty-p" style="font-size:16px;margin-top:4px;" id="typ2">A welcome email is on its way to <strong id="tye" style="color:var(--gold)"></strong>.<br/>Our fully automated compliance pipeline has initiated your onboarding cycle.</p>
  <div class="ns-box">
  <div class="ns-hl">What happens next</div>
  <div class="ns-item"><div class="ns-num">01</div><div class="ns-txt"><strong>Welcome Email Letter:</strong> Dispatched instantly to introducing your dedicated lead compliance advisor.</div></div>
@@ -382,19 +382,65 @@ async function pay(){
  var ch=[];
  document.querySelectorAll('.cn').forEach(function(n,i){var b=document.querySelectorAll('.cb')[i];if(n.value.trim())ch.push({name:n.value.trim(),bday:b?b.value:''});});
  var d={svc:S.svc,amt:S.amt,name:g('fn').value.trim(),desig:g('fd').value.trim(),email:g('fe').value.trim(),phone:g('fp').value.trim(),company:g('fc').value.trim(),country:g('fco').value,gst:g('fg').value.trim(),industry:g('fi').value,source:g('fs').value,msg:g('fm').value.trim(),bday:g('rb').value,anni:g('ra').value,spouse:g('rs').value.trim(),sbday:g('rsb').value,father:g('rf').value.trim(),fbday:g('rfb').value,mother:g('rm').value.trim(),mbday:g('rmb').value,children:ch,ts:new Date().toISOString()};
+ 
+ var cur = S.cur || 'INR';
+ var prefix = cur === 'USD' ? '$' : '₹';
+ var locale = cur === 'USD' ? 'en-US' : 'en-IN';
+ var baseVal = parseFloat(S.amt);
+ var gstVal = Math.round(baseVal * 0.18 * 100) / 100;
+ var totVal = baseVal + gstVal;
+ 
+ var baseStr = prefix + baseVal.toLocaleString(locale, {minimumFractionDigits: cur==='USD'?2:0, maximumFractionDigits: cur==='USD'?2:0});
+ var gstStr = prefix + gstVal.toLocaleString(locale, {minimumFractionDigits: cur==='USD'?2:0, maximumFractionDigits: cur==='USD'?2:0});
+ var totStr = prefix + totVal.toLocaleString(locale, {minimumFractionDigits: cur==='USD'?2:0, maximumFractionDigits: cur==='USD'?2:0});
+
+ var msgBody = 'NEW CLIENT INTAKE FLOW\n\n' +
+               'SERVICE: ' + d.svc + '\n' +
+               'BASE AMOUNT: ' + baseStr + '\n' +
+               'GST (18%): ' + gstStr + '\n' +
+               'TOTAL (INCL. GST): ' + totStr + '\n\n' +
+               'CLIENT DETAILS:\n' +
+               'Name: ' + d.name + '\n' +
+               'Designation: ' + (d.desig || 'N/A') + '\n' +
+               'Email: ' + d.email + '\n' +
+               'Phone: ' + d.phone + '\n' +
+               'Company: ' + d.company + '\n' +
+               'Country: ' + d.country + '\n' +
+               'GSTIN: ' + (d.gst || 'N/A') + '\n' +
+               'Industry: ' + (d.industry || 'N/A') + '\n' +
+               'Source: ' + (d.source || 'N/A') + '\n' +
+               'Message/Context: ' + (d.msg || 'None') + '\n\n' +
+               'RELATIONSHIP PROFILE:\n' +
+               'Birthday: ' + (d.bday || 'N/A') + '\n' +
+               'Anniversary: ' + (d.anni || 'N/A') + '\n' +
+               'Spouse Name: ' + (d.spouse || 'N/A') + '\n' +
+               'Spouse Birthday: ' + (d.sbday || 'N/A') + '\n' +
+               'Father Name: ' + (d.father || 'N/A') + '\n' +
+               'Father Birthday: ' + (d.fbday || 'N/A') + '\n' +
+               'Mother Name: ' + (d.mother || 'N/A') + '\n' +
+               'Mother Birthday: ' + (d.mbday || 'N/A') + '\n' +
+               'Children: ' + (d.children.length ? JSON.stringify(d.children) : 'None') + '\n\n' +
+               'Submitted: ' + d.ts;
+
  var fd=new FormData();
  fd.append('access_key','83cc3e63-fbee-43e4-ba81-a074039de80b');
- fd.append('subject','NEW CLIENT: '+d.svc+' | '+d.name+' | '+d.company);
+ fd.append('subject','NEW CLIENT INTAKE: '+d.svc+' | '+d.name+' | '+d.company);
  fd.append('from_name','Vext Audit Capital Intake');
  fd.append('name',d.name);fd.append('email',d.email);
- fd.append('message','SERVICE: '+d.svc+'\nAMOUNT: Rs.'+parseInt(d.amt).toLocaleString('en-IN')+'\nName: '+d.name+'\nEmail: '+d.email+'\nPhone: '+d.phone+'\nCompany: '+d.company+'\nCountry: '+d.country+'\nGST: '+(d.gst||'N/A')+'\nSource: '+(d.source||'N/A')+'\nSubmitted: '+d.ts);
+ fd.append('message',msgBody);
+ 
  try{await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});}catch(e){}
  try{sessionStorage.setItem('vac',JSON.stringify(d));}catch(e){}
+ 
  if(S.lnk==='PENDING'){
- btn.textContent='Contact us to complete payment';
- btn.style.background='#8B6914';btn.style.color='#fff';btn.disabled=false;
- setTimeout(function(){window.location.href='mailto:support@vextaudit.com?subject=Payment+for+'+encodeURIComponent(S.svc)+'&body=Hi,+I+would+like+to+pay+for+'+encodeURIComponent(S.svc)+'.+Please+send+me+the+payment+link.';},600);
- return;
+  g('tyh').textContent = "Onboarding Cycle Initiated.";
+  g('typ1').innerHTML = 'Thank you for choosing Vext Audit Capital, <strong id="tyn" style="color:var(--gold)">' + d.name + '</strong>.';
+  g('typ2').innerHTML = 'Our automated pipeline is preparing your Statement of Work and secure checkout link. They will be dispatched to <strong id="tye" style="color:var(--gold)">' + d.email + '</strong> in the next 15 minutes.';
+  g('pbar').style.display='none';
+  g('plbls').style.display='none';
+  var f=g('onb-foot'); if(f) f.style.display='none';
+  go('ty');
+  return;
  }
  btn.textContent='Redirecting to payment...';
  setTimeout(function(){window.location.href=S.lnk;},900);
