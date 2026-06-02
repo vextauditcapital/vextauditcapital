@@ -29,3 +29,6 @@ env/
 .DS_Store
 
 .vercel
+*.db
+vextaudit_local.db
+

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Vext Audit Capital Core API Gateway
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vext-api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_ENV=development
+      - PORT=8080
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/vextaudit
+      - CRM_ENDPOINT=https://script.google.com/macros/s/AKfycbxihuqTbKLbt6bdCnbO2nI8htEJh1rMcVdztQko_TYSfpZUqDbZpKP2a0uY_ASztU5DDQ/exec
+      - SENTRY_DSN=${SENTRY_DSN}
+    depends_on:
+      - db
+    volumes:
+      - ./logs:/app/logs
+      - ./invoices:/app/invoices
+    restart: always
+
+  # Local Redundant PostgreSQL Database for testing
+  db:
+    image: postgres:15-alpine
+    container_name: vext-postgres-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=vextaudit
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  pgdata:
