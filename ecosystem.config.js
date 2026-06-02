@@ -19,10 +19,9 @@ module.exports = {
     },
     {
       name: "vext-api-gateway",
-      script: "./venv/bin/uvicorn",
-      args: "app.main:app --host 0.0.0.0 --port 8000 --workers 4",
+      script: "./venv/bin/python",
+      args: "-m uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4",
       cwd: "/opt/vext-audit",
-      instances: 1,
       autorestart: true,
       watch: false,
       max_memory_restart: "1G",
