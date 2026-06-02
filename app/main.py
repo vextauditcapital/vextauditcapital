@@ -114,6 +114,13 @@ async def onboard_intake(
     # 1. Parse JSON body gracefully
     try:
         data = json.loads(body_str)
+        if not isinstance(data, dict):
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail="JSON payload must be a dictionary object."
+            )
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,

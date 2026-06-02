@@ -5,7 +5,7 @@ from agents.config import settings
 
 logger = logging.getLogger("VextAnalytics")
 
-KPI_PATH = r"C:\Users\shyam\.gemini\antigravity\scratch\agents\kpi_metrics.json"
+KPI_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kpi_metrics.json")
 
 class CapitalAnalyticsEngine:
     """

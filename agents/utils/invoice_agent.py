@@ -10,8 +10,8 @@ from reportlab.lib.units import inch
 
 logger = logging.getLogger("VextInvoiceAgent")
 
-INVOICE_DIR = r"C:\Users\shyam\.gemini\antigravity\scratch\invoices"
-LOGO_PATH = r"C:\Users\shyam\.gemini\antigravity\scratch\VEXT-AUDIT-CAPITAL-LOGO.jpg"
+INVOICE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "invoices")
+LOGO_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "VEXT-AUDIT-CAPITAL-LOGO.jpg")
 
 def draw_background(canvas, doc):
     """Draws a premium background color matching the VEXT logo."""

@@ -9,8 +9,8 @@ from reportlab.lib.units import inch
 
 logger = logging.getLogger("VextPDFReportGenerator")
 
-REPORTS_DIR = r"C:\Users\shyam\.gemini\antigravity\scratch\reports"
-LOGO_PATH = r"C:\Users\shyam\.gemini\antigravity\scratch\VEXT-AUDIT-CAPITAL-LOGO.jpg"
+REPORTS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "reports")
+LOGO_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "VEXT-AUDIT-CAPITAL-LOGO.jpg")
 
 def draw_report_background(canvas, doc):
     """Draws a premium luxury Cream background color matching the VEXT logo."""

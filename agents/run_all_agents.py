@@ -1,4 +1,5 @@
 import sys
+import time
 import logging
 from agents.lead_command import run_sample_pipeline
 from agents.email_command import EmailCommandCenter
@@ -64,4 +65,11 @@ def run_orchestration():
     logger.info("="*70)
 
 if __name__ == "__main__":
-    run_orchestration()
+    while True:
+        try:
+            run_orchestration()
+        except Exception as e:
+            logger.error(f"Fatal error in orchestration loop: {e}")
+        
+        logger.info("Sleeping for 60 seconds before next polling cycle...")
+        time.sleep(60)

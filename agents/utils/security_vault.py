@@ -74,7 +74,8 @@ class EnterpriseSecurityVault:
         Appends a secure, cryptographically signed log entry to the append-only operational audit trail.
         Required for SOC 2 Type II validation and institutional compliance reviews.
         """
-        log_path = r"C:\Users\shyam\.gemini\antigravity\scratch\agents\compliance_audit_trail.log"
+        # Resolve log path dynamically to project root
+        log_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "compliance_audit_trail.log")
         timestamp = datetime.datetime.utcnow().isoformat()
         
         raw_event = f"{timestamp} | ACTION: {action} | OPERATOR: {operator} | STATUS: {status} | DETAILS: {details}"

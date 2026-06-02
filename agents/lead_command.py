@@ -8,7 +8,7 @@ from agents.config import settings
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("VextLeadCommand")
 
-DATABASE_PATH = r"C:\Users\shyam\.gemini\antigravity\scratch\agents\leads_database.json"
+DATABASE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "leads_database.json")
 
 class LeadCommandCenter:
     def __init__(self):

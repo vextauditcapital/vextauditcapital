@@ -60,7 +60,7 @@ def send_alert(message: str, channel: str = "critical-alerts"):
             headers={"Content-Type": "application/json"},
             timeout=5
         )
-        if response.status_color != 200:
+        if response.status_code != 200:
             logger.warning(f"Alert webhook returned non-200 status code: {response.status_code}")
     except Exception as e:
         logger.error(f"Failed to post telemetry alert to slack/teams: {e}")

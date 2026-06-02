@@ -14,19 +14,19 @@ class AgentSettings(BaseSettings):
     
     # Mailbox Credential Map (Using Workspace App Passwords for zero-human intervention)
     EMAIL_CEO: str = Field(default="ceo@vextaudit.com")
-    PASS_CEO: str = Field(default="aoksbhinewtvfitv")
+    PASS_CEO: str = Field(default="MOCK_PASSWORD")
     
     EMAIL_SUPPORT: str = Field(default="support@vextaudit.com")
-    PASS_SUPPORT: str = Field(default="ocrafvrdzfnmakxa")
+    PASS_SUPPORT: str = Field(default="MOCK_PASSWORD")
     
     EMAIL_NOREPLY: str = Field(default="no-reply@vextaudit.com")
-    PASS_NOREPLY: str = Field(default="ofxqupiswrzpvfhk")
+    PASS_NOREPLY: str = Field(default="MOCK_PASSWORD")
     
     EMAIL_INTELLIGENCE: str = Field(default="intelligence@vextaudit.com")
-    PASS_INTELLIGENCE: str = Field(default="tiedhaheeumcgqgm")
+    PASS_INTELLIGENCE: str = Field(default="MOCK_PASSWORD")
     
     EMAIL_NEWSLETTER: str = Field(default="newsletter@vextaudit.com")
-    PASS_NEWSLETTER: str = Field(default="gtjtibrluudnolmb")
+    PASS_NEWSLETTER: str = Field(default="MOCK_PASSWORD")
     
     # Zoho Sign Integration Parameters
     ZOHO_CLIENT_ID: str = Field(default="ZOHO_SIGN_CLIENT_ID_PLACEHOLDER")
