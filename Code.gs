@@ -121,7 +121,7 @@ function doPost(e) {
     // Parse incoming payload robustly (handles raw json and url-encoded bodies)
     if (e && e.postData) {
       rawBody = e.postData.contents || "";
-      if (e.postData.type === "application/json") {
+      if (e.postData.type === "application/json" || (e.postData.type && e.postData.type.indexOf("text/plain") !== -1)) {
         try {
           data = JSON.parse(rawBody);
         } catch(ex) {

@@ -319,6 +319,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
  </div>
 </div>
 <script>
+// ============================================================
+// VEXT AUDIT CAPITAL — SECURE DIRECT CRM API CONFIGURATION
+// ============================================================
+const CRM_CONFIG = {
+  // YOUR SECURE DIRECT CRM API ENDPOINT
+  // Replace this with your Google Apps Script Web App URL from Step 1
+  ENDPOINT: "https://script.google.com/macros/s/AKfycbxihuqTbKLbt6bdCnbO2nI8htEJh1rMcVdztQko_TYSfpZUqDbZpKP2a0uY_ASztU5DDQ/exec"
+};
+
 var S={svc:'',amt:'',lnk:'',cur:'INR',step:1},cc=1;
 function g(id){return document.getElementById(id);}
 function sel(el,svc,amt,lnk,cur){document.querySelectorAll('.sc').forEach(function(c){c.classList.remove('sel');});el.classList.add('sel');S.svc=svc;S.amt=amt;S.lnk=lnk;S.cur=cur||'INR';g('b1').disabled=false;}
@@ -422,37 +431,61 @@ async function pay(){
                'Children: ' + (d.children.length ? JSON.stringify(d.children) : 'None') + '\n\n' +
                'Submitted: ' + d.ts;
 
- var fd=new FormData();
- fd.append('access_key','83cc3e63-fbee-43e4-ba81-a074039de80b');
- fd.append('subject','NEW CLIENT INTAKE: '+d.svc+' | '+d.name+' | '+d.company);
- fd.append('from_name','Vext Audit Capital Intake');
- fd.append('name',d.name);
- fd.append('email',d.email);
- fd.append('message',msgBody);
+  var payload = {
+    source: 'onboard_intake',
+    subject: 'NEW CLIENT INTAKE: ' + d.svc + ' | ' + d.name + ' | ' + d.company,
+    name: d.name,
+    email: d.email,
+    message: msgBody,
+    svc: d.svc,
+    service: d.svc,
+    amt: d.amt,
+    amount: d.amt,
+    currency: cur,
+    desig: d.desig || '',
+    designation: d.desig || '',
+    phone: d.phone || '',
+    company: d.company || '',
+    country: d.country || '',
+    gst: d.gst || '',
+    gstin: d.gst || '',
+    industry: d.industry || '',
+    source_val: d.source || '',
+    msg: d.msg || '',
+    comments: d.msg || '',
+    bday: d.bday || '',
+    birthday: d.bday || '',
+    anni: d.anni || '',
+    anniversary: d.anni || '',
+    spouse: d.spouse || '',
+    spouse_name: d.spouse || '',
+    sbday: d.sbday || '',
+    spouse_birthday: d.sbday || '',
+    father: d.father || '',
+    father_name: d.father || '',
+    fbday: d.fbday || '',
+    father_birthday: d.fbday || '',
+    mother: d.mother || '',
+    mother_name: d.mother || '',
+    mbday: d.mbday || '',
+    mother_birthday: d.mbday || '',
+    children: d.children,
+    dpdp_consent: 'yes'
+  };
+
+  try {
+    await fetch(CRM_CONFIG.ENDPOINT, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify(payload)
+    });
+  } catch(e) {
+    console.error('Direct CRM submission failed:', e);
+  }
  
- // Append granular fields for webhook / CRM integrations (e.g. Google Sheets, Make, Zapier)
- fd.append('service', d.svc);
- fd.append('amount', d.amt);
- fd.append('currency', cur);
- fd.append('designation', d.desig || '');
- fd.append('phone', d.phone || '');
- fd.append('company', d.company || '');
- fd.append('country', d.country || '');
- fd.append('gstin', d.gst || '');
- fd.append('industry', d.industry || '');
- fd.append('source', d.source || '');
- fd.append('comments', d.msg || '');
- fd.append('birthday', d.bday || '');
- fd.append('anniversary', d.anni || '');
- fd.append('spouse_name', d.spouse || '');
- fd.append('spouse_birthday', d.sbday || '');
- fd.append('father_name', d.father || '');
- fd.append('father_birthday', d.fbday || '');
- fd.append('mother_name', d.mother || '');
- fd.append('mother_birthday', d.mbday || '');
- fd.append('children', JSON.stringify(d.children));
- 
- try{await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});}catch(e){}
  try{sessionStorage.setItem('vac',JSON.stringify(d));}catch(e){}
  
  if(S.lnk==='PENDING'){
@@ -495,37 +528,47 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
  }
  var svc=p.get('service');
  if(svc){
-       var map={
-    process:['Process Intelligence','707','https://rzp.io/rzp/iY8ndF1','USD'],
-    competitive:['Competitive Intelligence','99','https://rzp.io/rzp/GwTyPEN','USD'],
-    'market-entry':['Market Entry Analysis','149','https://rzp.io/rzp/RfGnqkck','USD'],
-    'operational-risk':['Operational Risk Assessment','1022','https://rzp.io/rzp/TeVr6dJa','USD'],
-    gst:['GST Audit & Compliance','25000','https://rzp.io/rzp/c8Iadz3e','INR'],
-    dpdp:['DPDP Readiness Assessment','40000','https://rzp.io/rzp/kbkHHpJU','INR'],
-    financial:['Financial Operations Audit','30000','https://rzp.io/rzp/jInJsXH9','INR'],
-    it:['IT & Cybersecurity Audit','50000','https://rzp.io/rzp/tffBCbc3m','INR'],
-    export:['Export Compliance','20000','https://rzp.io/rzp/d6lMSsm','INR'],
-    bundle:['Full Audit Bundle','75000','PENDING','INR'],
-    vextintel:['VextIntel India Retainer','15000','https://rzp.io/rzp/xfTGpOLS','INR'],
-    'vextintel-annual':['VextIntel Annual','150000','PENDING','INR'],
-    tds:['TDS Compliance Audit','20000','PENDING','INR'],
-    roc:['ROC Annual Compliance Audit','18000','PENDING','INR'],
-    payroll:['Payroll Compliance Audit','22000','PENDING','INR'],
-    fema:['FEMA Compliance Audit','25000','PENDING','INR'],
-    msme:['MSME Compliance Health Check','15000','PENDING','INR'],
-    startup:['Startup India DPIIT Audit','18000','PENDING','INR'],
-    'annual-subscription':['Annual Compliance Subscription','60000','PENDING','INR'],
-    amlkyc:['AML / KYC Policy Audit','799','PENDING','USD'],
-    esg:['ESG Baseline Report','599','PENDING','USD'],
-    gdpr:['GDPR Compliance Assessment','799','PENDING','USD'],
-    hipaa:['HIPAA Compliance Assessment','899','PENDING','USD'],
-    iso27001:['Information Security Gap Assessment','1199','PENDING','USD'],
-    pcidss:['PCI-DSS Compliance Assessment','999','PENDING','USD'],
-    soc2:['SOC 2 Readiness Assessment','999','PENDING','USD'],
-    transferpricing:['Transfer Pricing Documentation','75000','PENDING','INR'],
-    vendor:['Vendor Risk Assessment','499','PENDING','USD'],
-    'vextintel-global':['VextIntel Global Edition','199','PENDING','USD'],
-    incometax:['Income Tax Compliance Audit','30000','PENDING','INR']
+        var map={
+     process:['Process Intelligence','707','https://rzp.io/rzp/iY8ndF1','USD'],
+     competitive:['Competitive Intelligence','99','https://rzp.io/rzp/GwTyPEN','USD'],
+     'market-entry':['Market Entry Analysis','149','https://rzp.io/rzp/RfGnqkck','USD'],
+     'operational-risk':['Operational Risk Assessment','1022','https://rzp.io/rzp/TeVr6dJa','USD'],
+     'ops-risk':['Operational Risk Assessment','1022','https://rzp.io/rzp/TeVr6dJa','USD'],
+     gst:['GST Audit & Compliance','25000','https://rzp.io/rzp/c8Iadz3e','INR'],
+     dpdp:['DPDP Readiness Assessment','40000','https://rzp.io/rzp/kbkHHpJU','INR'],
+     financial:['Financial Operations Audit','30000','https://rzp.io/rzp/jInJsXH9','INR'],
+     'fin-ops':['Financial Operations Audit','30000','https://rzp.io/rzp/jInJsXH9','INR'],
+     it:['IT & Cybersecurity Audit','50000','https://rzp.io/rzp/tffBCbc3m','INR'],
+     'it-cyber':['IT & Cybersecurity Audit','50000','https://rzp.io/rzp/tffBCbc3m','INR'],
+     export:['Export Compliance','20000','https://rzp.io/rzp/d6lMSsm','INR'],
+     bundle:['Full Audit Bundle','75000','PENDING','INR'],
+     vextintel:['VextIntel India Retainer','15000','https://rzp.io/rzp/xfTGpOLS','INR'],
+     'vextintel-monthly':['VextIntel India Retainer','15000','https://rzp.io/rzp/xfTGpOLS','INR'],
+     'vextintel-annual':['VextIntel Annual','150000','PENDING','INR'],
+     tds:['TDS Compliance Audit','20000','PENDING','INR'],
+     roc:['ROC Annual Compliance Audit','18000','PENDING','INR'],
+     payroll:['Payroll Compliance Audit','22000','PENDING','INR'],
+     fema:['FEMA Compliance Audit','25000','PENDING','INR'],
+     msme:['MSME Compliance Health Check','15000','PENDING','INR'],
+     startup:['Startup India DPIIT Audit','18000','PENDING','INR'],
+     'startup-dpiit':['Startup India DPIIT Audit','18000','PENDING','INR'],
+     'annual-subscription':['Annual Compliance Subscription','60000','PENDING','INR'],
+     'annual-sub':['Annual Compliance Subscription','60000','PENDING','INR'],
+     amlkyc:['AML / KYC Policy Audit','799','PENDING','USD'],
+     'aml-kyc':['AML / KYC Policy Audit','799','PENDING','USD'],
+     esg:['ESG Baseline Report','599','PENDING','USD'],
+     gdpr:['GDPR Compliance Assessment','799','PENDING','USD'],
+     hipaa:['HIPAA Compliance Assessment','899','PENDING','USD'],
+     iso27001:['Information Security Gap Assessment','1199','PENDING','USD'],
+     pcidss:['PCI-DSS Compliance Assessment','999','PENDING','USD'],
+     soc2:['SOC 2 Readiness Assessment','999','PENDING','USD'],
+     transferpricing:['Transfer Pricing Documentation','75000','PENDING','INR'],
+     'transfer-pricing':['Transfer Pricing Documentation','75000','PENDING','INR'],
+     vendor:['Vendor Risk Assessment','499','PENDING','USD'],
+     'vendor-risk':['Vendor Risk Assessment','499','PENDING','USD'],
+     'vextintel-global':['VextIntel Global Edition','199','PENDING','USD'],
+     incometax:['Income Tax Compliance Audit','30000','PENDING','INR'],
+     'income-tax':['Income Tax Compliance Audit','30000','PENDING','INR']
   };
  var entry=map[svc];
  if(entry){

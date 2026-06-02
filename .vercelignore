@@ -1,0 +1,25 @@
+# Ignore Python virtual environment and cache
+venv/
+__pycache__/
+
+# Ignore backend agents and related python scripts
+agents/
+*.py
+requirements.txt
+ecosystem.config.js
+
+# Ignore local automation logs and reports
+logs/
+reports/
+invoices/
+*.log
+
+# Ignore Google Apps Script backend files
+*.gs
+CRM_GOOGLE_APPS_SCRIPT.js
+IntakeWebhook.gs
+
+# Ignore other cloud/deployment configurations not used by Vercel
+setup_droplet.sh
+render.yaml
+setup_server.sh

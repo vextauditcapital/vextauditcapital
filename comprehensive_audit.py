@@ -8,19 +8,19 @@ html_files = [f for f in os.listdir(dir_path) if f.endswith('.html')]
 CORRECT_LINKS = {
     "GST Audit & Compliance": {
         "price": "INR 25,000",
-        "link": "https://rzp.io/rzp/c8fadz3e"
+        "link": "https://rzp.io/rzp/c8Iadz3e"
     },
     "DPDP Readiness Assessment": {
         "price": "INR 40,000",
-        "link": "https://rzp.io/rzp/kbIHpjU"
+        "link": "https://rzp.io/rzp/kbkHHpJU"
     },
     "Financial Operations Audit": {
         "price": "INR 30,000",
-        "link": "https://rzp.io/rzp/jmJsVf9"
+        "link": "https://rzp.io/rzp/jInJsXH9"
     },
     "IT & Cybersecurity Audit": {
         "price": "INR 50,000",
-        "link": "https://rzp.io/rzp/ffBOb3m"
+        "link": "https://rzp.io/rzp/tffBCbc3m"
     },
     "Export Compliance Audit": {
         "price": "INR 20,000",
@@ -32,11 +32,11 @@ CORRECT_LINKS = {
     },
     "VextIntel Monthly Retainer": {
         "price": "INR 15,000/month",
-        "link": "https://rzp.io/rzp/xFrQp0LS"
+        "link": "https://rzp.io/rzp/xfTGpOLS"
     },
     "VextIntel India Retainer": {
         "price": "INR 15,000/month",
-        "link": "https://rzp.io/rzp/xFrQp0LS"
+        "link": "https://rzp.io/rzp/xfTGpOLS"
     },
     "VextIntel Annual": {
         "price": "INR 1,50,000/year",
@@ -47,36 +47,36 @@ CORRECT_LINKS = {
         "link": "https://rzp.io/rzp/9AMfMA3"
     },
     "AI Business Process Intelligence": {
-        "price": "$707",
-        "link": "https://rzp.io/rzp/keoObhk2"
+        "price": "$807",
+        "link": "https://rzp.io/rzp/iY8ndF1"
     },
     "Process Intelligence": {
-        "price": "$707",
-        "link": "https://rzp.io/rzp/keoObhk2"
+        "price": "$807",
+        "link": "https://rzp.io/rzp/iY8ndF1"
     },
     "AI Competitive Intelligence": {
-        "price": "$99",
-        "link": "https://rzp.io/rzp/DCuZCCJ"
+        "price": "$699",
+        "link": "https://rzp.io/rzp/GwTyPEN"
     },
     "Competitive Intelligence": {
-        "price": "$99",
-        "link": "https://rzp.io/rzp/DCuZCCJ"
+        "price": "$699",
+        "link": "https://rzp.io/rzp/GwTyPEN"
     },
     "AI Market Entry Analysis": {
-        "price": "$149",
-        "link": "https://rzp.io/rzp/rEiI8hlx"
+        "price": "$914",
+        "link": "https://rzp.io/rzp/RfGnqkck"
     },
     "Market Entry Analysis": {
-        "price": "$149",
-        "link": "https://rzp.io/rzp/rEiI8hlx"
+        "price": "$914",
+        "link": "https://rzp.io/rzp/RfGnqkck"
     },
     "AI Operational Risk Assessment": {
         "price": "$1,022",
-        "link": "https://rzp.io/rzp/4bCDrHY"
+        "link": "https://rzp.io/rzp/TeVr6dJa"
     },
     "Operational Risk Assessment": {
         "price": "$1,022",
-        "link": "https://rzp.io/rzp/4bCDrHY"
+        "link": "https://rzp.io/rzp/TeVr6dJa"
     }
 }
 

@@ -2,6 +2,7 @@
 .env
 *.env
 secrets.json
+service_account_credentials.json
 
 # Python cache and byte-compiled files
 __pycache__/
@@ -26,3 +27,5 @@ env/
 *.sublime-project
 *.sublime-workspace
 .DS_Store
+
+.vercel
