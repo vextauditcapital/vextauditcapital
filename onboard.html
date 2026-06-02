@@ -426,8 +426,31 @@ async function pay(){
  fd.append('access_key','83cc3e63-fbee-43e4-ba81-a074039de80b');
  fd.append('subject','NEW CLIENT INTAKE: '+d.svc+' | '+d.name+' | '+d.company);
  fd.append('from_name','Vext Audit Capital Intake');
- fd.append('name',d.name);fd.append('email',d.email);
+ fd.append('name',d.name);
+ fd.append('email',d.email);
  fd.append('message',msgBody);
+ 
+ // Append granular fields for webhook / CRM integrations (e.g. Google Sheets, Make, Zapier)
+ fd.append('service', d.svc);
+ fd.append('amount', d.amt);
+ fd.append('currency', cur);
+ fd.append('designation', d.desig || '');
+ fd.append('phone', d.phone || '');
+ fd.append('company', d.company || '');
+ fd.append('country', d.country || '');
+ fd.append('gstin', d.gst || '');
+ fd.append('industry', d.industry || '');
+ fd.append('source', d.source || '');
+ fd.append('comments', d.msg || '');
+ fd.append('birthday', d.bday || '');
+ fd.append('anniversary', d.anni || '');
+ fd.append('spouse_name', d.spouse || '');
+ fd.append('spouse_birthday', d.sbday || '');
+ fd.append('father_name', d.father || '');
+ fd.append('father_birthday', d.fbday || '');
+ fd.append('mother_name', d.mother || '');
+ fd.append('mother_birthday', d.mbday || '');
+ fd.append('children', JSON.stringify(d.children));
  
  try{await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});}catch(e){}
  try{sessionStorage.setItem('vac',JSON.stringify(d));}catch(e){}
