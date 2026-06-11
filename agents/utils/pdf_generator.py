@@ -177,9 +177,9 @@ def generate_brand_deliverable_pdf(client_name: str, report_content: str) -> byt
         canvas_obj.setFillColor(BRAND_CREAM)
         canvas_obj.rect(0, 0, letter[0], letter[1], fill=1, stroke=0)
         
-        # Full Opacity Logo
+        # Full Opacity Logo positioned higher up
         if os.path.exists(logo_path):
-            canvas_obj.drawImage(logo_path, (letter[0]-150)/2, letter[1]-200, width=150, height=150, mask='auto')
+            canvas_obj.drawImage(logo_path, (letter[0]-150)/2, letter[1]-280, width=150, height=150, mask='auto')
         
         canvas_obj.restoreState()
 
@@ -187,7 +187,7 @@ def generate_brand_deliverable_pdf(client_name: str, report_content: str) -> byt
     
     # Title Page
     styles = getSampleStyleSheet()
-    title_style = ParagraphStyle(name='Title', alignment=TA_CENTER, fontName=FONT_DISPLAY, fontSize=24, textColor=BRAND_DEEP_BURGUNDY, spaceBefore=250, spaceAfter=20)
+    title_style = ParagraphStyle(name='Title', alignment=TA_CENTER, fontName=FONT_DISPLAY, fontSize=24, textColor=BRAND_DEEP_BURGUNDY, spaceBefore=350, spaceAfter=20)
     sub_style = ParagraphStyle(name='Sub', alignment=TA_CENTER, fontName=FONT_BODY, fontSize=14, textColor=BRAND_MID_BURGUNDY)
     
     elements.append(Paragraph("STATUTORY COMPLIANCE REPORT", title_style))
