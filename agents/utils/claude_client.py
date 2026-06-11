@@ -7,17 +7,16 @@ logger = logging.getLogger("VextClaudeGatekeeper")
 
 class ClaudeClient:
     def __init__(self):
-        self.api_key = os.environ.get("CLAUDE_API_KEY")
-        if not self.api_key:
-            logger.warning("CLAUDE_API_KEY environment variable not set. Using dummy fallback.")
+        self.api_key = settings.CLAUDE_API_KEY
+        if not self.api_key or self.api_key == "DUMMY_CLAUDE_API_KEY":
+            logger.warning("CLAUDE_API_KEY is not configured or using dummy fallback.")
             self.client = None
         else:
             self.client = Anthropic(api_key=self.api_key)
             
         # Hardcoding the requested Fable API model logic
         # In a real environment, you use the exact model string provided by Anthropic docs
-        # We will use 'claude-3-haiku-20240307' or similar if Fable isn't live, but the logic remains identical.
-        self.model = "claude-3-5-sonnet-20241022" # Using latest highly capable model for strict JSON
+        self.model = "claude-fable-5"
 
     def analyze_statutory_compliance(self, context_data: str, compliance_framework: str) -> str:
         """
@@ -42,13 +41,17 @@ class ClaudeClient:
             response = self.client.messages.create(
                 model=self.model,
                 max_tokens=4000,
-                temperature=0.0, # Zero hallucination
                 system=system_prompt,
                 messages=[
                     {"role": "user", "content": user_prompt}
                 ]
             )
-            return response.content[0].text
+            for block in response.content:
+                if getattr(block, 'type', '') == 'text':
+                    return block.text
+                elif type(block).__name__ == 'TextBlock':
+                    return block.text
+            return '{"status": "error", "message": "No text block found in Claude response"}'
         except Exception as e:
             logger.error(f"Claude API execution failed: {e}")
             return '{"status": "error", "message": "Claude API failure"}'

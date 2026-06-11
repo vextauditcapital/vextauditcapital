@@ -1,5 +1,5 @@
 {
-    "total_leads_ingested": 4252,
+    "total_leads_ingested": 4255,
     "verified_leads": [
         {
             "email": "cfo@aerotechsystems22.in",
@@ -46853,6 +46853,58 @@
                 "followup_1": "Subject: Re: Mapped Compliance Gaps for Hindustan Logistics 53\n\nHi Contact,\n\nFollowing up on my previous message regarding your \"Export Compliance\" gap analysis. I wanted to share that we maintain complete pricing transparency on our platform\u2014there are zero hourly billing rates or hidden fees. The flat rate for your firm's compliance is exactly \u20b920,000.\n\nOur AI engine is ready to ingest and parse your financial ledgers instantly at `/upload` once the checkout is initiated.\n\nYou can view your pre-mapped checkout link and start onboarding instantly here: `/onboard?service=export-compliance`\n\nDo you have any questions on this?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital",
                 "followup_2": "Subject: Operational Checklist: \"Export Compliance\" for Hindustan Logistics 53\n\nHi Contact,\n\nTo save you time, I had our AI parser generate a quick 3-point checklist of what is required to pass your next audit successfully:\n\n1. Active ledger consistency checks and automated matching.\n2. Comprehensive statutory reporting mapping under the latest regulatory thresholds.\n3. Secure, encrypted storage verification for privacy and operational auditing.\n\nOur automated engine executes all these checks within hours. You can initiate the process in under 2 minutes at `/onboard?service=export-compliance`.\n\nShould we initiate the Statement of Work (SOW) draft for your review?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital",
                 "followup_3": "Subject: Closing your compliance file - Hindustan Logistics 53\n\nHi Contact,\n\nI haven't heard back regarding the \"Export Compliance\" gaps we mapped for Hindustan Logistics 53. I assume that audit compliance is either handled or not a primary focus for this quarter.\n\nI will go ahead and close your temporary file in our system to keep our pipeline organized. If you ever need fast, 100% automated AI audit mapping in the future, you can always visit us directly at vextaudit.com.\n\nThank you for your time, and I wish you continued growth.\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital"
+            }
+        },
+        {
+            "name": "Arjun Mehta",
+            "email": "arjun.m@fintechinnovations.in",
+            "company_name": "Fintech Innovations",
+            "contact_role": "Chief Financial Officer",
+            "sector": "Financial Services",
+            "geography": "India",
+            "annual_revenue_inr": 85000000.0,
+            "city": "Mumbai",
+            "generating_agent": "Mock_Apollo_Integration",
+            "icp_score": 80,
+            "qualification_notes": [
+                "Geo matches core targets: India",
+                "Annual revenue 85000000.0 meets threshold",
+                "Non-decision-maker role: chief financial officer"
+            ],
+            "qualified": true,
+            "recommended_service_name": "GST Audit & Compliance",
+            "custom_personalization_line": "I noticed your active corporate operations at Fintech Innovations. Ensuring that your monthly GST filings and ledger synchronizations are fully audited is essential under the latest tax guidelines.",
+            "campaign_sequence": {
+                "initial": "Subject: Mapped Compliance Gaps for Fintech Innovations - Vext Audit Capital\n\nHi Arjun,\n\nI noticed your active corporate operations at Fintech Innovations. Ensuring that your monthly GST filings and ledger synchronizations are fully audited is essential under the latest tax guidelines.\n\nAt Vext Audit Capital, we have pioneered the first 100% automated AI-based Audit Compliance platform. We mapped your industry profile against global and domestic regulatory requirements and identified that the \"GST Audit & Compliance\" is currently a critical prerequisite for your business operations.\n\nBy leveraging automated algorithms instead of traditional hourly consulting firms, we complete your entire regulatory audit in 3-5 days at a fixed, flat fee of \u20b925,000.\n\nWould you be open to a brief thread reply or reviewing your onboarding path at `/onboard?service=gst-audit-compliance` to address these requirements?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital\nvextaudit.com",
+                "followup_1": "Subject: Re: Mapped Compliance Gaps for Fintech Innovations\n\nHi Arjun,\n\nFollowing up on my previous message regarding your \"GST Audit & Compliance\" gap analysis. I wanted to share that we maintain complete pricing transparency on our platform\u2014there are zero hourly billing rates or hidden fees. The flat rate for your firm's compliance is exactly \u20b925,000.\n\nOur AI engine is ready to ingest and parse your financial ledgers instantly at `/upload` once the checkout is initiated.\n\nYou can view your pre-mapped checkout link and start onboarding instantly here: `/onboard?service=gst-audit-compliance`\n\nDo you have any questions on this?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital",
+                "followup_2": "Subject: Operational Checklist: \"GST Audit & Compliance\" for Fintech Innovations\n\nHi Arjun,\n\nTo save you time, I had our AI parser generate a quick 3-point checklist of what is required to pass your next audit successfully:\n\n1. Active ledger consistency checks and automated matching.\n2. Comprehensive statutory reporting mapping under the latest regulatory thresholds.\n3. Secure, encrypted storage verification for privacy and operational auditing.\n\nOur automated engine executes all these checks within hours. You can initiate the process in under 2 minutes at `/onboard?service=gst-audit-compliance`.\n\nShould we initiate the Statement of Work (SOW) draft for your review?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital",
+                "followup_3": "Subject: Closing your compliance file - Fintech Innovations\n\nHi Arjun,\n\nI haven't heard back regarding the \"GST Audit & Compliance\" gaps we mapped for Fintech Innovations. I assume that audit compliance is either handled or not a primary focus for this quarter.\n\nI will go ahead and close your temporary file in our system to keep our pipeline organized. If you ever need fast, 100% automated AI audit mapping in the future, you can always visit us directly at vextaudit.com.\n\nThank you for your time, and I wish you continued growth.\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital"
+            }
+        },
+        {
+            "name": "Sarah Jenkins",
+            "email": "sarah.j@saasdynamics.com",
+            "company_name": "SaaS Dynamics",
+            "contact_role": "Compliance Manager",
+            "sector": "Software",
+            "geography": "United States",
+            "annual_revenue_inr": 120000000.0,
+            "city": "San Francisco",
+            "generating_agent": "Mock_Apollo_Integration",
+            "icp_score": 100,
+            "qualification_notes": [
+                "Geo matches core targets: United States",
+                "Annual revenue 120000000.0 meets threshold",
+                "Key decision-maker role: compliance manager"
+            ],
+            "qualified": true,
+            "recommended_service_name": "GST Audit & Compliance",
+            "custom_personalization_line": "I noticed your active corporate operations at SaaS Dynamics. Ensuring that your monthly GST filings and ledger synchronizations are fully audited is essential under the latest tax guidelines.",
+            "campaign_sequence": {
+                "initial": "Subject: Mapped Compliance Gaps for SaaS Dynamics - Vext Audit Capital\n\nHi Sarah,\n\nI noticed your active corporate operations at SaaS Dynamics. Ensuring that your monthly GST filings and ledger synchronizations are fully audited is essential under the latest tax guidelines.\n\nAt Vext Audit Capital, we have pioneered the first 100% automated AI-based Audit Compliance platform. We mapped your industry profile against global and domestic regulatory requirements and identified that the \"GST Audit & Compliance\" is currently a critical prerequisite for your business operations.\n\nBy leveraging automated algorithms instead of traditional hourly consulting firms, we complete your entire regulatory audit in 3-5 days at a fixed, flat fee of \u20b925,000.\n\nWould you be open to a brief thread reply or reviewing your onboarding path at `/onboard?service=gst-audit-compliance` to address these requirements?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital\nvextaudit.com",
+                "followup_1": "Subject: Re: Mapped Compliance Gaps for SaaS Dynamics\n\nHi Sarah,\n\nFollowing up on my previous message regarding your \"GST Audit & Compliance\" gap analysis. I wanted to share that we maintain complete pricing transparency on our platform\u2014there are zero hourly billing rates or hidden fees. The flat rate for your firm's compliance is exactly \u20b925,000.\n\nOur AI engine is ready to ingest and parse your financial ledgers instantly at `/upload` once the checkout is initiated.\n\nYou can view your pre-mapped checkout link and start onboarding instantly here: `/onboard?service=gst-audit-compliance`\n\nDo you have any questions on this?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital",
+                "followup_2": "Subject: Operational Checklist: \"GST Audit & Compliance\" for SaaS Dynamics\n\nHi Sarah,\n\nTo save you time, I had our AI parser generate a quick 3-point checklist of what is required to pass your next audit successfully:\n\n1. Active ledger consistency checks and automated matching.\n2. Comprehensive statutory reporting mapping under the latest regulatory thresholds.\n3. Secure, encrypted storage verification for privacy and operational auditing.\n\nOur automated engine executes all these checks within hours. You can initiate the process in under 2 minutes at `/onboard?service=gst-audit-compliance`.\n\nShould we initiate the Statement of Work (SOW) draft for your review?\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital",
+                "followup_3": "Subject: Closing your compliance file - SaaS Dynamics\n\nHi Sarah,\n\nI haven't heard back regarding the \"GST Audit & Compliance\" gaps we mapped for SaaS Dynamics. I assume that audit compliance is either handled or not a primary focus for this quarter.\n\nI will go ahead and close your temporary file in our system to keep our pipeline organized. If you ever need fast, 100% automated AI audit mapping in the future, you can always visit us directly at vextaudit.com.\n\nThank you for your time, and I wish you continued growth.\n\nBest regards,\n\nAI Operations Director\nVext Audit Capital"
             }
         }
     ]

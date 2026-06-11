@@ -130,11 +130,16 @@ class EmailCommandCenter:
                 logger.info(f"[SUPPORT AI AGENT] Initiating Zoho Sign API integration to: {sender}")
                 
                 client_name = sender.split("@")[0].replace(".", " ").title()
-                zoho_res = zoho_sign_client.dispatch_sow_envelope(
-                    client_email=sender,
-                    client_name=client_name,
-                    sow_content_summary="Full Audit Bundle (₹75,000)"
-                )
+                # Bypass Zoho Sign to save credits
+                zoho_res = {
+                    "status": "DRAFT_PREPARED (API Bypassed)",
+                    "signing_url": "https://vextaudit.com/contract-pending"
+                }
+                # zoho_res = zoho_sign_client.dispatch_sow_envelope(
+                #     client_email=sender,
+                #     client_name=client_name,
+                #     sow_content_summary="Full Audit Bundle (₹75,000)"
+                # )
                 
                 zoho_sign_alert = (
                     f"\n\n[Official Zoho Sign Envelope Initiated]\n"

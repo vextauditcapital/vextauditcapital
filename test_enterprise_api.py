@@ -15,7 +15,7 @@ def run_server():
 def run_integration_tests():
     """Main verification pipeline."""
     print("="*80)
-    print(" VEXT AUDIT CAPITAL — ENTERPRISE API INTEGRATION TESTER")
+    print(" VEXT AUDIT CAPITAL - ENTERPRISE API INTEGRATION TESTER")
     print("="*80)
     
     # 1. Start FastAPI server in a background thread

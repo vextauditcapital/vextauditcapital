@@ -27,7 +27,7 @@ OUTBOUND_TEMPLATES = {
         "Subject: Re: Mapped Compliance Gaps for {company_name}\n\n"
         "Hi {contact_first_name},\n\n"
         "Following up on my previous message regarding your \"{recommended_service_name}\" gap analysis. "
-        "I wanted to share that we maintain complete pricing transparency on our platform—there are zero hourly billing rates or hidden fees. "
+        "I wanted to share that we maintain complete pricing transparency on our platform-there are zero hourly billing rates or hidden fees. "
         "The flat rate for your firm's compliance is exactly {service_price}.\n\n"
         "Our AI engine is ready to ingest and parse your financial ledgers instantly at `/upload` once the checkout is initiated.\n\n"
         "You can view your pre-mapped checkout link and start onboarding instantly here: `/onboard?service={recommended_service_code}`\n\n"

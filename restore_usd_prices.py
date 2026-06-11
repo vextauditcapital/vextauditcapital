@@ -215,25 +215,25 @@ def main():
     subpage_reversions = {
         'ai-business-process-intelligence.html': [
             ('₹67,310 excluding taxes', '$707 excluding taxes'),
-            ('Begin Process Intelligence — ₹67,310', 'Begin Process Intelligence — $707'),
+            ('Begin Process Intelligence - ₹67,310', 'Begin Process Intelligence - $707'),
             ('Starting From</span><span class="svc-meta-val">₹67,310', 'Starting From</span><span class="svc-meta-val">$707'),
             ('class="price-amount">₹67,310', 'class="price-amount">$707')
         ],
         'ai-competitive-intelligence.html': [
             ('class="hero-price">₹9,425', 'class="hero-price">$99'),
-            ('Begin Competitive Intelligence — ₹9,425', 'Begin Competitive Intelligence — $99'),
+            ('Begin Competitive Intelligence - ₹9,425', 'Begin Competitive Intelligence - $99'),
             ('Starting From</span><span class="svc-meta-val">₹9,425', 'Starting From</span><span class="svc-meta-val">$99'),
             ('class="price-amount">₹9,425', 'class="price-amount">$99')
         ],
         'ai-market-entry-analysis.html': [
             ('class="hero-price">₹14,185', 'class="hero-price">$149'),
-            ('Begin Market Entry Analysis — ₹14,185', 'Begin Market Entry Analysis — $149'),
+            ('Begin Market Entry Analysis - ₹14,185', 'Begin Market Entry Analysis - $149'),
             ('Starting From</span><span class="svc-meta-val">₹14,185', 'Starting From</span><span class="svc-meta-val">$149'),
             ('class="price-amount">₹14,185', 'class="price-amount">$149')
         ],
         'ai-operational-risk-assessment.html': [
             ('class="hero-price">₹97,300', 'class="hero-price">$1,022'),
-            ('Begin Risk Assessment — ₹97,300', 'Begin Risk Assessment — $1,022'),
+            ('Begin Risk Assessment - ₹97,300', 'Begin Risk Assessment - $1,022'),
             ('Starting From</span><span class="svc-meta-val">₹97,300', 'Starting From</span><span class="svc-meta-val">$1,022'),
             ('class="price-amount">₹97,300', 'class="price-amount">$1,022')
         ],

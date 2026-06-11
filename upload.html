@@ -240,7 +240,7 @@ async function submitDocuments() {
         mimeType: file.type || 'application/octet-stream'
       });
 
-      // Use no-cors fetch — we cannot read response but upload goes through
+      // Use no-cors fetch - we cannot read response but upload goes through
       await fetch(WEBAPP, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },

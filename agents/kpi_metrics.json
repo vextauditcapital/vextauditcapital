@@ -1,14 +1,14 @@
 {
     "general_metrics": {
-        "total_processed_leads": 3454,
-        "total_qualified_leads": 1375,
-        "conversion_rate_percentage": 39.81,
+        "total_processed_leads": 3457,
+        "total_qualified_leads": 1377,
+        "conversion_rate_percentage": 39.83,
         "total_closed_deals": 9,
         "realized_revenue_inr": 9.0,
         "target_revenue_june_inr": 7500000.0,
         "target_monthly_net_profit_inr": 10000000.0,
         "target_yoy_growth_percentage": 12.0,
-        "june_target_feasibility_score": 100.0
+        "june_target_feasibility_score": 10.0
     },
     "unit_economics": {
         "blended_average_order_value_inr": 1.0,
