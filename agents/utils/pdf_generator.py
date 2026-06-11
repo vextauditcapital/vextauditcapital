@@ -46,7 +46,7 @@ def generate_brand_invoice_pdf(client_details: dict, invoice_no: str, service_de
     elements = []
     
     # 1. Header (Logo on Left, Brand Name Center)
-    logo_path = "VEXT-AUDIT-CAPITAL-LOGO.jpg"
+    logo_path = "VEXT-AUDIT-CAPITAL-LOGO-TRANSPARENT.png"
     logo = Image(logo_path, width=80, height=80) if os.path.exists(logo_path) else Paragraph("LOGO", ParagraphStyle(name='temp', fontName=FONT_DISPLAY))
     
     header_data = [
@@ -145,7 +145,7 @@ def generate_brand_deliverable_pdf(client_name: str, report_content: str) -> byt
     buffer = io.BytesIO()
     doc = SimpleDocTemplate(buffer, pagesize=letter, rightMargin=50, leftMargin=50, topMargin=50, bottomMargin=50)
 
-    logo_path = "VEXT-AUDIT-CAPITAL-LOGO.jpg"
+    logo_path = "VEXT-AUDIT-CAPITAL-LOGO-TRANSPARENT.png"
 
     def draw_background_and_watermark(canvas_obj, doc_obj):
         canvas_obj.saveState()
