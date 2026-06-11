@@ -133,5 +133,57 @@ class CapitalAnalyticsEngine:
             
         self.save_metrics(metrics)
 
+    def sync_with_razorpay(self):
+        """Fetches live successful payments from Razorpay to calculate real revenue."""
+        import requests
+        from requests.auth import HTTPBasicAuth
+        
+        try:
+            url = "https://api.razorpay.com/v1/payments"
+            # Fetching last 100 payments
+            response = requests.get(
+                url, 
+                params={"count": 100},
+                auth=HTTPBasicAuth(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET),
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                payments = data.get("items", [])
+                
+                realized_revenue_inr = 0.0
+                total_closed_deals = 0
+                
+                for payment in payments:
+                    if payment.get("status") == "captured":
+                        total_closed_deals += 1
+                        # Razorpay amounts are in paise (e.g. 5000000 = 50000.00 INR)
+                        amount_inr = payment.get("amount", 0) / 100.0
+                        realized_revenue_inr += amount_inr
+                        
+                metrics = self.load_metrics()
+                gm = metrics["general_metrics"]
+                gm["realized_revenue_inr"] = realized_revenue_inr
+                gm["total_closed_deals"] = total_closed_deals
+                
+                # Update CAC metrics
+                if total_closed_deals > 0:
+                    aov = realized_revenue_inr / total_closed_deals
+                    metrics["unit_economics"]["blended_average_order_value_inr"] = round(aov, 2)
+                    cac = metrics["unit_economics"]["customer_acquisition_cost_inr"]
+                    if cac > 0:
+                        metrics["unit_economics"]["ltv_to_cac_ratio"] = round(aov / cac, 2)
+                
+                self.save_metrics(metrics)
+                logger.info(f"Razorpay Sync Complete: {total_closed_deals} captured deals, Total Revenue: ₹{realized_revenue_inr}")
+                return {"deals": total_closed_deals, "revenue": realized_revenue_inr}
+            else:
+                logger.error(f"Razorpay API Error: {response.status_code} - {response.text}")
+                return None
+        except Exception as e:
+            logger.error(f"Razorpay sync failed: {e}")
+            return None
+
 # Global Instance of Analytics Engine
 analytics_engine = CapitalAnalyticsEngine()

@@ -3,15 +3,17 @@
         "total_processed_leads": 3454,
         "total_qualified_leads": 1375,
         "conversion_rate_percentage": 39.81,
-        "total_closed_deals": 150,
-        "realized_revenue_inr": 9385000.0,
-        "target_revenue_june_inr": 6000000.0,
+        "total_closed_deals": 9,
+        "realized_revenue_inr": 9.0,
+        "target_revenue_june_inr": 7500000.0,
+        "target_monthly_net_profit_inr": 10000000.0,
+        "target_yoy_growth_percentage": 12.0,
         "june_target_feasibility_score": 100.0
     },
     "unit_economics": {
-        "blended_average_order_value_inr": 62566.67,
+        "blended_average_order_value_inr": 1.0,
         "customer_acquisition_cost_inr": 150.0,
-        "ltv_to_cac_ratio": 417.11,
+        "ltv_to_cac_ratio": 0.01,
         "cac_payback_days": 1.0,
         "rule_of_40_score": 130.0
     },

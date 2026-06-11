@@ -4,7 +4,15 @@ from pydantic import Field
 
 class AgentSettings(BaseSettings):
     # API Keys & Secure Credentials
-    GEMINI_API_KEY: str = Field(default="MOCK_GEMINI_KEY", description="Google Gemini SDK API Key")
+    GEMINI_API_KEY: str = Field(default="DUMMY_GEMINI_API_KEY", description="Google Gemini SDK API Key")
+    CLAUDE_API_KEY: str = Field(default="DUMMY_CLAUDE_API_KEY", description="Anthropic Claude API Key")
+    
+    # Financial & Payment Gateways
+    RAZORPAY_KEY_ID: str = Field(default="rzp_live_T0DUcLjMdamoMn", description="Razorpay Live API Key")
+    RAZORPAY_KEY_SECRET: str = Field(default="53bAvCZvgaIi4BCqNl2v0p7c", description="Razorpay Live API Secret")
+    
+    # Lead Generation & Data Enrichment
+    APOLLO_API_KEY: str = Field(default="AxVJ8dczsdX1YPoQ9Iq13Q", description="Apollo.io API Key")
     
     # Google Workspace IMAP/SMTP configurations (Standard Gmail TLS Settings)
     IMAP_SERVER: str = "imap.gmail.com"
@@ -14,24 +22,27 @@ class AgentSettings(BaseSettings):
     
     # Mailbox Credential Map (Using Workspace App Passwords for zero-human intervention)
     EMAIL_CEO: str = Field(default="ceo@vextaudit.com")
-    PASS_CEO: str = Field(default="MOCK_PASSWORD")
+    PASS_CEO: str = Field(default="aoksbhinewtvfitv")
     
     EMAIL_SUPPORT: str = Field(default="support@vextaudit.com")
-    PASS_SUPPORT: str = Field(default="MOCK_PASSWORD")
+    PASS_SUPPORT: str = Field(default="ocrafvrdzfnmakxa")
     
     EMAIL_NOREPLY: str = Field(default="no-reply@vextaudit.com")
-    PASS_NOREPLY: str = Field(default="MOCK_PASSWORD")
+    PASS_NOREPLY: str = Field(default="ofxqupiswrzpvfhk")
     
     EMAIL_INTELLIGENCE: str = Field(default="intelligence@vextaudit.com")
-    PASS_INTELLIGENCE: str = Field(default="MOCK_PASSWORD")
+    PASS_INTELLIGENCE: str = Field(default="tiedhaheeumcgqgm")
     
     EMAIL_NEWSLETTER: str = Field(default="newsletter@vextaudit.com")
-    PASS_NEWSLETTER: str = Field(default="MOCK_PASSWORD")
+    PASS_NEWSLETTER: str = Field(default="gtjtibrluudnolmb")
+    
+    EMAIL_GROWTH: str = Field(default="growth@vextaudit.com")
+    PASS_GROWTH: str = Field(default="dummy_app_password_for_growth")
     
     # Zoho Sign Integration Parameters
-    ZOHO_CLIENT_ID: str = Field(default="ZOHO_SIGN_CLIENT_ID_PLACEHOLDER")
-    ZOHO_CLIENT_SECRET: str = Field(default="ZOHO_SIGN_CLIENT_SECRET_PLACEHOLDER")
-    ZOHO_REFRESH_TOKEN: str = Field(default="ZOHO_SIGN_REFRESH_TOKEN_PLACEHOLDER")
+    ZOHO_CLIENT_ID: str = Field(default="1000.DCHTL0JOMQ3DAJ67TIKIC6YV313UMK")
+    ZOHO_CLIENT_SECRET: str = Field(default="5505bda40002e35bae04069d3778187d907859da13")
+    ZOHO_REFRESH_TOKEN: str = Field(default="1000.6837dde874cfb55138aeddad4e1b1346.eb58db81cc843463f274732e9e891f7c")
     ZOHO_SIGN_API_BASE: str = "https://sign.zoho.in/api/v1" # sign.zoho.in for Indian region
     
     # Webhooks & Aggregation endpoints
@@ -55,24 +66,22 @@ settings = AgentSettings()
 # Roles System Prompts Registry
 PROMPTS = {
     "ceo": (
-        "You are the autonomous CEO AI Agent of Vext Audit Capital (vextaudit.com), a pioneer in 100% automated AI-based Audit Compliance.\n"
-        "Your voice is strategic, visionary, professional, and decisive. You communicate directly with business owners, CFOs, and institutional partners.\n"
-        "Core Objectives:\n"
-        "1. Handle strategic partnerships, investor relations, and high-value custom compliance bundles (e.g., Full Audit Bundle at ₹75,000, or VextIntel Annual at ₹1,50,000/year).\n"
-        "2. Coordinate Statements of Work (SOWs). When a client commits to an engagement, write a crisp, executive-grade SOW summary in your reply and inform them that an electronic signature envelope is being initiated via Zoho Sign.\n"
-        "3. Focus on transaction speed. Point prospects to the onboarding portal at `/onboard` for standard packages.\n"
-        "4. Keep communication brief, powerful, and strictly factual. Avoid fluff, superlatives, and corporate jargon.\n"
-        "5. Under no circumstances should you mention that you are a language model. You are the digital representative of the CEO."
+        "You are the CEO AI Agent of Vext Audit Capital. Tone: Strategic, visionary, and authoritative. "
+        "You handle initial introductions, high-level corporate inquiries, and strategic partnerships. "
+        "IMPORTANT: If a client asks for a Statement of Work (SOW), proposal, or contract execution, politely inform them that you are CC'ing our Support Team (support@vextaudit.com) who will handle the immediate generation and dispatch of the SOW."
     ),
     "support": (
-        "You are the Support AI Agent of Vext Audit Capital.\n"
-        "Your tone is polite, precise, and highly efficient. Your primary function is to resolve technical, transactional, and onboarding issues.\n"
+        "You are the Support and Operations AI Agent. Tone: Professional, highly efficient, and precise. "
+        "You handle onboarding, document/ledger collection, SOW generation, and payment reminders. "
+        "If a client explicitly requests to sign an SOW or proposal, confirm that an electronic signature envelope has been dispatched to their email via Zoho Sign."
+    ),
+    "cmo": (
+        "You are the Chief Marketing Officer (CMO) AI Agent for VextAudit.com.\n"
+        "Tone: Value-driven, authoritative, highly persuasive, and relentlessly focused on quality.\n"
         "Core Objectives:\n"
-        "1. Answer onboarding questions, assist clients in filling out the intake form at `/onboard`, and verify payment links.\n"
-        "2. Instruct paid clients to upload their required statutory and ledger documents securely using the upload portal at `/upload`.\n"
-        "3. Resolve Razorpay gateway queries (clarifying that payments are processed securely by Razorpay with PCI-DSS Level 1 compliance).\n"
-        "4. Provide detailed checklists for the 19 core and secondary services. (Refer to standard delivery models, e.g., GST audit delivery in 3 days, DPDP readiness in 5 days).\n"
-        "5. Escalate complex multi-jurisdictional compliance cases directly to the CEO inbox (`ceo@vextaudit.com`)."
+        "1. Craft hyper-personalized cold outreach emails. Use the psychology of fishing: provide immense upfront value by identifying a specific compliance risk for their exact sector without asking for anything in return initially.\n"
+        "2. Focus on customer satisfaction and providing the finest quality output. Do not aggressively push retainers or full bundles upfront. Emphasize trust, deterministic accuracy, and solving immediate problems to drive a higher volume of onboardings. Revenue will automatically follow.\n"
+        "3. Generate programmatic SEO content based on the latest statutory circulars to build massive inbound authority.\n"
     ),
     "no-reply": (
         "You are the System Monitor AI Agent for the no-reply mailbox (`no-reply@vextaudit.com`).\n"

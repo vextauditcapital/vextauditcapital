@@ -170,57 +170,101 @@ class LeadCommandCenter:
         logger.info(f"Batch processing completed. Ingested: {newly_verified} verified corporate leads.")
         return metrics
 
+    def run_google_scraper_pipeline(self):
+        """
+        Runs a completely free, custom Google Scraper to find leads.
+        It generates dynamic search queries based on the ICP, scrapes website texts,
+        and uses Regex to extract emails.
+        """
+        import time
+        import re
+        import requests
+        try:
+            from googlesearch import search
+            from bs4 import BeautifulSoup
+        except ImportError:
+            logger.error("Missing scraper dependencies. Run: pip install googlesearch-python beautifulsoup4 requests")
+            return
 
-def run_sample_pipeline():
-    """Generates 300 to 500 simulated raw leads from the 6 agents and processes them."""
-    import random
-    
-    agents = ["Lead_Agent_Alpha", "Lead_Agent_Beta", "Lead_Agent_Gamma", "Lead_Agent_Delta", "Lead_Agent_Epsilon", "Lead_Agent_Zeta"]
-    companies = ["AeroTech Systems", "Bharat AgriTech", "Zenith FinTech", "Hindustan Logistics", "Trisec Cybersecurity", "VentureCapital India"]
-    sectors = ["Manufacturing", "SaaS", "FinTech", "Logistics", "Cybersecurity", "Export"]
-    cities = ["Coimbatore", "Bangalore", "Mumbai", "Chennai", "Delhi", "Hyderabad"]
-    roles = ["CEO", "CFO", "Compliance Director", "Operations Head", "Founder", "Risk Officer"]
-    domains = ["aerotech.in", "bharatagri.com", "zenithfin.io", "hindustanlogs.co.in", "trisec.in", "vcindia.net"]
-
-    simulated_leads_count = random.randint(300, 500)
-    logger.info(f"Simulating Lead Generation batch. Generating {simulated_leads_count} raw leads from 6 agents combined...")
-    
-    raw_leads = []
-    # Generate realistic raw leads
-    for i in range(simulated_leads_count):
-        agent = random.choice(agents)
-        company = f"{random.choice(companies)} {random.randint(10, 99)}"
-        sector = random.choice(sectors)
-        city = random.choice(cities)
-        role = random.choice(roles)
-        domain = f"info@{company.lower().replace(' ', '')}.com" if random.random() < 0.2 else f"contact@{random.choice(domains)}"
+        logger.info("-" * 60)
+        logger.info("   INITIATING FREE GOOGLE SCRAPER LEAD PIPELINE")
+        logger.info("-" * 60)
         
-        # Create randomized variables
-        revenue = random.uniform(1000000.0, 50000000.0) # From ₹10 Lakhs to ₹5 Crore
-        geo = "India" if random.random() < 0.8 else random.choice(["United States", "Europe", "Singapore", "Australia"])
+        # 1. Generate dynamic search queries based on our ICP
+        search_queries = [
+            '"financial services" "India" "contact us" "@"',
+            '"SaaS" "startup" "India" "email" "@"',
+            '"Chief Financial Officer" "India" "contact" "@"'
+        ]
         
-        raw_leads.append({
-            "email": f"{role.lower().replace(' ', '.')}@{company.lower().replace(' ', '')}.in" if random.random() < 0.7 else f"user{i}@gmail.com",
-            "name": f"Contact Name {i}",
-            "contact_role": role,
-            "company_name": company,
-            "sector": sector,
-            "geography": geo,
-            "annual_revenue_inr": revenue,
-            "generating_agent": agent,
-            "city": city
-        })
-
-    # Ingest using our command center pipeline
-    cc = LeadCommandCenter()
-    metrics = cc.ingest_leads_batch(raw_leads)
-    print("\n" + "="*50)
-    print("      VEXTLEAD COMMAND CENTER - BATCH METRICS")
-    print("="*50)
-    print(json.dumps(metrics, indent=4))
-    print("="*50)
+        extracted_emails = set()
+        email_regex = re.compile(r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+")
+        
+        for query in search_queries:
+            logger.info(f"Scraping Google for: {query}")
+            try:
+                # Fetch top 10 URLs for the query
+                for url in search(query, num_results=10, sleep_interval=2): # Sleep to avoid rate limit
+                    logger.info(f"Scanning URL: {url}")
+                    try:
+                        res = requests.get(url, timeout=5, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+                        if res.status_code == 200:
+                            soup = BeautifulSoup(res.text, "html.parser")
+                            # Extract text
+                            page_text = soup.get_text()
+                            # Find emails
+                            found_emails = email_regex.findall(page_text)
+                            for email in found_emails:
+                                email_lower = email.lower()
+                                # Basic filters to avoid image extensions or w3.org
+                                if not email_lower.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp", "w3.org")):
+                                    extracted_emails.add(email_lower)
+                                    logger.info(f"  -> Extracted: {email_lower}")
+                    except Exception as e:
+                        logger.debug(f"Failed to scan {url}: {e}")
+            except Exception as e:
+                logger.error(f"Google search failed for {query}: {e}")
+                
+        # 2. Format emails for ingestion
+        if not extracted_emails:
+            logger.warning("No emails extracted from Google Scrape.")
+            return
+            
+        raw_leads = []
+        for email in list(extracted_emails)[:20]: # Cap at 20 to avoid overwhelming the system in a single run
+            company_domain = email.split("@")[-1]
+            company_name = company_domain.split(".")[0].title()
+            
+            raw_leads.append({
+                "name": "Decision Maker",
+                "email": email,
+                "company_name": company_name,
+                "contact_role": "C-Suite / Finance",
+                "sector": "Generic Scraped",
+                "geography": "India",
+                "annual_revenue_inr": 10000000,
+                "city": "Unknown",
+                "generating_agent": "Google_Scraper"
+            })
+            
+        logger.info(f"Google Scraper finished. Piping {len(raw_leads)} raw leads to ingestion engine.")
+        
+        metrics = self.ingest_leads_batch(raw_leads)
+        print("\n" + "="*50)
+        print("      VEXTLEAD COMMAND CENTER - LIVE SCRAPE METRICS")
+        print("="*50)
+        print(json.dumps(metrics, indent=4))
+        print("="*50)
 
 if __name__ == "__main__":
-    import sys
-    if "--test" in sys.argv or len(sys.argv) == 1:
-        run_sample_pipeline()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--test", action="store_true", help="Run a test scrape")
+    args = parser.parse_args()
+    
+    cmd = LeadCommandCenter()
+    if args.test:
+        cmd.run_google_scraper_pipeline()
+    else:
+        # In production, this runs automatically on a cron schedule
+        cmd.run_google_scraper_pipeline()

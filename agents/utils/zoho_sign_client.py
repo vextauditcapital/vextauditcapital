@@ -55,8 +55,8 @@ class EnterpriseZohoSignClient:
     def dispatch_sow_envelope(self, client_email: str, client_name: str, sow_content_summary: str) -> dict:
         """
         Creates and dispatches an electronic signature envelope for a Statement of Work.
-        - Generates SOW draft
-        - Calls Zoho Sign to upload or construct document
+        - Generates bulletproof SOW draft dynamically
+        - Calls Zoho Sign to upload the document
         - Assigns recipient tags for electronic signing
         """
         # Fetch valid token
@@ -75,15 +75,24 @@ class EnterpriseZohoSignClient:
             }
 
         headers = {
-            "Authorization": f"Zoho-oauthtoken {token}",
-            "Content-Type": "application/json"
+            "Authorization": f"Zoho-oauthtoken {token}"
+            # Important: Do NOT set Content-Type to application/json, 
+            # let requests library handle multipart/form-data boundary
         }
         
-        # Build Request Payload as specified by Zoho Sign API specifications
-        payload = {
+        # 1. Generate Bulletproof PDF
+        try:
+            from agents.utils.pdf_generator import generate_bulletproof_sow
+            pdf_bytes = generate_bulletproof_sow(client_name, sow_content_summary)
+        except Exception as e:
+            logger.error(f"Failed to generate PDF SOW: {e}")
+            return {"status": "FAILED", "error": "PDF Generation Failed"}
+        
+        # 2. Build Request Payload as specified by Zoho Sign API
+        data_payload = {
             "requests": {
                 "request_name": f"Statement of Work - Vext Audit Capital - {client_name}",
-                "notes": "Please review and electronically sign this Statement of Work to initiate your automated audit.",
+                "notes": "Please review and electronically sign this Statement of Work to initiate your automated audit. This is a binding agreement.",
                 "actions": [
                     {
                         "recipient_name": client_name,
@@ -98,25 +107,44 @@ class EnterpriseZohoSignClient:
         }
         
         try:
-            # Step 1: Create request envelope
-            response = requests.post(f"{self.base_url}/requests", headers=headers, json=payload, timeout=15)
-            if response.status_code in [200, 201]:
+            # Step 3: Create request envelope and upload document in a single multipart request
+            response = requests.post(
+                f"{self.base_url}/requests", 
+                headers=headers, 
+                data={"data": json.dumps(data_payload)},
+                files={"file": ("Statement_of_Work.pdf", pdf_bytes, "application/pdf")},
+                timeout=20
+            )
+            
+            if response.status_code == 200:
                 res_data = response.json()
                 request_id = res_data.get("requests", {}).get("request_id")
-                logger.info(f"Created Zoho Sign Request Envelope: {request_id}")
                 
-                # Step 2: Upload SOW content (in production, we upload a generated PDF, here we return success metadata)
-                return {
-                    "status": "SUCCESS",
-                    "mode": "PRODUCTION",
-                    "request_id": request_id,
-                    "document_id": "doc_prod_active",
-                    "signing_url": f"https://sign.zoho.in/sign_document/{request_id}",
-                    "message": "Production Statement of Work successfully sent to client's email via Zoho Sign."
-                }
+                # In Zoho, we need to explicitly SUBMIT the request after uploading it to send the email
+                submit_response = requests.post(
+                    f"{self.base_url}/requests/{request_id}/submit",
+                    headers=headers,
+                    timeout=10
+                )
+                
+                if submit_response.status_code == 200:
+                    logger.info(f"Successfully submitted Zoho Sign Envelope: {request_id}")
+                    return {
+                        "status": "SUCCESS",
+                        "mode": "PRODUCTION",
+                        "request_id": request_id,
+                        "signing_url": f"https://sign.zoho.in/sign_document/{request_id}",
+                        "message": "Production Statement of Work successfully sent to client's email via Zoho Sign."
+                    }
+                else:
+                    logger.error(f"Document uploaded but failed to submit: {submit_response.text}")
+                    return {"status": "FAILED", "error": "Submission Failed"}
             else:
-                logger.error(f"Failed to create Zoho Sign request: {response.status_code} - {response.text}")
+                logger.error(f"Failed to create/upload Zoho Sign request: {response.status_code} - {response.text}")
                 return {"status": "FAILED", "error": response.text}
+        except Exception as e:
+            logger.error(f"Zoho Sign API transaction failed: {e}")
+            return {"status": "FAILED", "error": str(e)}
         except Exception as e:
             logger.error(f"Zoho Sign API transaction failed: {e}")
             return {"status": "FAILED", "error": str(e)}

@@ -47,6 +47,9 @@ class LocalComplianceRuleEngine:
                 except ValueError:
                     pass
 
+        from agents.utils.claude_client import claude_client
+        
+        # 1. Structural pre-scan using Antigravity engine (Fast parsing)
         # Calculate localized structured score
         integrity_score = 100.0
         if invalid_gstins:
@@ -56,15 +59,30 @@ class LocalComplianceRuleEngine:
             
         integrity_score = max(10.0, integrity_score)
 
-        return {
+        pre_scan_payload = {
             "file_type": "GST Ledger",
             "total_rows_scanned": total_rows,
             "unique_gstins_detected": list(set(gstin_found)),
             "invalid_gstin_alerts": invalid_gstins,
             "imbalanced_transactions": imbalanced_transactions,
-            "structural_integrity_score": integrity_score,
-            "status": "PASS" if integrity_score >= 80 else "FAIL_REQUIRES_AI_REMEDIATION"
+            "structural_integrity_score": integrity_score
         }
+
+        # 2. Hand off to Claude API for strict statutory review and JSON formatting
+        logger.info("Passing structured ledger data to Claude Fable API for statutory verification...")
+        context_data_str = json.dumps(pre_scan_payload, indent=2)
+        claude_response_str = claude_client.analyze_statutory_compliance(context_data_str, "Indian GST Act 2017")
+        
+        try:
+            # Parse Claude's deterministic output
+            final_audit_matrix = json.loads(claude_response_str)
+            pre_scan_payload["claude_statutory_verification"] = final_audit_matrix
+            pre_scan_payload["status"] = "PASS" if integrity_score >= 80 and final_audit_matrix.get("status") != "FAILED_MISSING_DATA" else "FAIL_REQUIRES_AI_REMEDIATION"
+        except Exception as e:
+            logger.error(f"Failed to parse Claude JSON response: {e}")
+            pre_scan_payload["status"] = "FAIL_CLAUDE_JSON_ERROR"
+
+        return pre_scan_payload
 
     def verify_dpdp_readiness_checklist(self, questionnaire_answers: dict) -> dict:
         """
