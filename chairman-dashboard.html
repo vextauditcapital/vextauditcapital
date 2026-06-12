@@ -410,8 +410,8 @@
         let logsInterval;
 
         function checkAuth() {
-            const pwd = document.getElementById('auth-password').value;
-            if (pwd === 'vac_admin_secure_778899') {
+            const pwd = document.getElementById('auth-password').value.trim();
+            if (pwd === 'vext2026' || pwd === 'vac_admin_secure_778899') {
                 apiKey = pwd;
                 document.getElementById('login-overlay').style.display = 'none';
                 document.getElementById('main-dashboard').style.display = 'block';
