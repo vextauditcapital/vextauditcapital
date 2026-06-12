@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chairman Dashboard | Vext Audit Capital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #2D0A11;
+            --burgundy-dark: #1A050A;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --cream: #FAF9F6;
+            --white: #FFFFFF;
+            
+            --ff-display: 'Cinzel', serif;
+            --ff-body: 'Cormorant Garamond', serif;
+            --ff-ui: 'Jost', sans-serif;
+            
+            --accent-gold: rgba(212, 175, 55, 0.8);
+            --accent-gold-glow: rgba(212, 175, 55, 0.2);
+            --border-subtle: rgba(250, 249, 246, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--burgundy-dark);
+            color: var(--cream);
+            font-family: var(--ff-body);
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(circle at 50% 0%, var(--burgundy) 0%, var(--burgundy-dark) 70%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 40px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand img {
+            height: 80px;
+            width: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 0 15px var(--accent-gold-glow);
+        }
+
+        .brand-text h1 {
+            font-family: var(--ff-display);
+            font-size: 28px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .brand-text p {
+            font-family: var(--ff-ui);
+            font-size: 12px;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .status-badge {
+            font-family: var(--ff-ui);
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10B981;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-badge::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #10B981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10B981;
+        }
+
+        .section-title {
+            font-family: var(--ff-display);
+            font-size: 18px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '|';
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-label {
+            font-family: var(--ff-ui);
+            font-size: 12px;
+            color: rgba(250, 249, 246, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .card-value {
+            font-family: var(--ff-display);
+            font-size: 36px;
+            color: var(--white);
+        }
+        
+        .card-value.gold {
+            color: var(--gold);
+        }
+
+        .logs-container {
+            background: #000;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+            color: #a8a8a8;
+            line-height: 1.5;
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .log-time { color: #888; }
+        .log-sender { color: var(--gold); font-weight: bold;}
+        .log-target { color: #10B981; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <img src="/VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital Logo" onerror="this.src='https://vextaudit.com/VEXT-AUDIT-CAPITAL-LOGO.jpeg'">
+                <div class="brand-text">
+                    <h1>VEXT AUDIT CAPITAL</h1>
+                    <p>Prudentia · Integritas · Fidelitas</p>
+                </div>
+            </div>
+            <div class="status-badge">
+                LIVE OUTBOUND ENGINE
+            </div>
+        </header>
+
+        <div class="section-title">FINANCIAL TARGETS</div>
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-label">June Target (₹75 Lakhs)</div>
+                <div class="card-value gold" id="metric-realized">₹0</div>
+                <div class="card-label" style="margin-top: 10px;">Gap: ₹75,00,000</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Deals Closed (AOV ₹75,000)</div>
+                <div class="card-value" id="metric-deals">0 / 100 Required</div>
+            </div>
+        </div>
+
+        <div class="section-title">LIVE DATA PIPELINE (DuckDuckGo Engine)</div>
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-label">Raw Leads Scraped</div>
+                <div class="card-value" id="metric-raw">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Verified ICP Leads (DNS/MX)</div>
+                <div class="card-value" id="metric-verified">0</div>
+            </div>
+        </div>
+
+        <div class="section-title">EMAIL DISPATCH (CEO, Growth, Support)</div>
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-label">Emails Sent</div>
+                <div class="card-value" id="metric-sent">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Opened</div>
+                <div class="card-value" id="metric-opened">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Replied</div>
+                <div class="card-value" id="metric-replied">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Bounced</div>
+                <div class="card-value" id="metric-bounced" style="color: #EF4444;">0</div>
+            </div>
+        </div>
+
+        <div class="section-title">LIVE OUTBOUND LOGS</div>
+        <div class="logs-container" id="live-logs">
+            <div class="log-entry"><span class="log-time">[System]</span> Initializing secure connection to Droplet 206.189.48.139...</div>
+            <div class="log-entry"><span class="log-time">[System]</span> Awaiting first dispatch pulse from Orchestrator...</div>
+        </div>
+    </div>
+
+    <script>
+        function formatINR(number) {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(number);
+        }
+
+        async function fetchMetrics() {
+            try {
+                // Fetch from the droplet backend
+                const response = await fetch('http://206.189.48.139:8000/api/metrics', {
+                    headers: { 'X-API-Key': 'vac_admin_secure_778899' }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    document.getElementById('metric-raw').innerText = data.total_leads.toLocaleString();
+                    document.getElementById('metric-verified').innerText = data.verified_leads.toLocaleString();
+                    
+                    document.getElementById('metric-sent').innerText = data.emails_sent.toLocaleString();
+                    document.getElementById('metric-opened').innerText = data.emails_opened.toLocaleString();
+                    document.getElementById('metric-replied').innerText = data.emails_replied.toLocaleString();
+                    document.getElementById('metric-bounced').innerText = data.emails_bounced.toLocaleString();
+                    
+                    document.getElementById('metric-realized').innerText = formatINR(data.realized_revenue_inr);
+                    
+                    const dealsClosed = Math.floor(data.realized_revenue_inr / 75000);
+                    document.getElementById('metric-deals').innerText = `${dealsClosed} / 100 Required`;
+                }
+            } catch (error) {
+                console.error("Failed to fetch metrics:", error);
+            }
+        }
+
+        async function fetchLogs() {
+            try {
+                const response = await fetch('http://206.189.48.139:8000/api/logs', {
+                    headers: { 'X-API-Key': 'vac_admin_secure_778899' }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    const logContainer = document.getElementById('live-logs');
+                    if (data.logs && data.logs.length > 0) {
+                        logContainer.innerHTML = '';
+                        data.logs.forEach(log => {
+                            const entry = document.createElement('div');
+                            entry.className = 'log-entry';
+                            entry.innerHTML = `<span class="log-time">[${new Date(log.timestamp).toLocaleTimeString()}]</span> <span class="log-sender">${log.sender}</span> -> <span class="log-target">${log.target}</span>: ${log.status}`;
+                            logContainer.appendChild(entry);
+                        });
+                    }
+                }
+            } catch(e) {}
+        }
+
+        // Initial fetch
+        fetchMetrics();
+        
+        // Refresh every 5 seconds
+        setInterval(fetchMetrics, 5000);
+        setInterval(fetchLogs, 5000);
+    </script>
+</body>
+</html>
