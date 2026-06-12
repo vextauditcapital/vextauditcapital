@@ -317,14 +317,7 @@
     </div>
 
     <div class="container" style="display: none;" id="main-dashboard">
-        <header>
-        <div class="tabs" style="margin-top: 20px; margin-bottom: 20px; display: flex; gap: 10px;">
-            <button onclick="switchTab('dashboard-view')" id="tab-btn-dash" style="padding: 10px 20px; background: var(--gold); border: none; color: black; font-weight: bold; cursor: pointer; border-radius: 4px;">Dashboard</button>
-            <button onclick="switchTab('dataroom-view')" id="tab-btn-data" style="padding: 10px 20px; background: var(--maroon); border: 1px solid var(--gold); color: var(--gold); font-weight: bold; cursor: pointer; border-radius: 4px;">Data Room (Leads)</button>
-        </div>
-
-        <div id="dashboard-view">
-
+        <header style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 30px;">
             <div class="brand">
                 <img src="/VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital Logo" onerror="this.src='https://vextaudit.com/VEXT-AUDIT-CAPITAL-LOGO.jpeg'">
                 <div class="brand-text">
@@ -332,11 +325,16 @@
                     <p>Prudentia · Integritas · Fidelitas</p>
                 </div>
             </div>
-            <div class="status-badge">
-                <div class="status-badge-inner"></div>
-                <div class="last-updated" id="last-updated-time"></div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                <div class="tabs" style="display: flex; gap: 10px;">
+                    <button onclick="switchTab('dashboard-view')" id="tab-btn-dash" style="padding: 10px 20px; background: var(--gold); border: none; color: black; font-weight: bold; cursor: pointer; border-radius: 4px;">Dashboard</button>
+                    <button onclick="switchTab('dataroom-view')" id="tab-btn-data" style="padding: 10px 20px; background: transparent; border: none; color: var(--gold); font-weight: bold; cursor: pointer; border-radius: 4px;">Data Room (Leads)</button>
+                </div>
+                <div id="last-updated-time" style="font-family: var(--ff-ui); font-size: 12px; color: rgba(250, 249, 246, 0.6); letter-spacing: 0.5px;"></div>
             </div>
         </header>
+
+        <div id="dashboard-view">
 
         <div class="section-title">FINANCIAL TARGETS</div>
         <div class="grid-4">
@@ -442,9 +440,9 @@
         function switchTab(tabId) {
             document.getElementById('dashboard-view').style.display = 'none';
             document.getElementById('dataroom-view').style.display = 'none';
-            document.getElementById('tab-btn-dash').style.background = 'var(--maroon)';
+            document.getElementById('tab-btn-dash').style.background = 'transparent';
             document.getElementById('tab-btn-dash').style.color = 'var(--gold)';
-            document.getElementById('tab-btn-data').style.background = 'var(--maroon)';
+            document.getElementById('tab-btn-data').style.background = 'transparent';
             document.getElementById('tab-btn-data').style.color = 'var(--gold)';
             
             document.getElementById(tabId).style.display = 'block';
