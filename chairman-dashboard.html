@@ -111,6 +111,7 @@
             font-size: 10px;
             color: rgba(250, 249, 246, 0.6);
             letter-spacing: 0.5px;
+            display: none;
         }
 
         .status-badge-inner::before {
@@ -222,9 +223,9 @@
                     <p>Prudentia · Integritas · Fidelitas</p>
                 </div>
             </div>
-            <div class="status-badge">
-                <div class="status-badge-inner">LIVE OUTBOUND ENGINE</div>
-                <div class="last-updated" id="last-updated-time">Last Updated: Just now (Refreshing 5s)</div>
+            <div class="status-badge" style="display: none;">
+                <div class="status-badge-inner"></div>
+                <div class="last-updated" id="last-updated-time"></div>
             </div>
         </header>
 
@@ -242,15 +243,15 @@
             </div>
             <div class="card">
                 <div class="card-label">MoM Growth</div>
-                <div class="card-value" style="color: #10B981;">+12.4%</div>
+                <div class="card-value" style="color: var(--gold);">+12.4%</div>
             </div>
             <div class="card">
                 <div class="card-label">YoY Growth</div>
-                <div class="card-value" style="color: #10B981;">+48.2%</div>
+                <div class="card-value" style="color: var(--gold);">+48.2%</div>
             </div>
         </div>
 
-        <div class="section-title">LIVE DATA PIPELINE (DuckDuckGo Engine)</div>
+        <div class="section-title">LIVE DATA PIPELINE</div>
         <div class="grid-2">
             <div class="card">
                 <div class="card-label">Raw Leads Scraped</div>
@@ -262,23 +263,19 @@
             </div>
         </div>
 
-        <div class="section-title">EMAIL DISPATCH (CEO, Growth, Support)</div>
-        <div class="grid-4">
+        <div class="section-title">EMAIL DISPATCH</div>
+        <div class="grid-3">
             <div class="card">
-                <div class="card-label">Emails Sent</div>
-                <div class="card-value" id="metric-sent">0</div>
+                <div class="card-label">CEO Emails Sent</div>
+                <div class="card-value" id="metric-ceo-sent">0</div>
             </div>
             <div class="card">
-                <div class="card-label">Opened</div>
-                <div class="card-value" id="metric-opened">0</div>
+                <div class="card-label">Growth Emails Sent</div>
+                <div class="card-value" id="metric-growth-sent">0</div>
             </div>
             <div class="card">
-                <div class="card-label">Replied</div>
-                <div class="card-value" id="metric-replied">0</div>
-            </div>
-            <div class="card">
-                <div class="card-label">Bounced</div>
-                <div class="card-value" id="metric-bounced" style="color: #EF4444;">0</div>
+                <div class="card-label">Support Emails Sent</div>
+                <div class="card-value" id="metric-support-sent">0</div>
             </div>
         </div>
 
@@ -311,10 +308,9 @@
                     document.getElementById('metric-raw').innerText = data.total_leads.toLocaleString();
                     document.getElementById('metric-verified').innerText = data.verified_leads.toLocaleString();
                     
-                    document.getElementById('metric-sent').innerText = data.emails_sent.toLocaleString();
-                    document.getElementById('metric-opened').innerText = data.emails_opened.toLocaleString();
-                    document.getElementById('metric-replied').innerText = data.emails_replied.toLocaleString();
-                    document.getElementById('metric-bounced').innerText = data.emails_bounced.toLocaleString();
+                    document.getElementById('metric-ceo-sent').innerText = (data.emails_sent_ceo || 0).toLocaleString();
+                    document.getElementById('metric-growth-sent').innerText = (data.emails_sent_growth || 0).toLocaleString();
+                    document.getElementById('metric-support-sent').innerText = (data.emails_sent_support || 0).toLocaleString();
                     
                     document.getElementById('metric-realized').innerText = formatINR(data.realized_revenue_inr);
                     
