@@ -318,6 +318,13 @@
 
     <div class="container" style="display: none;" id="main-dashboard">
         <header>
+        <div class="tabs" style="margin-top: 20px; margin-bottom: 20px; display: flex; gap: 10px;">
+            <button onclick="switchTab('dashboard-view')" id="tab-btn-dash" style="padding: 10px 20px; background: var(--gold); border: none; color: black; font-weight: bold; cursor: pointer; border-radius: 4px;">Dashboard</button>
+            <button onclick="switchTab('dataroom-view')" id="tab-btn-data" style="padding: 10px 20px; background: var(--maroon); border: 1px solid var(--gold); color: var(--gold); font-weight: bold; cursor: pointer; border-radius: 4px;">Data Room (Leads)</button>
+        </div>
+
+        <div id="dashboard-view">
+
             <div class="brand">
                 <img src="/VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital Logo" onerror="this.src='https://vextaudit.com/VEXT-AUDIT-CAPITAL-LOGO.jpeg'">
                 <div class="brand-text">
@@ -394,6 +401,28 @@
             <div class="log-entry"><span class="log-time">[System]</span> Initializing secure connection to Droplet 206.189.48.139...</div>
             <div class="log-entry"><span class="log-time">[System]</span> Awaiting first dispatch pulse from Orchestrator...</div>
         </div>
+
+        </div> <!-- End dashboard-view -->
+        <div id="dataroom-view" style="display: none;">
+            <div class="section-title">GLOBAL LEADS DATABASE (Verified ICP)</div>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; color: white; margin-top: 10px; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background-color: var(--dark-maroon); color: var(--gold); text-align: left; border-bottom: 1px solid var(--gold);">
+                            <th style="padding: 12px;">Name</th>
+                            <th style="padding: 12px;">Role</th>
+                            <th style="padding: 12px;">Company</th>
+                            <th style="padding: 12px;">City/Geo</th>
+                            <th style="padding: 12px;">Sector</th>
+                            <th style="padding: 12px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leads-table-body">
+                        <tr><td colspan="6" style="padding: 12px; text-align: center;">Loading leads...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -408,6 +437,61 @@
         let apiKey = '';
         let metricsInterval;
         let logsInterval;
+
+        
+        function switchTab(tabId) {
+            document.getElementById('dashboard-view').style.display = 'none';
+            document.getElementById('dataroom-view').style.display = 'none';
+            document.getElementById('tab-btn-dash').style.background = 'var(--maroon)';
+            document.getElementById('tab-btn-dash').style.color = 'var(--gold)';
+            document.getElementById('tab-btn-data').style.background = 'var(--maroon)';
+            document.getElementById('tab-btn-data').style.color = 'var(--gold)';
+            
+            document.getElementById(tabId).style.display = 'block';
+            if(tabId === 'dashboard-view') {
+                document.getElementById('tab-btn-dash').style.background = 'var(--gold)';
+                document.getElementById('tab-btn-dash').style.color = 'black';
+            } else {
+                document.getElementById('tab-btn-data').style.background = 'var(--gold)';
+                document.getElementById('tab-btn-data').style.color = 'black';
+                fetchLeads();
+            }
+        }
+
+        async function fetchLeads() {
+            try {
+                const response = await fetch('/api/leads', {
+                    headers: { 'X-API-Key': apiKey }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    const tbody = document.getElementById('leads-table-body');
+                    if (data.leads && data.leads.length > 0) {
+                        tbody.innerHTML = '';
+                        // Reverse so newest leads show first
+                        data.leads.reverse().forEach(lead => {
+                            const statusColor = lead.contacted ? '#22C55E' : 'var(--gold)';
+                            const statusText = lead.contacted ? 'Contacted' : 'Pending';
+                            const geo = lead.city || lead.geography || 'Unknown';
+                            tbody.innerHTML += `
+                                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <td style="padding: 12px;">${lead.name}</td>
+                                    <td style="padding: 12px;">${lead.contact_role}</td>
+                                    <td style="padding: 12px;">${lead.company_name}</td>
+                                    <td style="padding: 12px;">${geo}</td>
+                                    <td style="padding: 12px;">${lead.sector}</td>
+                                    <td style="padding: 12px; color: ${statusColor}; font-weight: bold;">${statusText}</td>
+                                </tr>
+                            `;
+                        });
+                    } else {
+                        tbody.innerHTML = '<tr><td colspan="6" style="padding: 12px; text-align: center;">No leads found.</td></tr>';
+                    }
+                }
+            } catch(e) {
+                document.getElementById('leads-table-body').innerHTML = `<tr><td colspan="6" style="padding: 12px; text-align: center; color: red;">Error loading leads</td></tr>`;
+            }
+        }
 
         function checkAuth() {
             const pwd = document.getElementById('auth-password').value.trim();
