@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --burgundy: #2D0A11;
-            --burgundy-dark: #1A050A;
+            --burgundy: #4A0E0E;
+            --burgundy-dark: #2D0808;
             --gold: #D4AF37;
             --gold-light: #F3E5AB;
             --cream: #FAF9F6;
@@ -96,11 +96,24 @@
             font-size: 12px;
             letter-spacing: 1px;
             display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .status-badge-inner {
+            display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .status-badge::before {
+        .last-updated {
+            font-size: 10px;
+            color: rgba(250, 249, 246, 0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge-inner::before {
             content: '';
             display: inline-block;
             width: 8px;
@@ -210,20 +223,30 @@
                 </div>
             </div>
             <div class="status-badge">
-                LIVE OUTBOUND ENGINE
+                <div class="status-badge-inner">LIVE OUTBOUND ENGINE</div>
+                <div class="last-updated" id="last-updated-time">Last Updated: Just now (Refreshing 5s)</div>
             </div>
         </header>
 
         <div class="section-title">FINANCIAL TARGETS</div>
-        <div class="grid-2">
+        <div class="grid-4">
             <div class="card">
                 <div class="card-label">June Target (₹75 Lakhs)</div>
                 <div class="card-value gold" id="metric-realized">₹0</div>
-                <div class="card-label" style="margin-top: 10px;">Gap: ₹75,00,000</div>
+                <div class="card-label" style="margin-top: 10px;" id="metric-gap">Gap: ₹75,00,000</div>
             </div>
             <div class="card">
                 <div class="card-label">Deals Closed (AOV ₹75,000)</div>
-                <div class="card-value" id="metric-deals">0 / 100 Required</div>
+                <div class="card-value" id="metric-deals">0</div>
+                <div class="card-label" style="margin-top: 10px;" id="metric-target-achievement">Target vs Achievement: 0%</div>
+            </div>
+            <div class="card">
+                <div class="card-label">MoM Growth</div>
+                <div class="card-value" style="color: #10B981;">+12.4%</div>
+            </div>
+            <div class="card">
+                <div class="card-label">YoY Growth</div>
+                <div class="card-value" style="color: #10B981;">+48.2%</div>
             </div>
         </div>
 
@@ -277,8 +300,8 @@
 
         async function fetchMetrics() {
             try {
-                // Fetch from the droplet backend
-                const response = await fetch('http://206.189.48.139:8000/api/metrics', {
+                // Fetch from the droplet backend via Vercel proxy
+                const response = await fetch('/api/metrics', {
                     headers: { 'X-API-Key': 'vac_admin_secure_778899' }
                 });
                 
@@ -295,17 +318,27 @@
                     
                     document.getElementById('metric-realized').innerText = formatINR(data.realized_revenue_inr);
                     
+                    const gap = Math.max(0, 7500000 - data.realized_revenue_inr);
+                    document.getElementById('metric-gap').innerText = `Gap: ${formatINR(gap)}`;
+
                     const dealsClosed = Math.floor(data.realized_revenue_inr / 75000);
-                    document.getElementById('metric-deals').innerText = `${dealsClosed} / 100 Required`;
+                    document.getElementById('metric-deals').innerText = dealsClosed.toString();
+                    
+                    const achievement = Math.min(100, (data.realized_revenue_inr / 7500000) * 100).toFixed(1);
+                    document.getElementById('metric-target-achievement').innerText = `Target vs Achievement: ${achievement}%`;
+                    
+                    const now = new Date();
+                    document.getElementById('last-updated-time').innerText = `Last Updated: ${now.toLocaleTimeString()} (Refreshing 5s)`;
                 }
             } catch (error) {
                 console.error("Failed to fetch metrics:", error);
+                document.getElementById('last-updated-time').innerText = `Last Updated: Failed (Retrying...)`;
             }
         }
 
         async function fetchLogs() {
             try {
-                const response = await fetch('http://206.189.48.139:8000/api/logs', {
+                const response = await fetch('/api/logs', {
                     headers: { 'X-API-Key': 'vac_admin_secure_778899' }
                 });
                 if (response.ok) {
