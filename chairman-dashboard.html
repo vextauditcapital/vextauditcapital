@@ -407,6 +407,7 @@
                 <table style="width: 100%; border-collapse: collapse; color: white; margin-top: 10px; font-size: 0.9rem;">
                     <thead>
                         <tr style="background-color: var(--burgundy-dark); color: var(--gold); text-align: left; border-bottom: 1px solid var(--gold);">
+                            <th style="padding: 12px;">Name</th>
                             <th style="padding: 12px;">Client Email</th>
                             <th style="padding: 12px;">Sender Email</th>
                             <th style="padding: 12px;">Date & Time</th>
@@ -467,6 +468,7 @@
                         tbody.innerHTML = '';
                         // Reverse so newest leads show first
                         data.leads.reverse().forEach(lead => {
+                            const clientName = lead.name || 'Unknown';
                             const clientEmail = lead.email || 'N/A';
                             const senderEmail = lead.sent_from || (lead.contacted ? 'N/A' : 'Pending');
                             const dateTime = lead.contact_date || 'Pending';
@@ -474,6 +476,7 @@
                             const country = lead.geography || 'Global';
                             tbody.innerHTML += `
                                 <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <td style="padding: 12px;">${clientName}</td>
                                     <td style="padding: 12px;">${clientEmail}</td>
                                     <td style="padding: 12px; color: ${lead.contacted ? '#22C55E' : 'var(--gold)'};">${senderEmail}</td>
                                     <td style="padding: 12px;">${dateTime}</td>
