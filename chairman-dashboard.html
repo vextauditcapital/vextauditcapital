@@ -37,6 +37,7 @@
             font-family: var(--ff-body);
             -webkit-font-smoothing: antialiased;
             background-image: radial-gradient(circle at 50% 0%, var(--burgundy) 0%, var(--burgundy-dark) 70%);
+            background-attachment: fixed;
             min-height: 100vh;
         }
 
@@ -111,7 +112,6 @@
             font-size: 10px;
             color: rgba(250, 249, 246, 0.6);
             letter-spacing: 0.5px;
-            display: none;
         }
 
         .status-badge-inner::before {
@@ -132,12 +132,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .section-title::before {
-            content: '|';
-            color: var(--gold);
-            font-weight: bold;
         }
 
         .grid-3 {
@@ -211,6 +205,22 @@
         .log-sender { color: var(--gold); font-weight: bold;}
         .log-target { color: #10B981; }
 
+        @media (max-width: 768px) {
+            .grid-4, .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .brand {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -223,7 +233,7 @@
                     <p>Prudentia · Integritas · Fidelitas</p>
                 </div>
             </div>
-            <div class="status-badge" style="display: none;">
+            <div class="status-badge">
                 <div class="status-badge-inner"></div>
                 <div class="last-updated" id="last-updated-time"></div>
             </div>
@@ -263,20 +273,28 @@
             </div>
         </div>
 
-        <div class="section-title">EMAIL DISPATCH</div>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-label">CEO Emails Sent</div>
-                <div class="card-value" id="metric-ceo-sent">0</div>
-            </div>
-            <div class="card">
-                <div class="card-label">Growth Emails Sent</div>
-                <div class="card-value" id="metric-growth-sent">0</div>
-            </div>
-            <div class="card">
-                <div class="card-label">Support Emails Sent</div>
-                <div class="card-value" id="metric-support-sent">0</div>
-            </div>
+        <div class="section-title">EMAIL DISPATCH (CEO)</div>
+        <div class="grid-4">
+            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="ceo-sent">0</div></div>
+            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="ceo-opened">0</div></div>
+            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="ceo-unread">0</div></div>
+            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="ceo-bounced">0</div></div>
+        </div>
+
+        <div class="section-title">EMAIL DISPATCH (Growth)</div>
+        <div class="grid-4">
+            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="growth-sent">0</div></div>
+            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="growth-opened">0</div></div>
+            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="growth-unread">0</div></div>
+            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="growth-bounced">0</div></div>
+        </div>
+
+        <div class="section-title">EMAIL DISPATCH (Support)</div>
+        <div class="grid-4">
+            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="support-sent">0</div></div>
+            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="support-opened">0</div></div>
+            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="support-unread">0</div></div>
+            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="support-bounced">0</div></div>
         </div>
 
         <div class="section-title">LIVE OUTBOUND LOGS</div>
@@ -308,9 +326,20 @@
                     document.getElementById('metric-raw').innerText = data.total_leads.toLocaleString();
                     document.getElementById('metric-verified').innerText = data.verified_leads.toLocaleString();
                     
-                    document.getElementById('metric-ceo-sent').innerText = (data.emails_sent_ceo || 0).toLocaleString();
-                    document.getElementById('metric-growth-sent').innerText = (data.emails_sent_growth || 0).toLocaleString();
-                    document.getElementById('metric-support-sent').innerText = (data.emails_sent_support || 0).toLocaleString();
+                    document.getElementById('ceo-sent').innerText = (data.emails_sent_ceo || 0).toLocaleString();
+                    document.getElementById('ceo-opened').innerText = (data.emails_opened_ceo || 0).toLocaleString();
+                    document.getElementById('ceo-unread').innerText = (data.emails_unread_ceo || 0).toLocaleString();
+                    document.getElementById('ceo-bounced').innerText = (data.emails_bounced_ceo || 0).toLocaleString();
+
+                    document.getElementById('growth-sent').innerText = (data.emails_sent_growth || 0).toLocaleString();
+                    document.getElementById('growth-opened').innerText = (data.emails_opened_growth || 0).toLocaleString();
+                    document.getElementById('growth-unread').innerText = (data.emails_unread_growth || 0).toLocaleString();
+                    document.getElementById('growth-bounced').innerText = (data.emails_bounced_growth || 0).toLocaleString();
+
+                    document.getElementById('support-sent').innerText = (data.emails_sent_support || 0).toLocaleString();
+                    document.getElementById('support-opened').innerText = (data.emails_opened_support || 0).toLocaleString();
+                    document.getElementById('support-unread').innerText = (data.emails_unread_support || 0).toLocaleString();
+                    document.getElementById('support-bounced').innerText = (data.emails_bounced_support || 0).toLocaleString();
                     
                     document.getElementById('metric-realized').innerText = formatINR(data.realized_revenue_inr);
                     
@@ -324,7 +353,7 @@
                     document.getElementById('metric-target-achievement').innerText = `Target vs Achievement: ${achievement}%`;
                     
                     const now = new Date();
-                    document.getElementById('last-updated-time').innerText = `Last Updated: ${now.toLocaleTimeString()} (Refreshing 5s)`;
+                    document.getElementById('last-updated-time').innerText = `${now.toLocaleTimeString()}`;
                 }
             } catch (error) {
                 console.error("Failed to fetch metrics:", error);
