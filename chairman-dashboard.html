@@ -494,10 +494,11 @@
             }
         }
 
-        function checkAuth() {
-            const pwd = document.getElementById('auth-password').value.trim();
+        function checkAuth(storedPwd = null) {
+            const pwd = storedPwd || document.getElementById('auth-password').value.trim();
             if (pwd === 'vext2026' || pwd === 'vac_admin_secure_778899') {
                 apiKey = pwd;
+                sessionStorage.setItem('vext_api_key', pwd);
                 document.getElementById('login-overlay').style.display = 'none';
                 document.getElementById('main-dashboard').style.display = 'block';
                 
@@ -506,9 +507,19 @@
                 metricsInterval = setInterval(fetchMetrics, 5000);
                 logsInterval = setInterval(fetchLogs, 5000);
             } else {
-                document.getElementById('login-error').style.display = 'block';
+                if (!storedPwd) {
+                    document.getElementById('login-error').style.display = 'block';
+                }
             }
         }
+
+        // Auto-login if previously authenticated in this session
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedKey = sessionStorage.getItem('vext_api_key');
+            if (storedKey) {
+                checkAuth(storedKey);
+            }
+        });
 
         async function fetchMetrics() {
             try {
