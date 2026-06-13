@@ -70,7 +70,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://206.189.48.139.sslip.io/api/:path*"
+      "destination": "http://206.189.48.139:8000/api/:path*"
     }
   ]
 }
