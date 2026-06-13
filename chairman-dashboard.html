@@ -304,6 +304,13 @@
         }
 
     </style>
+    <script>
+        // Check for auto-login before page renders to prevent flash
+        const storedKey = localStorage.getItem('vext_api_key');
+        if (storedKey === 'vext2026' || storedKey === 'vac_admin_secure_778899') {
+            document.write('<style>#login-overlay { display: none !important; } .container { display: block !important; }</style>');
+        }
+    </script>
 </head>
 <body>
     <div id="login-overlay">
@@ -399,21 +406,7 @@
             <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="ceo-bounced">0</div></div>
         </div>
 
-        <div class="section-title">EMAIL DISPATCH (Growth)</div>
-        <div class="grid-4">
-            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="growth-sent">0</div></div>
-            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="growth-opened">0</div></div>
-            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="growth-unread">0</div></div>
-            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="growth-bounced">0</div></div>
-        </div>
 
-        <div class="section-title">EMAIL DISPATCH (Support)</div>
-        <div class="grid-4">
-            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="support-sent">0</div></div>
-            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="support-opened">0</div></div>
-            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="support-unread">0</div></div>
-            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="support-bounced">0</div></div>
-        </div>
 
         <div class="section-title">LIVE OUTBOUND LOGS</div>
         <div class="logs-container" id="live-logs">
@@ -575,15 +568,7 @@
                     document.getElementById('ceo-unread').innerText = (data.emails_unread_ceo || 0).toLocaleString();
                     document.getElementById('ceo-bounced').innerText = (data.emails_bounced_ceo || 0).toLocaleString();
 
-                    document.getElementById('growth-sent').innerText = (data.emails_sent_growth || 0).toLocaleString();
-                    document.getElementById('growth-opened').innerText = (data.emails_opened_growth || 0).toLocaleString();
-                    document.getElementById('growth-unread').innerText = (data.emails_unread_growth || 0).toLocaleString();
-                    document.getElementById('growth-bounced').innerText = (data.emails_bounced_growth || 0).toLocaleString();
 
-                    document.getElementById('support-sent').innerText = (data.emails_sent_support || 0).toLocaleString();
-                    document.getElementById('support-opened').innerText = (data.emails_opened_support || 0).toLocaleString();
-                    document.getElementById('support-unread').innerText = (data.emails_unread_support || 0).toLocaleString();
-                    document.getElementById('support-bounced').innerText = (data.emails_bounced_support || 0).toLocaleString();
                     
                     document.getElementById('metric-realized').innerText = formatINR(data.realized_revenue_inr);
                     
