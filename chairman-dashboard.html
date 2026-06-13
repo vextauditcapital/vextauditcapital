@@ -330,6 +330,7 @@
                     <button onclick="switchTab('dashboard-view')" id="tab-btn-dash" style="padding: 10px 20px; background: var(--gold); border: none; color: black; font-weight: bold; cursor: pointer; border-radius: 4px;">Dashboard</button>
                     <button onclick="switchTab('dataroom-view')" id="tab-btn-data" style="padding: 10px 20px; background: transparent; border: none; color: var(--gold); font-weight: bold; cursor: pointer; border-radius: 4px;">Data Room (Leads)</button>
                 </div>
+                <div id="live-clock" style="font-family: var(--ff-display); font-size: 16px; color: var(--gold); font-weight: bold;"></div>
                 <div id="last-updated-time" style="font-family: var(--ff-ui); font-size: 12px; color: rgba(250, 249, 246, 0.6); letter-spacing: 0.5px;"></div>
             </div>
         </header>
@@ -359,14 +360,34 @@
         </div>
 
         <div class="section-title">LIVE DATA PIPELINE</div>
-        <div class="grid-2">
+        <div class="grid-4">
             <div class="card">
-                <div class="card-label">Raw Leads Scraped</div>
+                <div class="card-label">Leads Generated (Scraped)</div>
                 <div class="card-value" id="metric-raw">0</div>
             </div>
             <div class="card">
-                <div class="card-label">Verified ICP Leads (DNS/MX)</div>
+                <div class="card-label">Verified ICP Leads</div>
                 <div class="card-value" id="metric-verified">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Total Leads Sent</div>
+                <div class="card-value" id="metric-sent">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Leads in Pipeline</div>
+                <div class="card-value" id="metric-pipeline">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Hot Leads</div>
+                <div class="card-value" style="color: #10B981;" id="metric-hot">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Cold Leads</div>
+                <div class="card-value" style="color: #60A5FA;" id="metric-cold">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Dead Leads</div>
+                <div class="card-value" style="color: #6B7280;" id="metric-dead">0</div>
             </div>
         </div>
 
@@ -498,7 +519,7 @@
             const pwd = storedPwd || document.getElementById('auth-password').value.trim();
             if (pwd === 'vext2026' || pwd === 'vac_admin_secure_778899') {
                 apiKey = pwd;
-                sessionStorage.setItem('vext_api_key', pwd);
+                localStorage.setItem('vext_api_key', pwd);
                 document.getElementById('login-overlay').style.display = 'none';
                 document.getElementById('main-dashboard').style.display = 'block';
                 
@@ -506,6 +527,7 @@
                 fetchMetrics();
                 metricsInterval = setInterval(fetchMetrics, 5000);
                 logsInterval = setInterval(fetchLogs, 5000);
+                startClock();
             } else {
                 if (!storedPwd) {
                     document.getElementById('login-error').style.display = 'block';
@@ -513,9 +535,16 @@
             }
         }
 
+        function startClock() {
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById('live-clock').innerText = now.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute:'2-digit', second:'2-digit' }) + ' IST';
+            }, 1000);
+        }
+
         // Auto-login if previously authenticated in this session
         document.addEventListener('DOMContentLoaded', () => {
-            const storedKey = sessionStorage.getItem('vext_api_key');
+            const storedKey = localStorage.getItem('vext_api_key');
             if (storedKey) {
                 checkAuth(storedKey);
             }
@@ -534,6 +563,13 @@
                     document.getElementById('metric-raw').innerText = data.total_leads.toLocaleString();
                     document.getElementById('metric-verified').innerText = data.verified_leads.toLocaleString();
                     
+                    const totalSent = (data.emails_sent_ceo || 0) + (data.emails_sent_growth || 0) + (data.emails_sent_support || 0);
+                    document.getElementById('metric-sent').innerText = totalSent.toLocaleString();
+                    document.getElementById('metric-pipeline').innerText = (data.leads_pipeline || 0).toLocaleString();
+                    document.getElementById('metric-hot').innerText = (data.leads_hot || 0).toLocaleString();
+                    document.getElementById('metric-cold').innerText = (data.leads_cold || 0).toLocaleString();
+                    document.getElementById('metric-dead').innerText = (data.leads_dead || 0).toLocaleString();
+
                     document.getElementById('ceo-sent').innerText = (data.emails_sent_ceo || 0).toLocaleString();
                     document.getElementById('ceo-opened').innerText = (data.emails_opened_ceo || 0).toLocaleString();
                     document.getElementById('ceo-unread').innerText = (data.emails_unread_ceo || 0).toLocaleString();
