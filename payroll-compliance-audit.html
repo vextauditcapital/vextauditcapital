@@ -101,16 +101,35 @@ footer{background:var(--bd);border-top:0.5px solid rgba(197,160,89,0.15);padding
 @media(max-width:1024px){.svc-layout{grid-template-columns:1fr;}.svc-sidebar{position:static;}.related-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:768px){nav{padding:12px 5%;}.nav-links{display:none;}.hamburger{display:flex;}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(29,4,4,0.98);padding:24px 5%;gap:20px;}.audit-grid{grid-template-columns:1fr;}.related-grid{grid-template-columns:1fr;}.svc-body{padding:44px 5%;}}
 </style>
+
+<!-- Global Answer Engine Optimization (AEO) Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Vext Audit Capital",
+  "url": "https://www.vextaudit.com/",
+  "logo": "https://www.vextaudit.com/VEXT-AUDIT-CAPITAL-LOGO.jpg",
+  "description": "Premium Compliance, Cybersecurity, and Data Privacy Audit Services.",
+  "areaServed": "Global",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "India"
+  }
+}
+</script>
 </head>
+
 <body>
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
-    <img src="VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital" class="nav-logo-img"/>
+    <img src="VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital" class="nav-logo-img"/ loading="lazy">
     <div><div class="nav-logo-main">VEXT AUDIT CAPITAL</div><div class="nav-logo-sub">Prudentia · Integritas · Fidelitas</div></div>
   </a>
   <div class="nav-links" id="navLinks">
     <a href="index.html#about">About</a><a href="index.html#services">Services</a>
     <a href="index.html#vextintel">VextIntel</a><a href="index.html#pricing">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
     <a href="onboard.html?service=payroll" class="nav-cta">Begin Now</a>
   </div>
   <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
