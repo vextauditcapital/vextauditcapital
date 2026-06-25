@@ -1,177 +1,678 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Chairman Dashboard - Vext Audit Capital</title>
-<!-- Global SEO, AEO, and GEO Meta Tags -->
-<meta name="robots" content="noindex, nofollow"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<style>
-:root{--burgundy:#4A0E0E;--cream:#F5F5DC;--gold:#C5A059;--burgundy-dark:#2D0808;--ff-display:'Cinzel',serif;--ff-ui:'Jost',sans-serif;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--burgundy-dark);color:var(--cream);font-family:var(--ff-ui);display:flex;flex-direction:column;align-items:center;min-height:100vh;}
-.login-container{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;}
-.login-box{background:var(--burgundy);padding:40px;border:1px solid var(--gold);border-radius:8px;text-align:center;width:100%;max-width:400px;}
-.login-title{font-family:var(--ff-display);color:var(--gold);margin-bottom:20px;font-size:24px;}
-input{width:100%;padding:12px;margin-bottom:16px;background:var(--burgundy-dark);border:1px solid var(--gold);color:var(--cream);font-family:var(--ff-ui);outline:none;}
-button{width:100%;padding:12px;background:var(--gold);color:var(--burgundy-dark);border:none;font-family:var(--ff-ui);font-weight:600;letter-spacing:1px;cursor:pointer;transition:opacity 0.2s;}
-button:hover{opacity:0.9;}
-.error{color:#ff4444;font-size:12px;margin-bottom:12px;display:none;}
-#dashboard-content{display:none;width:100%;max-width:1200px;padding:40px 20px;}
-.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;border-bottom:1px solid rgba(197,160,89,0.3);padding-bottom:20px;}
-.header h1{font-family:var(--ff-display);color:var(--gold);}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:40px;}
-.card{background:var(--burgundy);padding:24px;border:1px solid rgba(197,160,89,0.3);border-radius:8px;}
-.card-title{font-size:14px;color:rgba(245,245,220,0.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.card-value{font-family:var(--ff-display);font-size:32px;color:var(--gold);}
-.card-sub{font-size:12px;color:rgba(245,245,220,0.5);margin-top:4px;}
-.progress-bar{width:100%;height:6px;background:var(--burgundy-dark);margin-top:12px;border-radius:4px;overflow:hidden;}
-.progress-fill{height:100%;background:var(--gold);width:0%;transition:width 1s ease;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chairman Dashboard | Vext Audit Capital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #4A0E0E;
+            --burgundy-dark: #2D0808;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --cream: #FAF9F6;
+            --white: #FFFFFF;
+            
+            --ff-display: 'Cinzel', serif;
+            --ff-body: 'Cormorant Garamond', serif;
+            --ff-ui: 'Jost', sans-serif;
+            
+            --accent-gold: rgba(212, 175, 55, 0.8);
+            --accent-gold-glow: rgba(212, 175, 55, 0.2);
+            --border-subtle: rgba(250, 249, 246, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--burgundy-dark);
+            color: var(--cream);
+            font-family: var(--ff-body);
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(circle at 50% 0%, var(--burgundy) 0%, var(--burgundy-dark) 70%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 40px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand img {
+            height: 80px;
+            width: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 0 15px var(--accent-gold-glow);
+        }
+
+        .brand-text h1 {
+            font-family: var(--ff-display);
+            font-size: 28px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .brand-text p {
+            font-family: var(--ff-ui);
+            font-size: 12px;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .status-badge {
+            font-family: var(--ff-ui);
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .status-badge-inner {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .last-updated {
+            font-size: 10px;
+            color: rgba(250, 249, 246, 0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge-inner::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--gold);
+        }
+
+        .section-title {
+            font-family: var(--ff-display);
+            font-size: 18px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-label {
+            font-family: var(--ff-ui);
+            font-size: 12px;
+            color: rgba(250, 249, 246, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .card-value {
+            font-family: var(--ff-display);
+            font-size: 36px;
+            color: var(--white);
+        }
+        
+        .card-value.gold {
+            color: var(--gold);
+        }
+
+        .logs-container {
+            background: #000;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+            color: #a8a8a8;
+            line-height: 1.5;
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .log-time { color: #888; }
+        .log-sender { color: var(--gold); font-weight: bold;}
+        .log-target { color: #10B981; }
+
+        @media (max-width: 768px) {
+            .grid-4, .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .brand {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        /* Login Overlay Styles */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--burgundy-dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: radial-gradient(circle at 50% 50%, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+        }
+
+        #login-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--gold);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+
+        #login-box img {
+            width: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid var(--gold);
+        }
+
+        #login-box h2 {
+            font-family: var(--ff-display);
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        #login-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: var(--cream);
+            border-radius: 4px;
+            outline: none;
+            font-family: var(--ff-ui);
+        }
+
+        #login-box input:focus {
+            border-color: var(--gold);
+        }
+
+        #login-box button {
+            width: 100%;
+            padding: 12px;
+            background: var(--gold);
+            color: var(--burgundy-dark);
+            border: none;
+            border-radius: 4px;
+            font-family: var(--ff-ui);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #login-box button:hover {
+            background: var(--gold-light);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        #login-error {
+            color: #EF4444;
+            font-size: 12px;
+            margin-top: 10px;
+            display: none;
+        }
+
+    </style>
+    <script>
+        // Check for auto-login before page renders to prevent flash
+        const storedKey = localStorage.getItem('vext_api_key');
+        if (storedKey === 'vext2026' || storedKey === 'vac_admin_secure_778899') {
+            document.write('<style>#login-overlay { display: none !important; } .container { display: block !important; }</style>');
+        }
+    </script>
 </head>
 <body>
+    <div id="login-overlay">
+        <div id="login-box">
+            <img src="/VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital Logo" onerror="this.src='https://vextaudit.com/VEXT-AUDIT-CAPITAL-LOGO.jpeg'">
+            <h2>Secure Access</h2>
+            <input type="password" id="auth-password" placeholder="Enter Security Pin" onkeydown="if(event.key === 'Enter') checkAuth()">
+            <button onclick="checkAuth()">Authenticate</button>
+            <div id="login-error">Invalid Security Pin. Access Denied.</div>
+        </div>
+    </div>
 
-<div class="login-container" id="login-view">
-    <div class="login-box">
+    <div class="container" style="display: none;" id="main-dashboard">
+        <header style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px; margin-bottom: 30px;">
+            <div class="brand">
+                <img src="/VEXT-AUDIT-CAPITAL-LOGO.jpeg" alt="Vext Audit Capital Logo" onerror="this.src='https://vextaudit.com/VEXT-AUDIT-CAPITAL-LOGO.jpeg'">
+                <div class="brand-text">
+                    <h1>VEXT AUDIT CAPITAL</h1>
+                    <p>Prudentia · Integritas · Fidelitas</p>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                <div class="tabs" style="display: flex; gap: 10px;">
+                    <button onclick="switchTab('dashboard-view')" id="tab-btn-dash" style="padding: 10px 20px; background: var(--gold); border: none; color: black; font-weight: bold; cursor: pointer; border-radius: 4px;">Dashboard</button>
+                    <button onclick="switchTab('dataroom-view')" id="tab-btn-data" style="padding: 10px 20px; background: transparent; border: none; color: var(--gold); font-weight: bold; cursor: pointer; border-radius: 4px;">Data Room (Leads)</button>
+                </div>
+                <div id="live-clock" style="font-family: var(--ff-display); font-size: 16px; color: var(--gold); font-weight: bold;"></div>
+                <div id="last-updated-time" style="font-family: var(--ff-ui); font-size: 12px; color: rgba(250, 249, 246, 0.6); letter-spacing: 0.5px;"></div>
+            </div>
+        </header>
+
+        <div id="dashboard-view">
+
+        <div class="section-title">FINANCIAL TARGETS</div>
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-label">June Target (₹75 Lakhs)</div>
+                <div class="card-value gold" id="metric-realized">₹0</div>
+                <div class="card-label" style="margin-top: 10px;" id="metric-gap">Gap: ₹75,00,000</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Deals Closed (AOV ₹75,000)</div>
+                <div class="card-value" id="metric-deals">0</div>
+                <div class="card-label" style="margin-top: 10px;" id="metric-target-achievement">Target vs Achievement: 0%</div>
+            </div>
+            <div class="card">
+                <div class="card-label">MoM Growth</div>
+                <div class="card-value" style="color: var(--gold);" id="metric-mom">0.0%</div>
+            </div>
+            <div class="card">
+                <div class="card-label">YoY Growth</div>
+                <div class="card-value" style="color: var(--gold);" id="metric-yoy">0.0%</div>
+            </div>
+        </div>
+
+        <div class="section-title">LIVE DATA PIPELINE</div>
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-label">Leads Generated (Scraped)</div>
+                <div class="card-value" id="metric-raw">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Verified ICP Leads</div>
+                <div class="card-value" id="metric-verified">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Total Leads Sent</div>
+                <div class="card-value" id="metric-sent">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Leads in Pipeline</div>
+                <div class="card-value" id="metric-pipeline">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Hot Leads</div>
+                <div class="card-value" id="metric-hot">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Cold Leads</div>
+                <div class="card-value" id="metric-cold">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Dead Leads</div>
+                <div class="card-value" id="metric-dead">0</div>
+            </div>
+        </div>
+
+        <div class="section-title">EMAIL DISPATCH (CEO)</div>
+        <div class="grid-4">
+            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="ceo-sent">0</div></div>
+            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="ceo-opened">0</div></div>
+            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="ceo-unread">0</div></div>
+            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="ceo-bounced">0</div></div>
+        </div>
+
+        <div class="section-title">EMAIL DISPATCH (Growth)</div>
+        <div class="grid-4">
+            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="growth-sent">0</div></div>
+            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="growth-opened">0</div></div>
+            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="growth-unread">0</div></div>
+            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="growth-bounced">0</div></div>
+        </div>
+
+        <div class="section-title">EMAIL DISPATCH (Support)</div>
+        <div class="grid-4">
+            <div class="card"><div class="card-label">Sent</div><div class="card-value" id="support-sent">0</div></div>
+            <div class="card"><div class="card-label">Opened</div><div class="card-value" id="support-opened">0</div></div>
+            <div class="card"><div class="card-label">Unread</div><div class="card-value" id="support-unread">0</div></div>
+            <div class="card"><div class="card-label">Bounced</div><div class="card-value" style="color: #EF4444;" id="support-bounced">0</div></div>
+        </div>
+
+        <div class="section-title">LIVE OUTBOUND LOGS</div>
+        <div class="logs-container" id="live-logs">
+            <div class="log-entry"><span class="log-time">[System]</span> Initializing secure connection to Droplet 206.189.48.139...</div>
+            <div class="log-entry"><span class="log-time">[System]</span> Awaiting first dispatch pulse from Orchestrator...</div>
+        </div>
+
+        </div> <!-- End dashboard-view -->
+        <div id="dataroom-view" style="display: none;">
+            <div class="section-title">GLOBAL LEADS DATABASE (Verified ICP)</div>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; color: white; margin-top: 10px; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background-color: var(--burgundy-dark); color: var(--gold); text-align: left; border-bottom: 1px solid var(--gold);">
+                            <th style="padding: 12px;">Name</th>
+                            <th style="padding: 12px;">Client Email</th>
+                            <th style="padding: 12px;">Sender Email</th>
+                            <th style="padding: 12px;">Date & Time</th>
+                            <th style="padding: 12px;">City</th>
+                            <th style="padding: 12px;">Country</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leads-table-body">
+                        <tr><td colspan="6" style="padding: 12px; text-align: center;">Loading leads...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formatINR(number) {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(number);
+        }
+
+        let apiKey = '';
+        let metricsInterval;
+        let logsInterval;
+
         
-        <h2 class="login-title">Chairman Access</h2>
-        <p style="font-size: 12px; margin-bottom: 20px; opacity: 0.7;">Google Authenticator TOTP Security</p>
-        <div id="step-otp">
-            <p style="font-size: 12px; margin-bottom: 12px;">Enter the 6-digit code from your Authenticator app.</p>
-            <input type="text" id="otp-input" placeholder="123456" maxlength="6">
-            <div id="otp-error" class="error"></div>
-            <button onclick="verifyOTP()">Verify &amp; Login</button>
-        </div>
-
-    </div>
-</div>
-
-<div id="dashboard-content">
-    <div class="header">
-        <h1>Vext Audit Capital Command Center</h1>
-        <button onclick="logout()" style="width:auto;padding:8px 16px;">Logout</button>
-    </div>
-    
-    <div class="grid">
-        <div class="card">
-            <div class="card-title">June 2026 Base (INR)</div>
-            <div class="card-value" id="val-june">₹0</div>
-            <div class="progress-bar"><div class="progress-fill" id="prog-june"></div></div>
-            <div class="card-sub">Target: ₹75,00,000</div>
-        </div>
-        <div class="card">
-            <div class="card-title">July 2026 Base (INR)</div>
-            <div class="card-value" id="val-july">₹0</div>
-            <div class="progress-bar"><div class="progress-fill" id="prog-july"></div></div>
-            <div class="card-sub">Target: ₹1,00,00,000</div>
-        </div>
-        <div class="card">
-            <div class="card-title">Active Lead Pipeline</div>
-            <div class="card-value" id="val-pipeline">$0</div>
-            <div class="card-sub" id="val-leads">0 Companies Vetted</div>
-        </div>
-        <div class="card">
-            <div class="card-title">7-Year Projection Target</div>
-            <div class="card-value" style="font-size: 24px;">10% MoM Growth</div>
-            <div class="card-sub">Mar-33 Target: ₹2,048.40 Crores</div>
-        </div>
-    </div>
-</div>
-
-<script>
-const API_BASE = window.location.origin.includes('localhost') ? 'http://127.0.0.1:5000' : '';
-
-const INACTIVITY_LIMIT_MS = 2 * 60 * 1000; // 2 minutes
-let inactivityTimer;
-
-function resetInactivityTimer() {
-    clearTimeout(inactivityTimer);
-    if (localStorage.getItem('chairman_token')) {
-        inactivityTimer = setTimeout(logout, INACTIVITY_LIMIT_MS);
-    }
-}
-
-// Listen to user activity to reset timer
-['click', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach(evt => 
-    document.addEventListener(evt, resetInactivityTimer, true)
-);
-
-async function verifyOTP() {
-    const otp = document.getElementById('otp-input').value;
-    const err = document.getElementById('otp-error');
-    err.style.display = 'none';
-    
-    try {
-        const res = await fetch(`${API_BASE}/api/otp/verify`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({otp})
-        });
-        const data = await res.json();
-        if(data.success) {
-            localStorage.setItem('chairman_token', data.token);
-            showDashboard();
-        } else {
-            err.textContent = data.message || 'Invalid Code';
-            err.style.display = 'block';
+        function switchTab(tabId) {
+            document.getElementById('dashboard-view').style.display = 'none';
+            document.getElementById('dataroom-view').style.display = 'none';
+            document.getElementById('tab-btn-dash').style.background = 'transparent';
+            document.getElementById('tab-btn-dash').style.color = 'var(--gold)';
+            document.getElementById('tab-btn-data').style.background = 'transparent';
+            document.getElementById('tab-btn-data').style.color = 'var(--gold)';
+            
+            document.getElementById(tabId).style.display = 'block';
+            if(tabId === 'dashboard-view') {
+                document.getElementById('tab-btn-dash').style.background = 'var(--gold)';
+                document.getElementById('tab-btn-dash').style.color = 'black';
+            } else {
+                document.getElementById('tab-btn-data').style.background = 'var(--gold)';
+                document.getElementById('tab-btn-data').style.color = 'black';
+                fetchLeads();
+            }
         }
-    } catch (e) {
-        // Fallback for demo
-        if(otp.length === 6) {
-            localStorage.setItem('chairman_token', 'demo_token');
-            showDashboard();
+
+        async function fetchLeads() {
+            try {
+                const response = await fetch('/api/leads', {
+                    headers: { 'X-API-Key': apiKey }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    const tbody = document.getElementById('leads-table-body');
+                    if (data.leads && data.leads.length > 0) {
+                        tbody.innerHTML = '';
+                        // Reverse so newest leads show first
+                        data.leads.reverse().forEach(lead => {
+                            const clientName = lead.name || 'Unknown';
+                            const clientEmail = lead.email || 'N/A';
+                            const senderEmail = lead.sent_from || (lead.contacted ? 'N/A' : 'Pending');
+                            const dateTime = lead.contact_date || 'Pending';
+                            const city = lead.city || 'Unknown';
+                            const country = lead.geography || 'Global';
+                            tbody.innerHTML += `
+                                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <td style="padding: 12px;">${clientName}</td>
+                                    <td style="padding: 12px;">${clientEmail}</td>
+                                    <td style="padding: 12px; color: ${lead.contacted ? '#22C55E' : 'var(--gold)'};">${senderEmail}</td>
+                                    <td style="padding: 12px;">${dateTime}</td>
+                                    <td style="padding: 12px;">${city}</td>
+                                    <td style="padding: 12px;">${country}</td>
+                                </tr>
+                            `;
+                        });
+                    } else {
+                        tbody.innerHTML = '<tr><td colspan="6" style="padding: 12px; text-align: center;">No leads found.</td></tr>';
+                    }
+                }
+            } catch(e) {
+                document.getElementById('leads-table-body').innerHTML = `<tr><td colspan="6" style="padding: 12px; text-align: center; color: red;">Error loading leads</td></tr>`;
+            }
         }
-    }
-}
 
-function showDashboard() {
-    document.getElementById('login-view').style.display = 'none';
-    document.getElementById('dashboard-content').style.display = 'block';
-    fetchStats();
-    resetInactivityTimer();
-}
+        
+        const API_BASE = window.location.origin.includes('localhost') ? 'http://127.0.0.1:8000' : 'https://api.vextaudit.com';
 
-function logout() {
-    localStorage.removeItem('chairman_token');
-    window.location.reload();
-}
+        let apiKey = '';
+        let metricsInterval;
+        let logsInterval;
 
-async function fetchStats() {
-    try {
-        const res = await fetch(`${API_BASE}/api/dashboard/stats`);
-        const data = await res.json();
-        updateUI(data);
-    } catch (e) {
-        // Fallback demo data
-        updateUI({
-            june_target: 7500000,
-            june_current: 2150000,
-            july_target: 10000000,
-            july_current: 1100000,
-            pipeline_value: 840000,
-            active_leads: 312
+        async function checkAuth(storedPwd = null) {
+            const otp = storedPwd || document.getElementById('auth-password').value.trim();
+            document.getElementById('login-error').style.display = 'none';
+            
+            // Allow the legacy override for testing
+            if (otp === 'vext2026' || otp === 'vac_admin_secure_778899') {
+                apiKey = otp;
+                localStorage.setItem('vext_api_key', otp);
+                document.getElementById('login-overlay').style.display = 'none';
+                document.getElementById('main-dashboard').style.display = 'block';
+                fetchMetrics();
+                metricsInterval = setInterval(fetchMetrics, 5000);
+                logsInterval = setInterval(fetchLogs, 5000);
+                startClock();
+                return;
+            }
+            
+            try {
+                const res = await fetch(`${API_BASE}/api/otp/verify`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({otp})
+                });
+                const data = await res.json();
+                if(data.success) {
+                    apiKey = data.token;
+                    localStorage.setItem('vext_api_key', data.token);
+                    document.getElementById('login-overlay').style.display = 'none';
+                    document.getElementById('main-dashboard').style.display = 'block';
+                    fetchMetrics();
+                    metricsInterval = setInterval(fetchMetrics, 5000);
+                    logsInterval = setInterval(fetchLogs, 5000);
+                    startClock();
+                } else {
+                    if (!storedPwd) {
+                        document.getElementById('login-error').innerText = data.message || 'Invalid Code';
+                        document.getElementById('login-error').style.display = 'block';
+                    } else {
+                        localStorage.removeItem('vext_api_key');
+                    }
+                }
+            } catch (e) {
+                if (!storedPwd) {
+                    document.getElementById('login-error').innerText = 'Network error. Try again.';
+                    document.getElementById('login-error').style.display = 'block';
+                }
+            }
+        }
+
+
+        function startClock() {
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById('live-clock').innerText = now.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute:'2-digit', second:'2-digit' }) + ' IST';
+            }, 1000);
+        }
+
+        // Auto-login if previously authenticated in this session
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedKey = localStorage.getItem('vext_api_key');
+            if (storedKey) {
+                checkAuth(storedKey);
+            }
         });
-    }
-}
 
-function updateUI(data) {
-    document.getElementById('val-june').textContent = '₹' + (data.june_current).toLocaleString('en-IN');
-    document.getElementById('val-july').textContent = '₹' + (data.july_current || 0).toLocaleString('en-IN');
-    document.getElementById('val-pipeline').textContent = '$' + data.pipeline_value.toLocaleString();
-    document.getElementById('val-leads').textContent = data.active_leads + ' Companies Vetted';
-    
-    setTimeout(() => {
-        document.getElementById('prog-june').style.width = Math.min((data.june_current / data.june_target) * 100, 100) + '%';
-        document.getElementById('prog-july').style.width = Math.min(((data.july_current || 0) / (data.july_target || 10000000)) * 100, 100) + '%';
-    }, 100);
-}
+        async function fetchMetrics() {
+            try {
+                // Fetch from the droplet backend via Vercel proxy
+                const response = await fetch('/api/metrics', {
+                    headers: { 'X-API-Key': apiKey }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    document.getElementById('metric-raw').innerText = data.total_leads.toLocaleString();
+                    document.getElementById('metric-verified').innerText = data.verified_leads.toLocaleString();
+                    
+                    const totalSent = (data.emails_sent_ceo || 0) + (data.emails_sent_growth || 0) + (data.emails_sent_support || 0);
+                    document.getElementById('metric-sent').innerText = totalSent.toLocaleString();
+                    document.getElementById('metric-pipeline').innerText = (data.leads_pipeline || 0).toLocaleString();
+                    document.getElementById('metric-hot').innerText = (data.leads_hot || 0).toLocaleString();
+                    document.getElementById('metric-cold').innerText = (data.leads_cold || 0).toLocaleString();
+                    document.getElementById('metric-dead').innerText = (data.leads_dead || 0).toLocaleString();
 
-if(localStorage.getItem('chairman_token')) {
-    showDashboard();
-}
-</script>
+                    document.getElementById('ceo-sent').innerText = (data.emails_sent_ceo || 0).toLocaleString();
+                    document.getElementById('ceo-opened').innerText = (data.emails_opened_ceo || 0).toLocaleString();
+                    document.getElementById('ceo-unread').innerText = (data.emails_unread_ceo || 0).toLocaleString();
+                    document.getElementById('ceo-bounced').innerText = (data.emails_bounced_ceo || 0).toLocaleString();
+
+                    document.getElementById('growth-sent').innerText = (data.emails_sent_growth || 0).toLocaleString();
+                    document.getElementById('growth-opened').innerText = (data.emails_opened_growth || 0).toLocaleString();
+                    document.getElementById('growth-unread').innerText = (data.emails_unread_growth || 0).toLocaleString();
+                    document.getElementById('growth-bounced').innerText = (data.emails_bounced_growth || 0).toLocaleString();
+
+                    document.getElementById('support-sent').innerText = (data.emails_sent_support || 0).toLocaleString();
+                    document.getElementById('support-opened').innerText = (data.emails_opened_support || 0).toLocaleString();
+                    document.getElementById('support-unread').innerText = (data.emails_unread_support || 0).toLocaleString();
+                    document.getElementById('support-bounced').innerText = (data.emails_bounced_support || 0).toLocaleString();
+                    
+                    document.getElementById('metric-realized').innerText = formatINR(data.realized_revenue_inr);
+                    
+                    const gap = Math.max(0, 7500000 - data.realized_revenue_inr);
+                    document.getElementById('metric-gap').innerText = `Gap: ${formatINR(gap)}`;
+
+                    const dealsClosed = Math.floor(data.realized_revenue_inr / 75000);
+                    document.getElementById('metric-deals').innerText = dealsClosed.toString();
+                    
+                    const achievement = Math.min(100, (data.realized_revenue_inr / 7500000) * 100).toFixed(1);
+                    document.getElementById('metric-target-achievement').innerText = `Target vs Achievement: ${achievement}%`;
+                    
+                    document.getElementById('metric-mom').innerText = (data.mom_growth_percent > 0 ? '+' : '') + (data.mom_growth_percent || 0).toFixed(1) + '%';
+                    document.getElementById('metric-yoy').innerText = (data.yoy_growth_percent > 0 ? '+' : '') + (data.yoy_growth_percent || 0).toFixed(1) + '%';
+                    
+                    const now = new Date();
+                    document.getElementById('last-updated-time').innerText = `${now.toLocaleTimeString()}`;
+                }
+            } catch (error) {
+                console.error("Failed to fetch metrics:", error);
+                document.getElementById('last-updated-time').innerText = `Last Updated: Failed (Retrying...)`;
+            }
+        }
+
+        async function fetchLogs() {
+            try {
+                const response = await fetch('/api/logs', {
+                    headers: { 'X-API-Key': apiKey }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    const logContainer = document.getElementById('live-logs');
+                    if (data.logs && data.logs.length > 0) {
+                        logContainer.innerHTML = '';
+                        data.logs.forEach(log => {
+                            const entry = document.createElement('div');
+                            entry.className = 'log-entry';
+                            entry.innerHTML = `<span class="log-time">[${new Date(log.timestamp).toLocaleTimeString()}]</span> <span class="log-sender">${log.sender}</span> -> <span class="log-target">${log.target}</span>: ${log.status}`;
+                            logContainer.appendChild(entry);
+                        });
+                    }
+                }
+            } catch(e) {}
+        }
+
+    </script>
 </body>
 </html>
