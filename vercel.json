@@ -65,6 +65,12 @@
       "permanent": false
     }
   ],
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "http://206.189.48.139:5000/api/:match*"
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": false
 }
