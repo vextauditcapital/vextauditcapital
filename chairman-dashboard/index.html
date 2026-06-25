@@ -57,16 +57,16 @@ button:hover{opacity:0.9;}
     
     <div class="grid">
         <div class="card">
-            <div class="card-title">June 2026 Target (INR)</div>
+            <div class="card-title">June 2026 Base (INR)</div>
             <div class="card-value" id="val-june">₹0</div>
             <div class="progress-bar"><div class="progress-fill" id="prog-june"></div></div>
             <div class="card-sub">Target: ₹75,00,000</div>
         </div>
         <div class="card">
-            <div class="card-title">July Daily MRR Target (USD)</div>
-            <div class="card-value" id="val-july">$0</div>
+            <div class="card-title">July 2026 Base (INR)</div>
+            <div class="card-value" id="val-july">₹0</div>
             <div class="progress-bar"><div class="progress-fill" id="prog-july"></div></div>
-            <div class="card-sub">Target: $4,000 / day</div>
+            <div class="card-sub">Target: ₹1,00,00,000</div>
         </div>
         <div class="card">
             <div class="card-title">Active Lead Pipeline</div>
@@ -74,9 +74,9 @@ button:hover{opacity:0.9;}
             <div class="card-sub" id="val-leads">0 Companies Vetted</div>
         </div>
         <div class="card">
-            <div class="card-title">30-Year Projection Base</div>
-            <div class="card-value" style="font-size: 24px;">+18% - 25% YoY</div>
-            <div class="card-sub">Compounding growth activated.</div>
+            <div class="card-title">7-Year Projection Target</div>
+            <div class="card-value" style="font-size: 24px;">10% MoM Growth</div>
+            <div class="card-sub">Mar-33 Target: ₹2,048.40 Crores</div>
         </div>
     </div>
 </div>
@@ -84,7 +84,20 @@ button:hover{opacity:0.9;}
 <script>
 const API_BASE = window.location.origin.includes('localhost') ? 'http://127.0.0.1:8000' : 'https://api.vextaudit.com';
 
+const INACTIVITY_LIMIT_MS = 2 * 60 * 1000; // 2 minutes
+let inactivityTimer;
 
+function resetInactivityTimer() {
+    clearTimeout(inactivityTimer);
+    if (localStorage.getItem('chairman_token')) {
+        inactivityTimer = setTimeout(logout, INACTIVITY_LIMIT_MS);
+    }
+}
+
+// Listen to user activity to reset timer
+['click', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach(evt => 
+    document.addEventListener(evt, resetInactivityTimer, true)
+);
 
 async function verifyOTP() {
     const otp = document.getElementById('otp-input').value;
@@ -118,6 +131,7 @@ function showDashboard() {
     document.getElementById('login-view').style.display = 'none';
     document.getElementById('dashboard-content').style.display = 'block';
     fetchStats();
+    resetInactivityTimer();
 }
 
 function logout() {
@@ -135,8 +149,8 @@ async function fetchStats() {
         updateUI({
             june_target: 7500000,
             june_current: 2150000,
-            july_daily_target: 4000,
-            july_current_daily: 1299,
+            july_target: 10000000,
+            july_current: 1100000,
             pipeline_value: 840000,
             active_leads: 312
         });
@@ -144,14 +158,14 @@ async function fetchStats() {
 }
 
 function updateUI(data) {
-    document.getElementById('val-june').textContent = '₹' + data.june_current.toLocaleString();
-    document.getElementById('val-july').textContent = '$' + data.july_current_daily.toLocaleString();
+    document.getElementById('val-june').textContent = '₹' + (data.june_current).toLocaleString('en-IN');
+    document.getElementById('val-july').textContent = '₹' + (data.july_current || 0).toLocaleString('en-IN');
     document.getElementById('val-pipeline').textContent = '$' + data.pipeline_value.toLocaleString();
     document.getElementById('val-leads').textContent = data.active_leads + ' Companies Vetted';
     
     setTimeout(() => {
         document.getElementById('prog-june').style.width = Math.min((data.june_current / data.june_target) * 100, 100) + '%';
-        document.getElementById('prog-july').style.width = Math.min((data.july_current_daily / data.july_daily_target) * 100, 100) + '%';
+        document.getElementById('prog-july').style.width = Math.min(((data.july_current || 0) / (data.july_target || 10000000)) * 100, 100) + '%';
     }, 100);
 }
 
