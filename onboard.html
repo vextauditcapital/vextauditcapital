@@ -123,9 +123,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 </head>
 
 <body>
-<nav>
- <a href="index.html" class="nl"><img src="VEXT-AUDIT-CAPITAL-LOGO.jpg" alt="Vext Audit Capital" class="ni" width="48" height="48" onerror="this.style.display='none'"/ loading="lazy"><div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div></a>
- <a href="index.html" class="nb">← Return to site</a>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="Homepage">
+    <img src="VEXT-AUDIT-CAPITAL-LOGO.jpg" alt="Vext Audit Capital Logo" class="nav-logo-img" width="48" height="48" onerror="this.style.display='none'" fetchpriority="high" decoding="sync"/ loading="lazy">
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">VEXT AUDIT CAPITAL</span>
+      <span class="nav-logo-sub">Prudentia · Integritas · Fidelitas</span>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#vextintel">VextIntel</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="onboard.html" class="nav-cta">Begin Engagement</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Toggle navigation menu" aria-expanded="false" style="background:transparent;border:none;"><span></span><span></span><span></span></button>
 </nav>
 <div class="shell">
  <div class="rp" id="rp">
@@ -333,9 +347,59 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
  </div>
  </div>
  </div>
-  <footer class="onboarding-footer" id="onb-foot" style="margin-top: 50px; padding-top: 15px; border-top: 0.5px solid rgba(197,160,89,0.12); text-align: center; font-family: var(--ff-u); font-size: 8.5px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); opacity: 0.35; line-height: 1.6;">
-    * All prices listed are exclusive of 18% GST. Indian business entities are eligible for full Input Tax Credit (ITC). Corporate IEC Code: AFIFS2899N for Global Transactions.
-  </footer>
+  <footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-wrap">
+        <img src="VEXT-AUDIT-CAPITAL-LOGO.jpg" alt="Vext Audit Capital Footer Logo" class="footer-logo-img" width="52" height="52" onerror="this.style.display='none'" loading="lazy" decoding="async"/>
+        <div class="footer-brand-name">VEXT AUDIT CAPITAL<span>Precision Audit &amp; Compliance</span></div>
+      </div>
+      <p class="footer-tagline">Precision audit. Zero compromise.</p>
+      <p class="footer-motto">Prudentia · Integritas · Fidelitas</p>
+    </div>
+    <div class="footer-col">
+      <h3>India Core</h3>
+      <ul>
+        <li><a href="onboard.html?service=gst">GST Audit</a></li>
+        <li><a href="onboard.html?service=dpdp">DPDP Readiness</a></li>
+        <li><a href="onboard.html?service=financial">Financial Audit</a></li>
+        <li><a href="onboard.html?service=it">IT &amp; Cyber Audit</a></li>
+        <li><a href="onboard.html?service=export">Export Compliance</a></li>
+        <li><a href="onboard.html?service=vextintel">VextIntel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>India Statutory</h3>
+      <ul>
+        <li><a href="onboard.html?service=tds">TDS Compliance</a></li>
+        <li><a href="onboard.html?service=fema">FEMA Compliance</a></li>
+        <li><a href="onboard.html?service=roc">ROC / MCA</a></li>
+        <li><a href="onboard.html?service=payroll">Payroll Audit</a></li>
+        <li><a href="onboard.html?service=msme">MSME Health Check</a></li>
+        <li><a href="onboard.html?service=startup">Startup DPIIT</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Global</h3>
+      <ul>
+        <li><a href="onboard.html?service=process">Process Intelligence</a></li>
+        <li><a href="onboard.html?service=competitive">Competitive Intel</a></li>
+        <li><a href="onboard.html?service=market-entry">Market Entry</a></li>
+        <li><a href="onboard.html?service=operational-risk" target="_blank">Operational Risk</a></li>
+        <li><a href="onboard.html?service=bundle">Full Bundle</a></li>
+        <li><a href="mailto:support@vextaudit.com">support@vextaudit.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Vext Audit Capital.</p>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
+    </div>
+  </div>
+</footer>
  </div>
 </div>
 <script>
