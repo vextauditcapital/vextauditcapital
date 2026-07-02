@@ -428,6 +428,27 @@
             <div class="log-entry"><span class="log-time">[System]</span> Awaiting first dispatch pulse from Orchestrator...</div>
         </div>
 
+        <div class="section-title">2026 OFFICIAL TARGETS VS ACHIEVEMENT</div>
+        <div style="overflow-x: auto; margin-bottom: 40px;">
+            <table style="width: 100%; border-collapse: collapse; color: white; margin-top: 10px; font-size: 0.9rem;">
+                <thead>
+                    <tr style="background-color: var(--burgundy-dark); color: var(--gold); text-align: left; border-bottom: 1px solid var(--gold);">
+                        <th style="padding: 12px;">Week</th>
+                        <th style="padding: 12px;">Date Range</th>
+                        <th style="padding: 12px;">Daily Target</th>
+                        <th style="padding: 12px;">Daily Achieved</th>
+                        <th style="padding: 12px;">Mid-week Target</th>
+                        <th style="padding: 12px;">Mid-week Achieved</th>
+                        <th style="padding: 12px;">Weekly Target</th>
+                        <th style="padding: 12px;">Weekly Achieved</th>
+                    </tr>
+                </thead>
+                <tbody id="targets-table-body">
+                    <tr><td colspan="8" style="padding: 12px; text-align: center;">Loading targets...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
         </div> <!-- End dashboard-view -->
         <div id="dataroom-view" style="display: none;">
             <div class="section-title">GLOBAL LEADS DATABASE (Verified ICP)</div>
@@ -532,6 +553,7 @@
                 
                 // Start Dashboard loops
                 fetchMetrics();
+                fetchTargets();
                 metricsInterval = setInterval(fetchMetrics, 5000);
                 logsInterval = setInterval(fetchLogs, 5000);
                 startClock();
@@ -612,6 +634,41 @@
             } catch (error) {
                 console.error("Failed to fetch metrics:", error);
                 document.getElementById('last-updated-time').innerText = `Last Updated: Failed (Retrying...)`;
+            }
+        }
+
+        async function fetchTargets() {
+            try {
+                const response = await fetch('/api/targets', {
+                    headers: { 'X-API-Key': apiKey }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    const tbody = document.getElementById('targets-table-body');
+                    if (data.weeks && data.weeks.length > 0) {
+                        tbody.innerHTML = '';
+                        data.weeks.forEach(week => {
+                            const d_gap = week.daily_achieved >= week.daily_target ? '#22C55E' : (week.daily_achieved > 0 ? '#EAB308' : '#EF4444');
+                            const m_gap = week.midweek_achieved >= week.midweek_target ? '#22C55E' : (week.midweek_achieved > 0 ? '#EAB308' : '#EF4444');
+                            const w_gap = week.weekly_achieved >= week.weekly_target ? '#22C55E' : (week.weekly_achieved > 0 ? '#EAB308' : '#EF4444');
+                            
+                            tbody.innerHTML += `
+                                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <td style="padding: 12px;">Week ${week.week_number}</td>
+                                    <td style="padding: 12px;">${week.date_range}</td>
+                                    <td style="padding: 12px;">${formatINR(week.daily_target)}</td>
+                                    <td style="padding: 12px; color: ${d_gap};">${formatINR(week.daily_achieved)}</td>
+                                    <td style="padding: 12px;">${formatINR(week.midweek_target)}</td>
+                                    <td style="padding: 12px; color: ${m_gap};">${formatINR(week.midweek_achieved)}</td>
+                                    <td style="padding: 12px;">${formatINR(week.weekly_target)}</td>
+                                    <td style="padding: 12px; color: ${w_gap};">${formatINR(week.weekly_achieved)}</td>
+                                </tr>
+                            `;
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error("Failed to fetch targets:", error);
             }
         }
 
