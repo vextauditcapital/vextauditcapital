@@ -62,7 +62,7 @@ def generate_brand_invoice_pdf(client_details: dict, invoice_no: str, service_de
     # 2. Company Details & Invoice Info
     current_date = datetime.date.today().strftime("%d-%b-%Y")
     
-    comp_details = f"<font size='10' color='#4A0E0E'><b>Vext Audit Capital</b><br/>SkyDasher Tech LLP,<br/>3/195-G, Nehru Nagar-3<br/>Kangayampalayam,<br/>Coimbatore 641401.<br/>Tamil Nadu, India.</font>"
+    comp_details = f"<font size='10' color='#4A0E0E'><b>Vext Audit Capital</b><br/>,<br/>3/195-G, Nehru Nagar-3<br/>Kangayampalayam,<br/>Coimbatore 641401.<br/>Tamil Nadu, India.</font>"
     inv_details = f"<font size='20' color='#4A0E0E'><b>INVOICE</b></font><br/><font size='10' color='#4A0E0E'><b>Retail Invoice No: {invoice_no}</b></font><br/><br/><font size='10' color='#4A0E0E'><b>Invoice Date</b> &nbsp;&nbsp; {current_date}<br/><b>GSTIN:</b> 33AFIFS2899N1Z5</font>"
 
     info_data = [

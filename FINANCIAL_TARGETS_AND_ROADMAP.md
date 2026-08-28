@@ -1,4 +1,4 @@
-# Vext Audit Capital - Financial Targets & Reinvestment Roadmap
+# Vext Audit Capital Financial Targets & Reinvestment Roadmap
 
 This document outlines the official revenue and net profit targets for Vext Audit Capital during the FY 2026-2027 period, details the underlying lead-to-conversion mathematical model, and structures the automated reinvestment program required to maintain our status as a 100% automated AI-based compliance firm.
 

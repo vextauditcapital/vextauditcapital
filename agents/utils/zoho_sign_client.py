@@ -91,7 +91,7 @@ class EnterpriseZohoSignClient:
         # 2. Build Request Payload as specified by Zoho Sign API
         data_payload = {
             "requests": {
-                "request_name": f"Statement of Work - Vext Audit Capital - {client_name}",
+                "request_name": f"Statement of Work - Vext Audit Capital {client_name}",
                 "notes": "Please review and electronically sign this Statement of Work to initiate your automated audit. This is a binding agreement.",
                 "actions": [
                     {

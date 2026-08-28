@@ -1,5 +1,5 @@
 /**
- * Vext Audit Capital - CRM Sheets Onboarding Logging Apps Script
+ * Vext Audit Capital CRM Sheets Onboarding Logging Apps Script
  *
  * INSTRUCTIONS FOR DEPLOYMENT:
  * 1. Open your master Google Sheet (ID: 1Xj2RaD-TuP8ieDn8JKhy77alYKYWTM4S3ejnVTL8Q1k) or your active CRM Sheet.
