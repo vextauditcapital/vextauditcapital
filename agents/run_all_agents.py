@@ -14,18 +14,18 @@ def run_orchestration():
     logger.info("⚡ Operational Status: 100% Automated, Zero Human Intervention")
     logger.info("="*70)
     
-    # 1. Run Lead Generation Command Center
+    # 1. Run Lead Generation Command Center (PAUSED - EMAIL SEQUENCES STOPPED)
     try:
-        logger.info("\n[STEP 1] EXECUTING VEXTLEAD COMMAND CENTER PIPELINE")
-        run_sample_pipeline()
+        logger.info("\n[STEP 1] VEXTLEAD COMMAND CENTER PIPELINE - PAUSED BY USER")
+        # run_sample_pipeline()
     except Exception as e:
         logger.error(f"Lead Command Center encountered an execution error: {e}")
         
-    # 2. Run Email Inbox Automation Response Engine
+    # 2. Run Email Inbox Automation Response Engine (PAUSED - EMAIL SEQUENCES STOPPED)
     try:
-        logger.info("\n[STEP 2] EXECUTING VEXTMAIL RESPONSE ENGINE")
-        engine = EmailCommandCenter()
-        engine.run_all_mailboxes()
+        logger.info("\n[STEP 2] VEXTMAIL RESPONSE ENGINE - PAUSED BY USER")
+        # engine = EmailCommandCenter()
+        # engine.run_all_mailboxes()
     except Exception as e:
         logger.error(f"Email Command Center encountered an execution error: {e}")
         
